@@ -32,7 +32,7 @@ La **diversidad de enfoques** en IA viene de la mano de la necesidad de abordar 
 
 La **IA simbólica** se basa en la manipulación de símbolos y la aplicación de reglas lógicas para tomar decisiones o hacer inferencias. Este enfoque es efectivo cuando el problema está bien definido y se pueden aplicar reglas explícitas para resolverlo. Se utiliza típicamente en **sistemas expertos** y **motores de inferencia lógica**.
 
-La IA simbólica fue uno de los primeros enfoques desarrollados, especialmente en la creación de sistemas expertos como **MYCIN** o **DENDRA**, diseñado para realizar diagnósticos médicos basados en reglas.
+La IA simbólica fue uno de los primeros enfoques desarrollados, especialmente en la creación de sistemas expertos. Ejemplos clásicos son **MYCIN** o **DENDRA**, diseñados para realizar diagnósticos médicos basados en reglas o para ayudar al estudio de estructuras moleculares
 
 > [!TIP]
 >
@@ -45,7 +45,7 @@ La IA simbólica sigue siendo relevante en áreas donde la **transparencia** y l
 - **Ventajas**: 
   - **Transparencia** en la toma de decisiones: los resultados y razonamientos son fácilmente comprensibles y rastreables.
   - **Fiabilidad** en problemas estructurados con reglas claras.
-  
+
 - **Limitaciones**: 
   - **Escalabilidad**: los sistemas basados en reglas son difíciles de escalar a problemas complejos con muchas variables.
   - **Rigidez**: no son adecuados para problemas que involucren incertidumbre o que requieran adaptabilidad, como el reconocimiento de imágenes o la clasificación de grandes volúmenes de datos no estructurados.
@@ -58,9 +58,10 @@ Un **chatbot basado en reglas** es un sistema que responde a las entradas del us
 >
 > Pistas**: Ambos sistemas utilizan reglas predefinidas, pero un **sistema experto** se centra en resolver problemas más complejos dentro de un dominio específico (como el diagnóstico médico), mientras que un chatbot tiene interacciones más limitadas y simples.
 
-#### **Debate**
+##### A debate...
 
-> **Pregunta**: ¿Qué limitaciones tienen los sistemas basados en reglas en entornos complejos e inciertos?  
+> **Pregunta**: ¿Qué limitaciones tienen los sistemas basados en reglas en entornos complejos e inciertos? 
+>
 > **Clave**: Los sistemas basados en reglas no pueden adaptarse a problemas que involucren incertidumbre o datos ambiguos. En estos casos, es necesario usar enfoques como el **aprendizaje automático** o el **enfoque bayesiano**, que manejan mejor la incertidumbre y pueden actualizarse con nueva información.
 
 ---
@@ -69,22 +70,22 @@ Un **chatbot basado en reglas** es un sistema que responde a las entradas del us
 
 #### **Definición y características**
 
-El **aprendizaje automático (ML)** se basa en que las máquinas aprendan patrones directamente de los datos sin ser explícitamente programadas para cada tarea. Los algoritmos de ML detectan **patrones** en los datos y mejoran su rendimiento a medida que se procesan más datos.
+El **aprendizaje automático (ML)** se basa en la idea de que las máquinas aprendan patrones directamente de los datos, sin ser explícitamente programadas para cada tarea. Los algoritmos de ML detectan **patrones** en los datos y mejoran su rendimiento a medida que se procesan más datos.
 
 El aprendizaje automático es el **enfoque más predominante en la IA moderna**. Es especialmente eficaz cuando se trata de procesar grandes cantidades de datos no estructurados y encontrar patrones ocultos que no serían evidentes mediante reglas predefinidas.
 
 #### **Tipos de Aprendizaje Automático**:
 
 1. **Supervisado**: El modelo es entrenado con datos etiquetados, es decir, conoce la entrada y la salida esperada.
-  
+
    > **Ejemplo**: Un modelo de clasificación de imágenes que aprende a diferenciar entre gatos y perros usando imágenes etiquetadas.
 
 2. **No supervisado**: El modelo encuentra patrones ocultos en los datos sin tener etiquetas de entrada o salida.
-  
+
    > **Ejemplo**: Algoritmos de **clustering** que agrupan clientes en un supermercado según sus hábitos de compra, sin saber de antemano a qué categoría pertenecen.
 
 3. **Aprendizaje por refuerzo**: El modelo aprende mediante un sistema de **recompensas y penalizaciones** por sus acciones en un entorno.
-  
+
    > **Ejemplo**: Un agente de IA que aprende a jugar un videojuego optimizando su puntuación a lo largo de muchas partidas.
 
 
@@ -134,7 +135,7 @@ En los bancos y empresas de servicios financieros, la detección de fraudes es u
 3. **Actualización continua**:
 
    - El sistema mejora con el tiempo a medida que recibe más datos y se ajusta a **nuevas tácticas de fraude**. Esto permite que el modelo sea cada vez más efectivo y preciso.
-   
+
    
 
 ##### **Ventajas del uso de Aprendizaje Automático en la detección de fraudes**:
@@ -160,6 +161,18 @@ En los bancos y empresas de servicios financieros, la detección de fraudes es u
 
 Las **redes neuronales artificiales (ANN)** son modelos de aprendizaje automático que se inspiran en el funcionamiento del cerebro humano. Están diseñadas para reconocer patrones complejos en grandes volúmenes de datos no estructurados, como imágenes, texto o sonido.
 
+Una **neurona artificial** es la unidad básica de una **red neuronal**. Funciona inspirada en las neuronas biológicas, pero modelizada de modo matemático.
+
+Cada neurona recibe varias **entradas** (valores numéricos) que representan características o datos. Estas entradas se multiplican por **pesos** que determinan la importancia de cada una. Luego, se suman los valores ponderados y se añade un **sesgo** (un valor adicional). El resultado pasa por una **función de activación**, como la función sigmoide o ReLU, que decide si la neurona se "activa" o no.
+
+Si se activa, la neurona transmite una **salida** que servirá de entrada para otras neuronas en capas sucesivas, permitiendo que la red neuronal aprenda y realice predicciones o clasificaciones ajustando los pesos a través del entrenamiento.
+
+> [!TIP]
+>
+> El **perceptrón** es un modelo de **neurona artificial** también utilizado en redes neuronales. Fue introducido por Frank Rosenblatt en 1958 y es la base de las redes neuronales modernas. Un perceptrón funciona de manera similar a una neurona artificial: recibe varias **entradas**, las multiplica por **pesos**, y suma estos valores junto con un **sesgo**. Luego, pasa este resultado por una **función de activación** para producir una salida.
+>
+> Sin embargo, un perceptrón es una **implementación simple** de una neurona artificial. Es decir, no son exactamente lo mismo. El perceptrón es un **modelo específico** de neurona que solo puede resolver problemas **linealmente separables**, a diferencia de las neuronas artificiales más modernas usadas en redes neuronales profundas. Estas últimas utilizan funciones de activación más complejas y **son capaces de resolver problemas no lineales**.
+
 #### **Elementos de una red neuronal**
 
 - **Capas**: Las redes neuronales están formadas por **capas**. La **capa de entrada** recibe los datos, las **capas ocultas** procesan la información y la **capa de salida** genera el resultado final.
@@ -173,15 +186,11 @@ Las **redes neuronales artificiales (ANN)** son modelos de aprendizaje automáti
 
 #### **Deep Learning**
 
-El **Deep Learning** es una rama del aprendizaje automático que utiliza **redes neuronales profundas** con muchas capas ocultas. Estas redes son capaces de aprender **representaciones jerárquicas** de los datos y han logrado avances significativos en áreas como la visión por computadora y el procesamiento del lenguaje natural.
+El **deep learning** es una rama del aprendizaje automático que utiliza **redes neuronales profundas**. A diferencia de los enfoques tradicionales de aprendizaje automático, que dependen de características diseñadas manualmente, el **deep learning** aprende automáticamente representaciones de datos a través de múltiples **capas de neuronas** ocultas.
 
-**Referencias clave**:
+Cada capa en una red profunda procesa una parte de la información, comenzando con representaciones simples y avanzando hacia representaciones más abstractas. Por ejemplo, en una red profunda para reconocimiento de imágenes, las primeras capas podrían identificar bordes y colores, mientras que las capas más profundas reconocerían formas y objetos más complejos.
 
-- **Russell y Norvig (2020)** mencionan que las redes neuronales y el deep learning han permitido avances en **visión artificial**, **reconocimiento de voz** y **traducción automática**.
-- **Alfonseca (2021)** y **Puentes Calvo (2025)** destacan cómo las redes neuronales están detrás de muchas de las
-
- aplicaciones de IA más avanzadas, desde vehículos autónomos hasta sistemas de recomendación.
-- **Pedro Malo (2018)** subraya que las redes neuronales, gracias a su capacidad para aprender de grandes volúmenes de datos, están revolucionando la **visión artificial** y el **procesamiento del lenguaje**, siendo aplicadas en sistemas como **Google Translate** y en la **determinación de enfermedades** mediante análisis de imágenes médicas.
+Las aplicaciones de **deep learning** son numerosas, incluyendo la **visión por computadora**, el **procesamiento de lenguaje natural** (PLN), o el **reconocimiento de voz**, entre otras. Sin embargo, aunque es poderoso, el **deep learning** requiere grandes cantidades de datos y recursos computacionales para entrenar modelos de manera efectiva.
 
 #### **Ventajas y Limitaciones de las Redes Neuronales**
 
@@ -196,6 +205,34 @@ El **Deep Learning** es una rama del aprendizaje automático que utiliza **redes
 > **Pregunta para reflexión**: ¿Qué implicaciones éticas tiene la falta de transparencia en las redes neuronales?
 >
 > **Clave**: La falta de **explicabilidad** puede ser un problema en sistemas que toman decisiones importantes, como en la **medicina** o la **justicia**. Los usuarios y reguladores deben poder confiar en las decisiones de una IA y comprender por qué se toman esas decisiones.
+
+
+
+> [!TIP]
+>
+> Existen varios tipos de **arquitecturas** en deep learning, cada una diseñada para resolver diferentes tipos de problemas y manejar diferentes tipos de datos. A continuación, se enumeran brevemente las diferentes configuraciones que habitualmente encontramos:
+>
+> **Redes Neuronales Convolucionales (CNN)**
+>
+> Diseñadas para procesar datos con una estructura de cuadrícula, como imágenes. Utilizan **convoluciones** para extraer características importantes, como bordes y texturas, en distintas partes de una imagen. Son muy efectivas para **visión por computadora**, como reconocimiento de imágenes, detección de objetos y análisis de video.
+>
+> **Redes Neuronales Recurrentes (RNN)**
+>
+> Útiles para procesar secuencias de datos, ya que pueden **recordar** información previa y usarla para influir en las decisiones futuras. Esto las hace ideales para tareas donde el orden de los datos es importante. Son muy usadas en el procesamiento de **secuencias** como texto, audio y series temporales (ej. predicción del clima, análisis de textos o traducción automática).
+>
+> **Redes Neuronales de Memoria a Largo Plazo (LSTM)**
+>
+> Las **LSTM** son un tipo especial de RNN que puede aprender dependencias a largo plazo en secuencias de datos, superando las limitaciones de las RNN estándar. Usadas habitualmente en tareas como la **traducción automática**, la generación de texto y el **reconocimiento de voz**, tareas donde se requiere mantener el contexto a largo plazo.
+>
+> **Redes de Autoencoders**
+>
+> Los **autoencoders** son redes diseñadas para aprender representaciones más compactas de los datos, eliminando redundancias. Su objetivo es comprimir y luego reconstruir los datos de entrada. Se aplican normalmente en problemas de **reducción de la dimensionalidad**, detección de anomalías y preprocesamiento de datos.
+>
+> **Transformers**
+>
+> Los **transformers** son una arquitectura diseñada para manejar secuencias de datos usando un mecanismo de **atención** para procesar toda la secuencia a la vez, lo que permite un procesamiento más eficiente. Son ampliamente utilizados en **procesamiento de lenguaje natural (PLN)**, en modelos como GPT y BERT, para tareas como traducción, clasificación y generación de textos.
+
+
 
 #### Caso de uso: Redes Neuronales para Reconocimiento de Imágenes Médicas
 
@@ -242,96 +279,9 @@ En el ámbito de la **medicina**, el análisis de imágenes como radiografías, 
 
 > **Pregunta para reflexión**: ¿Cómo puede el uso de redes neuronales mejorar la precisión y velocidad de los diagnósticos médicos?
 >
-> **Clave**: Considera la capacidad de las redes neuronales para detectar patrones complejos en imágenes médicas y su habilidad para procesar grandes volúmenes de datos rápidamente, lo que puede acelerar el proceso de diagnóstico y reducir errores humanos.
-
----
-
-### Apéndice: Enfoque Bayesiano en IA
-
-#### **Definición y fundamentos**
-
-El **enfoque bayesiano** utiliza la **teoría de la probabilidad** para actualizar creencias o hipótesis en función de nueva evidencia. El teorema de Bayes permite **ajustar** las probabilidades de un evento basado en la información previa, lo que lo convierte en una herramienta eficaz para la toma de decisiones bajo incertidumbre.
-
-#### **Aplicaciones comunes**
-
-- **Modelos de clasificación**: Un ejemplo típico es el algoritmo **Naive Bayes**, utilizado en tareas como el **filtrado de spam** o la **clasificación de textos**.
-- **Redes bayesianas**: Se usan en áreas como la **toma de decisiones** médicas, donde es importante actualizar las probabilidades de diagnóstico a medida que se reciben nuevos síntomas o pruebas.
-
-El enfoque bayesiano es crucial para la **inteligencia artificial probabilística**, especialmente cuando se trabaja con datos incompletos o inciertos. Este enfoque tiene bastante relevancia en la toma de decisiones bajo incertidumbre, como en el diagnóstico médico, donde la IA puede actualizar las probabilidades de una enfermedad a medida que se reciben nuevas pruebas. Es importante resaltar que los modelos bayesianos son efectivos en situaciones donde los **datos son escasos** o **incompletos**, lo que les otorga una ventaja en áreas como la **gestión de riesgos** y la **predicción en mercados financieros**.
-
-#### **Ventajas y Desafíos**
-
-- **Ventajas**:
-  - **Manejo de la incertidumbre**: Los modelos bayesianos pueden manejar datos incompletos o ambiguos de manera eficiente.
-  - **Actualización continua**: Permiten ajustar las probabilidades conforme se recibe nueva información.
-  
-- **Desafíos**:
-  - **Costo computacional**: Para problemas complejos, el cálculo de probabilidades puede ser **costoso en términos computacionales**.
-  - **Dependencia de probabilidades previas**: Los resultados dependen en gran medida de las **probabilidades iniciales** asignadas, lo que puede influir en la precisión del modelo.
-  
-  
-
-> **Pregunta para reflexión**: ¿En qué tipos de problemas es más adecuado el enfoque bayesiano frente a otros enfoques, como las redes neuronales?
->
-> **Clave**: El enfoque bayesiano es más adecuado en situaciones con **datos limitados** o donde la **incertidumbre** es alta, como en el diagnóstico médico, donde es crucial ajustar las probabilidades a medida que se obtiene más información.
-
-#### Caso de uso típico: **Filtrado de correo no deseado (spam) con un enfoque bayesiano**
-
-El **enfoque bayesiano** es ampliamente utilizado en sistemas de **filtrado de correo electrónico** para clasificar los correos entrantes como **spam** o **no spam** (legítimos). El **algoritmo Naive Bayes**, basado en el teorema de Bayes, es uno de los métodos más efectivos y comúnmente empleados para esta tarea, ya que permite **actualizar las probabilidades** de que un correo sea spam a medida que se reciben más correos y se identifican patrones en ellos.
-
-##### **Descripción del caso de uso**
-
-En los sistemas de **correo electrónico**, los usuarios reciben diariamente una mezcla de correos legítimos y mensajes no deseados (spam). La tarea de los filtros de spam es detectar estos correos no deseados basándose en ciertas **características del mensaje** (palabras clave, enlaces sospechosos, remitentes) y clasificarlos en consecuencia. El enfoque bayesiano se utiliza para **calcular la probabilidad** de que un correo electrónico sea spam en función de estas características, actualizando estas probabilidades conforme se identifican nuevos patrones de spam.
-
-##### **Cómo funciona el modelo**
-
-1. **Probabilidades previas (prior)**:
-   - El modelo comienza con una **probabilidad previa** de que un correo sea spam basándose en datos históricos de correos que ya han sido clasificados como spam o no spam.
-   
-   > **Ejemplo**: Si históricamente el 20% de los correos recibidos en una cuenta son spam, esta será la **probabilidad previa** de que cualquier correo nuevo que llegue sea spam antes de analizarlo.
-
-2. **Recolección de nueva información (evidencia)**:
-   - El sistema analiza las características del correo entrante, como el contenido del asunto, el cuerpo del mensaje, la frecuencia de palabras comunes en correos spam (como "gratis", "descuento", "haz clic aquí"), la presencia de enlaces sospechosos, la dirección del remitente, y otros factores. Estos elementos constituyen la **evidencia** que el modelo utilizará para actualizar las probabilidades.
-
-   > **Ejemplo**: Si el asunto del correo incluye la palabra "oferta", y esta palabra aparece frecuentemente en correos identificados como spam, la probabilidad de que este nuevo correo sea spam aumentará.
-
-3. **Cálculo de la probabilidad posterior**:
-   - El sistema utiliza el **teorema de Bayes** para combinar la probabilidad previa con la nueva información (evidencia) y calcular una **probabilidad posterior**, que indica la probabilidad de que el correo sea spam dada la información disponible.
-
-   $$
-   P(\text{Spam} | \text{Evidencia}) = \frac{P(\text{Evidencia} | \text{Spam}) \cdot P(\text{Spam})}{P(\text{Evidencia})}
-   $$
-
-   > **Ejemplo**: Si el cuerpo del correo contiene enlaces y términos comúnmente asociados con spam (como "¡Has ganado!" o "Haz clic para obtener un premio"), el sistema ajusta la probabilidad posterior de que el correo sea spam. Si esta probabilidad supera un cierto umbral, el correo es marcado como spam y enviado a la carpeta de correo no deseado.
-
-4. **Actualización y mejora del filtro**:
-   - A medida que se recibe más correo y el usuario clasifica manualmente correos como spam o no spam, el sistema continúa aprendiendo y ajustando las **probabilidades previas** basadas en estos nuevos datos, lo que permite que el filtro de spam se vuelva cada vez más preciso y adaptativo.
-
-   > **Ejemplo**: Si un tipo específico de correo, como una newsletter legítima, es repetidamente marcado como "no spam" por el usuario, el sistema ajustará la probabilidad de que correos similares en el futuro sean etiquetados como spam.
-
-#### **Ventajas del uso del enfoque bayesiano en el filtrado de spam**:
-
-- **Capacidad de aprendizaje continuo**: Los filtros de spam basados en modelos bayesianos se adaptan continuamente a las nuevas formas de spam que surgen, mejorando su precisión con el tiempo a medida que reciben más datos y ejemplos.
-  
-- **Eficiencia computacional**: El **algoritmo Naive Bayes** es computacionalmente ligero, lo que permite su implementación en tiempo real para analizar y clasificar correos de manera rápida y eficaz.
-
-- **Manejo de múltiples características**: El modelo puede evaluar muchas características de los correos electrónicos de manera simultánea (como las palabras clave, la estructura del mensaje, los enlaces) y combinarlas para hacer una predicción.
-
-#### **Limitaciones**:
-
-- **Dependencia de la calidad de los datos**: Si el modelo es entrenado con datos que no representan adecuadamente la variedad de correos que un usuario puede recibir, o si no está bien ajustado para tipos específicos de spam, su precisión puede verse afectada.
-
-- **Falsos positivos**: A veces, el modelo puede marcar como spam correos que no lo son, especialmente si contienen palabras o características que aparecen comúnmente en correos de spam. Esto es un desafío para mantener una buena **experiencia del usuario**.
-
-> **Ejemplo práctico: Filtros de spam en Gmail**
->
-> **Gmail** utiliza un sistema de **filtros de spam** basado en aprendizaje automático, que incluye un enfoque bayesiano para analizar las características de los correos y calcular la probabilidad de que sean spam. El sistema no solo se basa en reglas fijas, sino que también aprende de las decisiones del usuario (cuando marcan correos como spam o no spam) para mejorar continuamente.
+> **Pista**: Considera la capacidad de las redes neuronales para detectar patrones complejos en imágenes médicas y su habilidad para procesar grandes volúmenes de datos rápidamente, lo que puede acelerar el proceso de diagnóstico y reducir errores humanos.
 
 
-
-> **Pregunta para reflexión**: ¿Qué ventajas ofrece el enfoque bayesiano frente a un sistema basado solo en reglas predefinidas para detectar spam?
->
-> **Clave**: Considera la capacidad del enfoque bayesiano para **adaptarse** a nuevas tácticas de spam a medida que emergen, sin tener que reescribir manualmente reglas cada vez que cambian los patrones.
 
 ---
 
@@ -354,4 +304,99 @@ En los sistemas de **correo electrónico**, los usuarios reciben diariamente una
 > **Debate**: Imagina que tienes que desarrollar un **sistema de recomendación** para una tienda en línea. ¿Qué enfoque utilizarías?
 > **Clave**: Un sistema de recomendación puede beneficiarse de un enfoque basado en **aprendizaje automático**, donde el modelo aprende de los datos de los usuarios y adapta las sugerencias de productos de manera continua. Sin embargo, el **enfoque bayesiano** podría ser útil si los datos iniciales son escasos y es necesario actualizar las recomendaciones a medida que se obtiene más información sobre los usuarios.
 
+---
 
+
+
+### Apéndice: Enfoque Bayesiano en IA
+
+#### **Definición y fundamentos**
+
+El **enfoque bayesiano** utiliza la **teoría de la probabilidad** para actualizar creencias o hipótesis en función de nueva evidencia. El teorema de Bayes permite **ajustar** las probabilidades de un evento basado en la información previa, lo que lo convierte en una herramienta eficaz para la toma de decisiones bajo incertidumbre.
+
+#### **Aplicaciones comunes**
+
+- **Modelos de clasificación**: Un ejemplo típico es el algoritmo **Naive Bayes**, utilizado en tareas como el **filtrado de spam** o la **clasificación de textos**.
+- **Redes bayesianas**: Se usan en áreas como la **toma de decisiones** médicas, donde es importante actualizar las probabilidades de diagnóstico a medida que se reciben nuevos síntomas o pruebas.
+
+El enfoque bayesiano es crucial para la **inteligencia artificial probabilística**, especialmente cuando se trabaja con datos incompletos o inciertos. Este enfoque tiene bastante relevancia en la toma de decisiones bajo incertidumbre, como en el diagnóstico médico, donde la IA puede actualizar las probabilidades de una enfermedad a medida que se reciben nuevas pruebas. Es importante resaltar que los modelos bayesianos son efectivos en situaciones donde los **datos son escasos** o **incompletos**, lo que les otorga una ventaja en áreas como la **gestión de riesgos** y la **predicción en mercados financieros**.
+
+#### **Ventajas y Desafíos**
+
+- **Ventajas**:
+
+  - **Manejo de la incertidumbre**: Los modelos bayesianos pueden manejar datos incompletos o ambiguos de manera eficiente.
+  - **Actualización continua**: Permiten ajustar las probabilidades conforme se recibe nueva información.
+
+- **Desafíos**:
+
+  - **Costo computacional**: Para problemas complejos, el cálculo de probabilidades puede ser **costoso en términos computacionales**.
+  - **Dependencia de probabilidades previas**: Los resultados dependen en gran medida de las **probabilidades iniciales** asignadas, lo que puede influir en la precisión del modelo.
+
+  
+
+> **Pregunta para reflexión**: ¿En qué tipos de problemas es más adecuado el enfoque bayesiano frente a otros enfoques, como las redes neuronales?
+>
+> **Clave**: El enfoque bayesiano es más adecuado en situaciones con **datos limitados** o donde la **incertidumbre** es alta, como en el diagnóstico médico, donde es crucial ajustar las probabilidades a medida que se obtiene más información.
+
+#### Caso de uso típico: **Filtrado de correo no deseado (spam) con un enfoque bayesiano**
+
+El **enfoque bayesiano** es ampliamente utilizado en sistemas de **filtrado de correo electrónico** para clasificar los correos entrantes como **spam** o **no spam** (legítimos). El **algoritmo Naive Bayes**, basado en el teorema de Bayes, es uno de los métodos más efectivos y comúnmente empleados para esta tarea, ya que permite **actualizar las probabilidades** de que un correo sea spam a medida que se reciben más correos y se identifican patrones en ellos.
+
+##### **Descripción del caso de uso**
+
+En los sistemas de **correo electrónico**, los usuarios reciben diariamente una mezcla de correos legítimos y mensajes no deseados (spam). La tarea de los filtros de spam es detectar estos correos no deseados basándose en ciertas **características del mensaje** (palabras clave, enlaces sospechosos, remitentes) y clasificarlos en consecuencia. El enfoque bayesiano se utiliza para **calcular la probabilidad** de que un correo electrónico sea spam en función de estas características, actualizando estas probabilidades conforme se identifican nuevos patrones de spam.
+
+##### **Cómo funciona el modelo**
+
+1. **Probabilidades previas (prior)**:
+
+   - El modelo comienza con una **probabilidad previa** de que un correo sea spam basándose en datos históricos de correos que ya han sido clasificados como spam o no spam.
+
+   > **Ejemplo**: Si históricamente el 20% de los correos recibidos en una cuenta son spam, esta será la **probabilidad previa** de que cualquier correo nuevo que llegue sea spam antes de analizarlo.
+
+2. **Recolección de nueva información (evidencia)**:
+
+   - El sistema analiza las características del correo entrante, como el contenido del asunto, el cuerpo del mensaje, la frecuencia de palabras comunes en correos spam (como "gratis", "descuento", "haz clic aquí"), la presencia de enlaces sospechosos, la dirección del remitente, y otros factores. Estos elementos constituyen la **evidencia** que el modelo utilizará para actualizar las probabilidades.
+
+   > **Ejemplo**: Si el asunto del correo incluye la palabra "oferta", y esta palabra aparece frecuentemente en correos identificados como spam, la probabilidad de que este nuevo correo sea spam aumentará.
+
+3. **Cálculo de la probabilidad posterior**:
+
+   - El sistema utiliza el **teorema de Bayes** para combinar la probabilidad previa con la nueva información (evidencia) y calcular una **probabilidad posterior**, que indica la probabilidad de que el correo sea spam dada la información disponible.
+
+   $$
+   P(\text{Spam} | \text{Evidencia}) = \frac{P(\text{Evidencia} | \text{Spam}) \cdot P(\text{Spam})}{P(\text{Evidencia})}
+   $$
+
+   > **Ejemplo**: Si el cuerpo del correo contiene enlaces y términos comúnmente asociados con spam (como "¡Has ganado!" o "Haz clic para obtener un premio"), el sistema ajusta la probabilidad posterior de que el correo sea spam. Si esta probabilidad supera un cierto umbral, el correo es marcado como spam y enviado a la carpeta de correo no deseado.
+
+4. **Actualización y mejora del filtro**:
+
+   - A medida que se recibe más correo y el usuario clasifica manualmente correos como spam o no spam, el sistema continúa aprendiendo y ajustando las **probabilidades previas** basadas en estos nuevos datos, lo que permite que el filtro de spam se vuelva cada vez más preciso y adaptativo.
+
+   > **Ejemplo**: Si un tipo específico de correo, como una newsletter legítima, es repetidamente marcado como "no spam" por el usuario, el sistema ajustará la probabilidad de que correos similares en el futuro sean etiquetados como spam.
+
+#### **Ventajas del uso del enfoque bayesiano en el filtrado de spam**:
+
+- **Capacidad de aprendizaje continuo**: Los filtros de spam basados en modelos bayesianos se adaptan continuamente a las nuevas formas de spam que surgen, mejorando su precisión con el tiempo a medida que reciben más datos y ejemplos.
+
+- **Eficiencia computacional**: El **algoritmo Naive Bayes** es computacionalmente ligero, lo que permite su implementación en tiempo real para analizar y clasificar correos de manera rápida y eficaz.
+
+- **Manejo de múltiples características**: El modelo puede evaluar muchas características de los correos electrónicos de manera simultánea (como las palabras clave, la estructura del mensaje, los enlaces) y combinarlas para hacer una predicción.
+
+#### **Limitaciones**:
+
+- **Dependencia de la calidad de los datos**: Si el modelo es entrenado con datos que no representan adecuadamente la variedad de correos que un usuario puede recibir, o si no está bien ajustado para tipos específicos de spam, su precisión puede verse afectada.
+
+- **Falsos positivos**: A veces, el modelo puede marcar como spam correos que no lo son, especialmente si contienen palabras o características que aparecen comúnmente en correos de spam. Esto es un desafío para mantener una buena **experiencia del usuario**.
+
+> **Ejemplo práctico: Filtros de spam en Gmail**
+>
+> **Gmail** utiliza un sistema de **filtros de spam** basado en aprendizaje automático, que incluye un enfoque bayesiano para analizar las características de los correos y calcular la probabilidad de que sean spam. El sistema no solo se basa en reglas fijas, sino que también aprende de las decisiones del usuario (cuando marcan correos como spam o no spam) para mejorar continuamente.
+
+
+
+> **Pregunta para reflexión**: ¿Qué ventajas ofrece el enfoque bayesiano frente a un sistema basado solo en reglas predefinidas para detectar spam?
+>
+> **Pista**: Considera la capacidad del enfoque bayesiano para **adaptarse** a nuevas tácticas de spam a medida que emergen, sin tener que reescribir manualmente reglas cada vez que cambian los patrones.
