@@ -16,51 +16,81 @@ subtitle: "Máster en FP de Inteligencia Artificial y Big Data"
 
 ### Introducción
 
-La **Inteligencia Artificial (IA)** se basa en la interacción de tres componentes clave: **algoritmos**, **hardware**, y **datos**. Estos elementos trabajan en conjunto para que los sistemas de IA puedan resolver problemas complejos, aprender del entorno y mejorar su rendimiento. En esta sección, profundizaremos en cómo estos componentes interactúan y cómo influyen en el éxito de los sistemas de IA.
+Un sistema basado en **inteligencia artificial**  depende de la interacción de tres componentes clave: **algoritmos**, **hardware**, y **datos**. Estos elementos trabajan en conjunto para que los sistemas de IA puedan resolver problemas complejos, aprender del entorno y mejorar su rendimiento. En esta sección, profundizaremos en cómo estos componentes interactúan y cómo influyen en el éxito de los sistemas de IA.
 
-> **Pregunta para reflexión**: ¿Cuál de estos tres componentes crees que es el más importante en el desarrollo de un sistema de IA?
+##### Para reflexionar...
+
+> **¿Cuál de estos tres componentes crees que es el más importante en el desarrollo de un sistema de IA?**
 >
 > **Clave**: Considera cómo los datos alimentan los algoritmos y cómo el hardware adecuado puede acelerar o ralentizar el entrenamiento de modelos. Los tres componentes deben trabajar juntos para obtener los mejores resultados.
+>
+> **¿Cómo determinarías cuál de estos tres componentes es el más crítico en un proyecto de IA específico?** 
+>
+> **Clave**: Dependerá de la naturaleza del problema. En problemas con grandes volúmenes de datos, los **algoritmos** y el **hardware** adecuado son esenciales. En otros casos, donde los datos son limitados, la **calidad de los datos** puede ser el mayor desafío.
 
 ---
 
 ### Algoritmos en la IA
 
-Los **algoritmos** son el "motor" de los sistemas de IA, ya que permiten que los datos se transformen en predicciones, decisiones o acciones. Los algoritmos son conjuntos de instrucciones que procesan los datos de manera eficiente para resolver problemas concretos. En muchos contextos, estos algoritmos se utilizan para modelar el aprendizaje automático (Machine Learning, ML).
+Los **algoritmos** son el "motor" de los sistemas de IA, ya que permiten que los datos se transformen en predicciones, decisiones o acciones. Los algoritmos son conjuntos de instrucciones que procesan los datos de manera eficiente para resolver problemas concretos. Por ejemplo, ya hemos visto como estos algoritmos se utilizan para modelar el aprendizaje automático.
 
-#### **Tipos de algoritmos**
+#### Algoritmos en distintos enfoques del aprendizaje automático
 
-1. **Aprendizaje supervisado**:
-   - Los algoritmos supervisados aprenden de **conjuntos de datos etiquetados**, lo que significa que el sistema conoce la respuesta correcta para cada dato de entrenamiento. Los algoritmos intentan aprender la relación entre los datos de entrada y la salida esperada.
-   - **Ejemplos**: Regresión lineal, árboles de decisión, redes neuronales.
+##### Algoritmos en el aprendizaje supervisado
 
-   > **Pregunta para reflexión**: ¿Qué ventajas tiene un conjunto de datos etiquetado en comparación con uno no etiquetado?
-   >
-   > **Clave**: En tareas como la **clasificación de imágenes** o el **reconocimiento de voz**, conocer la respuesta correcta facilita que el algoritmo ajuste sus parámetros de manera precisa y rápida.
+En este contexto, los algoritmos "aprenden" de **conjuntos de datos etiquetados**, lo que significa que el sistema conoce la respuesta correcta para cada dato de entrenamiento. Los algoritmos intentan cuadrar la relación entre los datos de entrada y la salida esperada. Algoritmos habituales en este campo son el de regresión lineal, regresión logística, los árboles de decisión o las redes neuronales.
 
-2. **Aprendizaje no supervisado**:
-   - Este enfoque se utiliza cuando no se dispone de **etiquetas**. El objetivo es encontrar **patrones ocultos** en los datos. Se utiliza en problemas como la **segmentación de usuarios** o el **análisis de clusters**.
-   - **Ejemplos**: Algoritmos de clustering como **k-means**, reducción de dimensionalidad como **PCA**.
+> **Ejemplo:** Un **algoritmo de regresión lineal** estima la relación entre una variable independiente \(X\) y una variable dependiente \(Y\) ajustando una línea recta a los datos. Por ejemplo, si queremos predecir el precio de una casa basado en su tamaño, el modelo analiza los datos históricos de precios y tamaños de casas. Utiliza una ecuación de la forma \(Y = mX + b\), donde \(m\) es la pendiente y \(b\) la intersección. El algoritmo ajusta \(m\) y \(b\) minimizando la diferencia entre los valores predichos y los valores reales, con el objetivo de encontrar la línea que mejor represente la tendencia de los datos.
 
-   > **Ejemplo práctico**: Imagina una aplicación de marketing donde se necesita segmentar a los clientes según su comportamiento de compra, pero no se tiene una clasificación previa de clientes. Los algoritmos no supervisados agrupan los datos en categorías similares para descubrir patrones relevantes.
 
-3. **Aprendizaje por refuerzo**:
 
-   - En este enfoque, los algoritmos aprenden interactuando con un entorno y ajustan su comportamiento en función de **recompensas o penalizaciones**. Este enfoque es especialmente útil en entornos dinámicos donde las acciones del agente afectan los resultados futuros.
-   - **Ejemplos**: Agentes de IA en juegos como **AlphaGo**, sistemas de control autónomo.
+> **Pregunta para reflexión**: ¿Qué ventajas tiene un conjunto de datos etiquetado en comparación con uno no etiquetado?
+>
+> **Clave**: En tareas como la **clasificación de imágenes** o el **reconocimiento de voz**, conocer la respuesta correcta facilita que el algoritmo ajuste sus parámetros de manera precisa y rápida.
 
-   > **Pregunta para reflexión**: ¿Cómo crees que el aprendizaje por refuerzo puede ser útil en sistemas autónomos como robots o vehículos autónomos?
-   >
-   > **Clave**: Considera cómo los sistemas pueden aprender de sus errores a largo plazo para optimizar sus decisiones y mejorar su desempeño en tareas como la navegación en entornos desconocidos o competitivos.
 
-4. **Enfoque Bayesiano**
 
-   - Los algoritmos bayesianos utilizan el **teorema de Bayes** para actualizar las probabilidades de que una hipótesis sea correcta a medida que se obtiene nueva información. Ideal, como hemos visto antes, para **manejar la incertidumbre** y **tomar decisiones** en situaciones donde los datos pueden cambiar con el tiempo.
-   - **Ejemplos**: Filtros anti-spam
+###### El algoritmo de Naive-Bayes
 
-   > **Pregunta para reflexión**: ¿Cómo crees que el enfoque bayesiano puede ayudar en sistemas que requieren adaptarse continuamente a nueva información?
-   >
-   > **Clave**: Los algoritmos bayesianos pueden manejar la incertidumbre de manera eficaz y actualizar las probabilidades basándose en nueva evidencia, lo que los hace ideales para situaciones donde se necesita una **actualización dinámica** de las predicciones, como en diagnósticos médicos o sistemas de detección de fraudes.
+Los algoritmos bayesianos utilizan el **teorema de Bayes** para actualizar las probabilidades de que una hipótesis sea correcta a medida que se obtiene nueva información. Este tipo de algoritmo son buenos a la hora de **manejar la incertidumbre** y **tomar decisiones** en situaciones donde los datos pueden cambiar con el tiempo.
+
+> **Ejemplo:** Un filtro antispam basado en un **algoritmo bayesiano** analiza el contenido de los correos electrónicos para calcular la **probabilidad** de que un mensaje sea spam. Utiliza el **teorema de Bayes** para evaluar palabras y patrones comunes en mensajes de spam y de correo legítimo. Por ejemplo, si palabras como "gratis" o "oferta" tienen alta probabilidad de aparecer en spam, el filtro incrementa la probabilidad de que un correo que contiene estas palabras sea spam. Con el tiempo y la acumulación de datos, el filtro se vuelve más preciso al clasificar correos, bloqueando spam de manera efectiva.
+
+
+
+> **Pregunta para reflexión:** ¿Por qué el algoritmo de Naive-Bayes podría fallar en clasificar correctamente datos con características altamente correlacionadas?
+>
+> **Clave**: El algoritmo de **Naive-Bayes** asume que todas las características son **independientes** entre sí. Esta suposición de independencia no es válida cuando existe una **alta correlación** entre características, ya que la influencia de una característica en el resultado no es independiente de la influencia de otra. En casos con características correlacionadas, Naive Bayes tiende a **subestimar o sobreestimar** la probabilidad de ciertas combinaciones de características, lo que puede llevar a errores en la clasificación.
+
+
+
+###### Redes neuronales
+
+Los **algoritmos en redes neuronales** ajustan los **pesos** de las conexiones entre neuronas para minimizar el error entre las predicciones del modelo y los valores reales. Cada neurona recibe valores de entrada, los multiplica por sus pesos y pasa el resultado a través de una **función de activación** que determina su salida. Durante el entrenamiento, la red utiliza un proceso llamado **retropropagación**, que emplea un mecanismo denominado **gradiente descendente** para ajustar los pesos y reducir el error de forma iterativa. De esta forma, la irá red mejorando sus predicciones al adaptarse a los patrones en los datos.
+
+> **Ejemplo:** Puedes imaginar una red neuronal que predice el precio de casas basándose en características como tamaño, ubicación y antigüedad. Durante el entrenamiento, el algoritmo compara el precio predicho con el precio real, calculando el error. Mediante retropropagación, ajusta los pesos de cada conexión para reducir este error en futuras predicciones. Tras muchas iteraciones, la red "aprende" los patrones que relacionan las características de las casas con sus precios, permitiéndole hacer predicciones precisas en datos nuevos no observados durante el entrenamiento.
+
+
+
+##### Algoritmos en el aprendizaje no supervisado
+
+Ya hemos hablado que este enfoque se utiliza cuando no se dispone de **etiquetas**. El objetivo es encontrar **patrones ocultos** en los datos. Se utiliza en problemas como la **segmentación de usuarios** o el **análisis de clusters**.
+
+> **Ejemplo:** El **algoritmo k-means** es un método de **clustering** en aprendizaje no supervisado que agrupa datos en **k-clusters**. Funciona iniciando con un número "k" de centros (centroides) seleccionados al azar. Luego, cada punto de datos se asigna al centro más cercano, formando un grupo. Después de esta asignación, el algoritmo recalcula los centroides como el promedio de todos los puntos en cada grupo. Este proceso de asignación y actualización se repite iterativamente hasta que los centroides ya no cambian significativamente o se alcanza un número máximo de iteraciones. El objetivo de k-means es minimizar la variación dentro de los clusters, encontrando agrupaciones naturales en los datos.
+
+> **Ejemplo práctico**: Imagina una aplicación de marketing donde se necesita segmentar a los clientes según su comportamiento de compra, pero no se tiene una clasificación previa de clientes. Los algoritmos no supervisados agrupan los datos en categorías similares para descubrir patrones relevantes.
+
+
+
+##### Aprendizaje por refuerzo
+
+Recuerda que en este enfoque, los algoritmos aprenden interactuando con un entorno y ajustan su comportamiento en función de **recompensas o penalizaciones**. Este enfoque es especialmente útil en entornos dinámicos donde las acciones del agente afectan los resultados futuros.
+
+> **Ejemplo:** Un ejemplo básico de **aprendizaje por refuerzo** es el entrenamiento de un **agente** para navegar en un laberinto. Al principio, el agente explora el laberinto al azar, recibiendo **recompensas** por llegar a la salida y **penalizaciones** por choques contra paredes. A medida que intenta diferentes caminos, el agente ajusta su comportamiento para maximizar las recompensas, aprendiendo qué acciones tomar en cada situación. Con el tiempo, el algoritmo optimiza su política, es decir, una estrategia que le permite llegar a la salida del laberinto de forma más rápida y eficiente
+
+> **Pregunta para reflexión**: ¿Cómo crees que el aprendizaje por refuerzo puede ser útil en sistemas autónomos como robots o vehículos autónomos?
+>
+> **Clave**: Considera cómo los sistemas pueden aprender de sus errores a largo plazo para optimizar sus decisiones y mejorar su desempeño en tareas como la navegación en entornos desconocidos o competitivos.
 
 #### Comparativa de algoritmos
 
@@ -70,14 +100,15 @@ En esta tabla se resumen ventajas, limitaciones y posibles aplicaciones de los a
 | ------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | **Aprendizaje Supervisado**    | Alta precisión, útil con datos etiquetados                   | Requiere grandes volúmenes de datos etiquetados, riesgo de sesgo | Clasificación de imágenes, predicción de precios, diagnóstico médico |
 | **Aprendizaje No Supervisado** | No necesita datos etiquetados, útil para descubrir patrones ocultos | Menor precisión, difícil de interpretar                      | Segmentación de clientes, análisis de clusters, detección de anomalías |
-| **Aprendizaje por Refuerzo**   | Optimización a largo plazo, ideal para entornos dinámicos    | Lento y costoso de entrenar, implementación compleja         | Juegos (AlphaGo), robots autónomos, sistemas de control      |
-| **Enfoque Bayesiano**          | Manejo eficaz de la incertidumbre, actualiza probabilidades con nueva información | Dependencia de probabilidades previas, alto costo computacional en problemas complejos | Filtrado de spam, diagnóstico probabilístico, predicción bajo incertidumbre |
+| **Aprendizaje por Refuerzo**   | Optimización a largo plazo, ideal para entornos dinámicos    | Lento y costoso de entrenar, implementación compleja         | Juegos (p.ej.: AlphaGo), robots autónomos, sistemas de control |
 
 ##### Cuestiones para reflexionar...
 
 > **Pregunta**: ¿Qué desafíos presenta la necesidad de grandes volúmenes de datos etiquetados para el aprendizaje supervisado?
 >
 > **Clave**: Piensa en el **coste** y el **tiempo** necesario para etiquetar manualmente grandes conjuntos de datos, así como el riesgo de **sesgo** si los datos no están bien etiquetados.
+
+
 
 > **Pregunta**: ¿Cómo decidimos qué algoritmo es más adecuado para un problema?
 >
@@ -87,32 +118,41 @@ En esta tabla se resumen ventajas, limitaciones y posibles aplicaciones de los a
 
 ### Hardware en la IA
 
-El **hardware** es otro componente crucial que determina la **velocidad** y **eficiencia** con la que un sistema de IA puede entrenar y realizar predicciones. A medida que los modelos de IA, como las redes neuronales profundas, se vuelven más complejos, el hardware adecuado se vuelve imprescindible.
+El **hardware** es otro componente crucial que determina la **velocidad** y **eficiencia** con la que un sistema de IA puede entrenar y realizar predicciones. A medida que los modelos de IA se vuelven más complejos, el hardware adecuado se vuelve imprescindible. Por ejemplo, esto último es algo habitual cuando trabajamos con redes neuronales y deep learning
 
-#### **Tipos de hardware en IA**
+#### Tipos de hardware en IA
 
-1. **CPU (Unidad Central de Procesamiento)**:
-   - Son las más comunes, pero no están optimizadas para tareas de IA intensivas, ya que son más lentas en cálculos paralelos.
-   - Adecuadas para tareas básicas de IA con conjuntos de datos más pequeños.
-   - Las primeras computadoras utilizaban **CPU** para todas las tareas, pero a medida que la IA y el machine learning comenzaron a crecer en complejidad, las CPUs demostraron ser insuficientes para procesar grandes volúmenes de datos o realizar cálculos paralelos intensivos.
-   
-2. **GPU (Unidad de Procesamiento Gráfico)**:
-   - Especializadas en el procesamiento paralelo, lo que las hace ideales para **entrenamiento de redes neuronales** profundas y tareas intensivas en IA.
-   - Utilizadas en aplicaciones que requieren el procesamiento de grandes volúmenes de datos y modelos complejos.
-   - En la década de 1990, las GPUs fueron diseñadas inicialmente para **procesar gráficos en videojuegos**, pero su capacidad para realizar múltiples cálculos en paralelo las hizo perfectas para entrenar modelos de IA, especialmente redes neuronales profundas. En 2006, NVIDIA lanzó **CUDA**, una plataforma que permitió a los desarrolladores utilizar GPUs para tareas generales de cómputo, revolucionando el campo de la IA.
-   
-3. **TPU (Unidad de Procesamiento Tensorial)**:
-   - Hardware especializado optimizado para tareas de **Deep Learning**, especialmente para ejecutar operaciones de redes neuronales con alta eficiencia energética.
-   - Utilizadas por empresas como **Google** para entrenar redes neuronales a gran escala.
-   - En 2015, Google presentó estas **TPUs**y son usadas en productos como Google Search y Google Photos.
-   - Más información en (https://cloud.google.com/tpu/docs/tpus?hl=es-419)
-   
-4. **FPGAs (Field Programmable Gate Arrays)**:
-   - Procesadores configurables que permiten una mayor eficiencia energética y flexibilidad para tareas específicas de IA.
-   - Aunque son más eficientes en términos de energía, requieren mayor esfuerzo en su configuración.
-   - En 2017, Microsoft lanzó **Project Brainwave**, una infraestructura de hardware para la **aceleración de modelos de deep learning** en tiempo real. En lugar de depender exclusivamente de **GPU** o **CPU**, Microsoft eligió FPGAs para optimizar el procesamiento de redes neuronales, especialmente en tareas que requieren inferencia rápida con **baja latencia**, como reconocimiento de imágenes o procesamiento de lenguaje natural. Puedes ampliar información [aquí](https://observatorio-ia.com/microsoft-presenta-proyecto-brainwave)
+##### CPU (Unidad Central de Procesamiento)
 
-##### Cuestiones para reflexionar
+Son las más comunes, si bien no están optimizadas para tareas de IA intensivas. Ello es debido a que son más lentas en cálculos paralelos.
+
+Pueden ser adecuadas para tareas básicas de IA con conjuntos de datos más pequeños.
+
+Las primeras computadoras utilizaban **CPU** para todas las tareas, pero a medida que la IA y el machine learning comenzaron a crecer en complejidad, las CPUs demostraron ser insuficientes para procesar grandes volúmenes de datos o realizar cálculos paralelos intensivos.
+
+##### GPU (Unidad de Procesamiento Gráfico)
+
+Especializadas en el procesamiento paralelo, lo que las hace ideales para **entrenamiento de redes neuronales** profundas y tareas intensivas en IA.
+
+Son utilizadas en aplicaciones que requieren el procesamiento de grandes volúmenes de datos y modelos complejos.
+
+El origen del uso de GPUs en IA se remonta a la década de los 90 del siglo pasado. Las GPUs fueron diseñadas inicialmente para **procesar gráficos en videojuegos**, pero su capacidad para realizar múltiples cálculos en paralelo las hizo perfectas para entrenar modelos de IA, especialmente redes neuronales profundas. En 2006, NVIDIA lanzó **CUDA**, una plataforma que permitió a los desarrolladores utilizar GPUs para tareas generales de cómputo, revolucionando el campo de la IA.
+
+##### TPU (Unidad de Procesamiento Tensorial)
+
+Hardware especializado optimizado para tareas de **deep learning**, especialmente para ejecutar operaciones de redes neuronales **con alta eficiencia energética**.
+
+Utilizadas por empresas como **Google** para entrenar redes neuronales a gran escala. En 2015, Google presentó estas **TPUs**y son usadas en productos como Google Search y Google Photos. Puedes encontrar más información aquí: https://cloud.google.com/tpu/docs/tpus?hl=es-419
+
+##### FPGAs (Field Programmable Gate Arrays)
+
+Se trata de procesadores configurables que permiten una mayor eficiencia energética y flexibilidad para tareas específicas de IA.
+
+Aunque son más eficientes en términos de energía, requieren mayor esfuerzo en su configuración.
+
+Este hardware está muy relacionado con **Microsoft**. En 2017 la compañía lanzó **Project Brainwave**, una infraestructura de hardware para la **aceleración de modelos de deep learning** en tiempo real. En lugar de depender exclusivamente de **GPU** o **CPU**, Microsoft eligió FPGAs para optimizar el procesamiento de redes neuronales, especialmente en tareas que requieren inferencia rápida con **baja latencia**, como reconocimiento de imágenes o procesamiento de lenguaje natural. Puedes ampliar información [aquí](https://observatorio-ia.com/microsoft-presenta-proyecto-brainwave)
+
+##### Para reflexionar...
 
 > **Pregunta para reflexión**: ¿Cómo elegirías el hardware adecuado para un proyecto de IA?
 >
@@ -126,46 +166,68 @@ El **hardware** es otro componente crucial que determina la **velocidad** y **ef
 
 ### Datos en la IA
 
-Los **datos** son el tercer componente fundamental en los sistemas de IA. Sin datos, los algoritmos no pueden aprender ni realizar predicciones precisas. La **calidad**, **cantidad**, y **representatividad** de los datos son factores críticos que determinan el éxito de un modelo de IA.
+Los **datos** son el tercer componente fundamental en los sistemas de IA. Sin datos, los algoritmos no pueden aprender ni realizar predicciones precisas. La **calidad**, **cantidad**, y **representatividad** de los datos son factores críticos que determinan el éxito de un modelo de IA. 
 
 #### **Tipos de datos**
 
-1. **Datos etiquetados**:
-   - Los datos donde las entradas están emparejadas con la salida esperada (etiquetas). Son necesarios para el aprendizaje supervisado.
-   - **Ejemplo**: En un conjunto de datos de imágenes de objetos, cada imagen está etiquetada con el nombre del objeto que contiene (perro, gato, coche, etc.).
+Esta claro: los **datos** son un componente esencial en cualquier proyecto de IA. determinando las estrategias de procesamiento, modelado y análisis. Podemos encontrar tres tipos de conjuntos de datos  en la mayoría de proyectos de IA: **estructurados**, **semi-estructurados** y **no estructurados**.
 
-2. **Datos no etiquetados**:
-   - Los datos sin anotaciones que requieren aprendizaje no supervisado para identificar patrones.
-   - **Ejemplo**: Datos de comportamiento de usuarios en un sitio web donde no se tiene una clasificación previa, pero se pueden identificar patrones de comportamiento comunes.
+##### **Datos estructurados**
 
-3. **Datos distribuidos (Big Data)**:
-   - Conjuntos de datos extremadamente grandes y complejos que requieren técnicas especializadas de procesamiento, como el uso de arquitecturas de **Big Data** (por ejemplo, Hadoop o Spark).
+Organizados en forma de tablas o matrices, con columnas que representan características específicas y filas que corresponden a entradas individuales. Estos datos se presentan en formatos bien definidos como CSV, tablas SQL o incluso ficheros de hojas de cálculo. Son comunes en muchos ámbitos de negocio y de los sistemas de información. Al tener una estructura rígida, estos datos son ideales para el aprendizaje supervisado y no supervisado, tanto en algoritmos de regresión como de clustering. Los modelos pueden acceder rápidamente a sus relaciones internas, facilitando el análisis y la extracción de patrones.
 
-#### Calidad y sesgo en los datos
+##### **Datos no estructurados**
 
-- **Datos ruidosos** o **sesgados** pueden hacer que un modelo sea inexacto o propenso a cometer errores. El sesgo en los datos es especialmente preocupante en aplicaciones sensibles como la justicia, la contratación de personal, o el diagnóstico médico.
+Carecen de una estructura organizativa y suelen encontrase en formatos tipo texto (libre), audio, video o imagen. Dada su naturaleza, requieren técnicas avanzadas de procesamiento como el procesamiento de lenguaje natural (PLN) para textos o redes neuronales convolucionales (CNN) para imágenes. A pesar de los desafíos adicionales de procesamiento y almacenamiento, estos datos son muy ricos en información y proporcionan un contexto valioso para el aprendizaje automático.
 
-> **Pregunta para reflexión**: ¿Cómo garantizar la calidad y representatividad de los datos?  
-> **Clave**: La **diversidad en los conjuntos de datos** es clave. Es importante tener muestras representativas que incluyan todos los grupos o características relevantes para evitar resultados sesgados.
+##### Datos semi-estructurados
 
-> **Debate**: ¿Qué estrategias se pueden usar para evitar el sesgo en los datos?  
-> **Clave**: Verifica las fuentes de datos, realiza auditorías regulares, y aplica técnicas de preprocesamiento como la normalización de datos. También es importante realizar evaluaciones continuas del modelo en diferentes subconjuntos de datos para asegurarse de
+Tienen una estructura menos rígida que los datos estructurados, combinando etiquetas y datos sin un esquema fijo. Los  más habituales son los archivos JSON o XML, muy utilizados en registros de dispositivos IoT o sistemas de comunicación web. Aunque estos datos contienen etiquetas que facilitan su análisis, en muchas ocasiones necesitan algún tipo de  preprocesamiento para convertirlos en estructuras adecuadas para el modelado.
 
- que no haya predisposiciones no deseadas.
-
-#### Desafíos éticos
-
-- El uso de datos en IA plantea problemas éticos, especialmente en relación con la **privacidad** y la **seguridad**. La recolección y el uso de datos deben cumplir con regulaciones como el **GDPR** en Europa para proteger los derechos de los usuarios.
-
-> **Pregunta para reflexión**: ¿Cómo manejar el uso de datos sensibles en la IA?  
-> **Clave**: Implementa estrategias como la **anonimización de datos**, el **aprendizaje federado** (donde los datos no se comparten directamente, sino que los modelos se entrenan localmente), y utiliza tecnologías de encriptación para garantizar la seguridad de los datos.
-
-
+> **Ejemplos:**
+>
+> - **Datos estructurados**: Una base de datos de pacientes de un hospital, con columnas como edad, altura, peso y diagnóstico.
+> - **Datos no estructurados**: Publicaciones de texto en redes sociales que contienen opiniones y emociones.
+> - **Datos semi-estructurados**: Registros JSON de sensores de temperatura y humedad en un sistema de IoT.
 
 ##### Para reflexionar...
 
-> ¿Cómo determinarías cuál de estos tres componentes es el más crítico en un proyecto de IA específico? 
+> **¿Qué tipo de datos presentarían un mayor desafío para el procesamiento en un proyecto de IA, y por qué?**
 >
-> **Clave**: Dependerá de la naturaleza del problema. En problemas con grandes volúmenes de datos, los **algoritmos** y el **hardware** adecuado son esenciales. En otros casos, donde los datos son limitados, la **calidad de los datos** puede ser el mayor desafío.
+> **Clave**: Los **datos no estructurados** presentan el mayor desafío debido a su formato libre, que requiere métodos de procesamiento avanzados y técnicas específicas de extracción de características, como redes neuronales convolucionales para imágenes o procesamiento de lenguaje natural para texto.
+
+> **¿Cómo podría beneficiarse un proyecto de IA de combinar datos estructurados y no estructurados?**
+> **Clave**: La combinación permite que el proyecto aproveche tanto los patrones claros en los datos estructurados como el contexto adicional y las características complejas de los datos no estructurados, logrando una predicción más precisa y un análisis más profundo. Puede ser interesante en aplicaciones como sistemas de recomendación o diagnóstico médico.
+
+
+
+#### Calidad y sesgo en los datos
+
+La **calidad del dato** es un factor crítico en el éxito de cualquier proyecto de inteligencia artificial. Los modelos de IA dependen directamente de los datos con los que se entrenan, por lo que los problemas en la calidad de los datos pueden llevar a predicciones inexactas o sesgadas. Para que los datos sean de alta calidad deben ser **completos**, **precisos**, **relevantes**, **consistentes** y **actualizados**.
+
+1. **Completos**: Asegura que no falten valores clave en el dataset.
+2. **Precisos**: Los datos deben reflejar correctamente la realidad que pretenden modelar.
+3. **Relevantes**: Solo los datos relacionados con el problema deben incluirse.
+4. **Consistentes**: No debe haber discrepancias entre diferentes fuentes de datos.
+5. **Actualizados**: Los datos deben mantenerse al día, especialmente en entornos dinámicos.
+
+##### Para reflexionar...
+
+> **¿Cómo garantizar la calidad y representatividad de los datos?** 
+>
+> **Clave**: La **diversidad en los conjuntos de datos** es clave. Es importante tener muestras representativas que incluyan todos los grupos o características relevantes para evitar resultados sesgados.
+
+> **¿Qué estrategias se pueden usar para evitar el sesgo en los datos?**
+>
+> **Clave**: Es importante verificar las fuentes de datos, realizar auditorías regulares, y aplicar técnicas de preprocesamiento adecuadas. También es importante realizar evaluaciones continuas del modelo en diferentes subconjuntos de datos para asegurarse de que no haya predisposiciones no deseadas.
+
+> **¿Cuáles son los desafíos que puede presentar el uso de los datos en  IA?**
+>
+> Clave: El uso de datos en IA plantea problemas éticos, especialmente en relación con la **privacidad** y la **seguridad**. La recolección y el uso de datos deben cumplir con regulaciones como el **GDPR** en Europa para proteger los derechos de los usuarios.
+
+> **¿Cómo se podría manejar el uso de datos sensibles en la IA?** 
+>
+> **Clave**: Puede ser interesante implementar estrategias como la **anonimización de datos**, el **aprendizaje federado** (los datos no se comparten directamente, sino que los modelos se entrenan localmente) o utilizar tecnologías de encriptación para garantizar la seguridad de los datos.
+
 
 
