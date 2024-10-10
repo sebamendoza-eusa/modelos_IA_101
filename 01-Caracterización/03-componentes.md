@@ -42,13 +42,9 @@ En este contexto, los algoritmos "aprenden" de **conjuntos de datos etiquetados*
 
 > **Ejemplo:** Un **algoritmo de regresión lineal** estima la relación entre una variable independiente \(X\) y una variable dependiente \(Y\) ajustando una línea recta a los datos. Por ejemplo, si queremos predecir el precio de una casa basado en su tamaño, el modelo analiza los datos históricos de precios y tamaños de casas. Utiliza una ecuación de la forma \(Y = mX + b\), donde \(m\) es la pendiente y \(b\) la intersección. El algoritmo ajusta \(m\) y \(b\) minimizando la diferencia entre los valores predichos y los valores reales, con el objetivo de encontrar la línea que mejor represente la tendencia de los datos.
 
-
-
 > **Pregunta para reflexión**: ¿Qué ventajas tiene un conjunto de datos etiquetado en comparación con uno no etiquetado?
 >
 > **Clave**: En tareas como la **clasificación de imágenes** o el **reconocimiento de voz**, conocer la respuesta correcta facilita que el algoritmo ajuste sus parámetros de manera precisa y rápida.
-
-
 
 ###### El algoritmo de Naive-Bayes
 
@@ -56,21 +52,15 @@ Los algoritmos bayesianos utilizan el **teorema de Bayes** para actualizar las p
 
 > **Ejemplo:** Un filtro antispam basado en un **algoritmo bayesiano** analiza el contenido de los correos electrónicos para calcular la **probabilidad** de que un mensaje sea spam. Utiliza el **teorema de Bayes** para evaluar palabras y patrones comunes en mensajes de spam y de correo legítimo. Por ejemplo, si palabras como "gratis" o "oferta" tienen alta probabilidad de aparecer en spam, el filtro incrementa la probabilidad de que un correo que contiene estas palabras sea spam. Con el tiempo y la acumulación de datos, el filtro se vuelve más preciso al clasificar correos, bloqueando spam de manera efectiva.
 
-
-
 > **Pregunta para reflexión:** ¿Por qué el algoritmo de Naive-Bayes podría fallar en clasificar correctamente datos con características altamente correlacionadas?
 >
 > **Clave**: El algoritmo de **Naive-Bayes** asume que todas las características son **independientes** entre sí. Esta suposición de independencia no es válida cuando existe una **alta correlación** entre características, ya que la influencia de una característica en el resultado no es independiente de la influencia de otra. En casos con características correlacionadas, Naive Bayes tiende a **subestimar o sobreestimar** la probabilidad de ciertas combinaciones de características, lo que puede llevar a errores en la clasificación.
-
-
 
 ###### Redes neuronales
 
 Los **algoritmos en redes neuronales** ajustan los **pesos** de las conexiones entre neuronas para minimizar el error entre las predicciones del modelo y los valores reales. Cada neurona recibe valores de entrada, los multiplica por sus pesos y pasa el resultado a través de una **función de activación** que determina su salida. Durante el entrenamiento, la red utiliza un proceso llamado **retropropagación**, que emplea un mecanismo denominado **gradiente descendente** para ajustar los pesos y reducir el error de forma iterativa. De esta forma, la irá red mejorando sus predicciones al adaptarse a los patrones en los datos.
 
 > **Ejemplo:** Puedes imaginar una red neuronal que predice el precio de casas basándose en características como tamaño, ubicación y antigüedad. Durante el entrenamiento, el algoritmo compara el precio predicho con el precio real, calculando el error. Mediante retropropagación, ajusta los pesos de cada conexión para reducir este error en futuras predicciones. Tras muchas iteraciones, la red "aprende" los patrones que relacionan las características de las casas con sus precios, permitiéndole hacer predicciones precisas en datos nuevos no observados durante el entrenamiento.
-
-
 
 ##### Algoritmos en el aprendizaje no supervisado
 
@@ -79,8 +69,6 @@ Ya hemos hablado que este enfoque se utiliza cuando no se dispone de **etiquetas
 > **Ejemplo:** El **algoritmo k-means** es un método de **clustering** en aprendizaje no supervisado que agrupa datos en **k-clusters**. Funciona iniciando con un número "k" de centros (centroides) seleccionados al azar. Luego, cada punto de datos se asigna al centro más cercano, formando un grupo. Después de esta asignación, el algoritmo recalcula los centroides como el promedio de todos los puntos en cada grupo. Este proceso de asignación y actualización se repite iterativamente hasta que los centroides ya no cambian significativamente o se alcanza un número máximo de iteraciones. El objetivo de k-means es minimizar la variación dentro de los clusters, encontrando agrupaciones naturales en los datos.
 
 > **Ejemplo práctico**: Imagina una aplicación de marketing donde se necesita segmentar a los clientes según su comportamiento de compra, pero no se tiene una clasificación previa de clientes. Los algoritmos no supervisados agrupan los datos en categorías similares para descubrir patrones relevantes.
-
-
 
 ##### Aprendizaje por refuerzo
 
@@ -107,8 +95,6 @@ En esta tabla se resumen ventajas, limitaciones y posibles aplicaciones de los a
 > **Pregunta**: ¿Qué desafíos presenta la necesidad de grandes volúmenes de datos etiquetados para el aprendizaje supervisado?
 >
 > **Clave**: Piensa en el **coste** y el **tiempo** necesario para etiquetar manualmente grandes conjuntos de datos, así como el riesgo de **sesgo** si los datos no están bien etiquetados.
-
-
 
 > **Pregunta**: ¿Cómo decidimos qué algoritmo es más adecuado para un problema?
 >
@@ -152,9 +138,15 @@ Aunque son más eficientes en términos de energía, requieren mayor esfuerzo en
 
 Este hardware está muy relacionado con **Microsoft**. En 2017 la compañía lanzó **Project Brainwave**, una infraestructura de hardware para la **aceleración de modelos de deep learning** en tiempo real. En lugar de depender exclusivamente de **GPU** o **CPU**, Microsoft eligió FPGAs para optimizar el procesamiento de redes neuronales, especialmente en tareas que requieren inferencia rápida con **baja latencia**, como reconocimiento de imágenes o procesamiento de lenguaje natural. Puedes ampliar información [aquí](https://observatorio-ia.com/microsoft-presenta-proyecto-brainwave)
 
+##### VPU (Unidad de Procesamiento de Visión)
+
+Hardware diseñado específicamente para acelerar tareas de visión artificial y procesamiento de imágenes en proyectos de **inteligencia artificial (IA)**. Las VPUs, como las de Intel Movidius, optimizan tareas como la detección de objetos, clasificación de imágenes y análisis de video, consumiendo menos energía en comparación con las **GPUs** tradicionales. Este tipo de hardware es clave en dispositivos integrados y aplicaciones IoT, donde se requiere procesamiento en tiempo real con baja latencia, como en drones, cámaras inteligentes y automóviles autónomos. Su uso permite llevar modelos de IA a dispositivos con recursos limitados de manera eficiente.
+
+
+
 ##### Para reflexionar...
 
-> **Pregunta para reflexión**: ¿Cómo elegirías el hardware adecuado para un proyecto de IA?
+> **¿Cómo elegirías el hardware adecuado para un proyecto de IA?**
 >
 > **Clave**: Si trabajas con **modelos pequeños**, una CPU puede ser suficiente. Para entrenar redes neuronales profundas, las **GPUs** o **TPUs** son esenciales. Además, en algunos casos, puede ser útil considerar soluciones más personalizables como **FPGAs**.
 
@@ -190,6 +182,25 @@ Tienen una estructura menos rígida que los datos estructurados, combinando etiq
 > - **Datos no estructurados**: Publicaciones de texto en redes sociales que contienen opiniones y emociones.
 > - **Datos semi-estructurados**: Registros JSON de sensores de temperatura y humedad en un sistema de IoT.
 
+#### Integración y procesamiento de los datos
+
+La integración de **datos no estructurados** en modelos de IA presenta un desafío teórico y técnico importante debido a la naturaleza compleja y heterogénea de estos datos. Los datos no estructurados, como texto, imágenes, audio y video, no siguen un formato predefinido ni tienen relaciones explícitas como en una base de datos relacional. Para utilizarlos en modelos de **machine learning** o **deep learning**, es fundamental convertirlos en una representación numérica que el algoritmo pueda procesar. 
+
+El reto teórico principal radica en cómo **codificar** la información de manera que preserve las características esenciales del dato y que, al mismo tiempo, permita al modelo detectar patrones útiles para la tarea específica. En el caso del **texto**, una teoría fundamental es cómo representar el significado semántico de palabras y frases. Aquí, las técnicas de representación vectorial, como **Word2Vec** o **embeddings** de modelos avanzados como **BERT**, son fundamentales para mapear conceptos en un espacio vectorial de alta dimensionalidad, donde las relaciones entre palabras pueden capturarse a través de la proximidad de los vectores.
+
+En el caso de las **imágenes**, la teoría que subyace al reconocimiento visual está vinculada a la capacidad de las redes neuronales, particularmente las **redes neuronales convolucionales (CNN)**, para extraer características jerárquicas. Las capas iniciales de una CNN detectan patrones básicos, como bordes y texturas, mientras que las capas más profundas identifican formas y objetos más complejos. Este proceso se basa en el concepto teórico de convolución y aprendizaje jerárquico de representaciones.
+
+Para **audio** y **video**, el procesamiento de señales y la extracción de características temporales se fundamentan en teorías de análisis de series temporales y transformaciones espectrales, como los espectrogramas, que convierten las ondas de sonido en representaciones visuales que los algoritmos pueden procesar de manera efectiva. Estos enfoques reflejan la necesidad de transformar una señal continua en un formato discreto que los modelos de aprendizaje automático puedan interpretar.
+
+> **Ejemplos**
+>
+> - **Texto**: Un sistema de análisis de sentimientos puede usar técnicas de **embeddings** de palabras para convertir opiniones en texto en vectores numéricos, permitiendo que el modelo entienda y clasifique las emociones expresadas.
+>   
+> - **Imágenes**: En la **detección de tumores**, las imágenes médicas, como las resonancias magnéticas, se procesan mediante **CNN**, que aprenden a identificar patrones específicos asociados con la presencia de tumores en el tejido.
+>
+> - **Audio**: En sistemas de **reconocimiento de voz**, las ondas de sonido se transforman en espectrogramas, que luego son analizados por redes neuronales recurrentes o transformadores, permitiendo que el modelo identifique palabras o frases.
+>
+
 ##### Para reflexionar...
 
 > **¿Qué tipo de datos presentarían un mayor desafío para el procesamiento en un proyecto de IA, y por qué?**
@@ -198,8 +209,6 @@ Tienen una estructura menos rígida que los datos estructurados, combinando etiq
 
 > **¿Cómo podría beneficiarse un proyecto de IA de combinar datos estructurados y no estructurados?**
 > **Clave**: La combinación permite que el proyecto aproveche tanto los patrones claros en los datos estructurados como el contexto adicional y las características complejas de los datos no estructurados, logrando una predicción más precisa y un análisis más profundo. Puede ser interesante en aplicaciones como sistemas de recomendación o diagnóstico médico.
-
-
 
 #### Calidad y sesgo en los datos
 
@@ -231,3 +240,31 @@ La **calidad del dato** es un factor crítico en el éxito de cualquier proyecto
 
 
 
+La cantidad y diversidad de los datos son elementos clave en el éxito de los proyectos de inteligencia artificial (IA) y **machine learning**. La teoría del aprendizaje automático sugiere que un modelo bien ajustado depende no solo de la calidad de los datos, sino también de su **cantidad y diversidad**. Estos factores influyen en la capacidad del modelo para generalizar y tomar decisiones correctas en nuevas situaciones.
+
+#### Cantidad de datos
+
+La **cantidad de datos** es otro elemento esencial en los proyectos de IA porque, en la mayoría de los algoritmos de machine learning, el rendimiento mejora cuando se dispone de más datos. Podemos encontrar el origen de esta afirmación en la teoría estadística de que un mayor volumen de datos reduce la **varianza** del modelo, lo que disminuye la posibilidad de **sobreajuste**. A medida que el modelo se entrena con más ejemplos, puede aprender una representación más precisa de los patrones en los datos, y ello permite que sus predicciones sean más confiables y robustas frente a situaciones nuevas.
+
+En el contexto de **deep learning**, por ejemplo, las redes neuronales profundas requieren grandes cantidades de datos para aprender características relevantes en tareas como el **reconocimiento de imágenes** o el **procesamiento del lenguaje natural**. Sin suficientes datos, los modelos complejos tienden a memorizar los ejemplos de entrenamiento en lugar de generalizar, lo que afecta su capacidad de trabajar con datos no vistos previamente.
+
+#### Diversidad de datos
+
+La **diversidad de los datos** es el último elemento a tener en cuenta. Incluso si tenemos grandes cantidades de datos, si estos no representan adecuadamente la variabilidad del problema, el modelo puede quedar sesgado. Por ejemplo, en un proyecto de **reconocimiento facial**, si los datos de entrenamiento solo contienen imágenes de un grupo demográfico limitado, el modelo será menos preciso para otros grupos, reflejando un problema de **sesgo de datos**.
+
+La diversidad se refiere a la variedad en las características de los datos, como diferentes **contextos**, **tipos de entradas** y **casos extremos**. En un proyecto de **predicción de demanda de productos**, es fundamental incluir datos de diferentes temporadas, áreas geográficas y perfiles de clientes. Si los datos carecen de esta diversidad, el modelo puede fallar en situaciones no representadas en el conjunto de entrenamiento. Esto lleva a problemas de **subajuste**, donde el modelo es demasiado simple para capturar la complejidad del problema.
+
+Además, la diversidad también abarca la incorporación de **fuentes heterogéneas** de datos. En los proyectos de IA modernos, los datos pueden provenir de fuentes variadas, como sensores, texto, imágenes y bases de datos estructuradas. La combinación de estas fuentes permite que los modelos tomen decisiones más informadas y complejas.
+
+> **Ejemplos**
+>
+> - **Reconocimiento facial**: Un modelo entrenado con una cantidad significativa de imágenes de personas de diversas etnias tendrá un mejor rendimiento global en comparación con uno entrenado con datos de un solo grupo.
+>   
+> - **Predicción de demanda**: Incluir datos de ventas durante períodos de alta demanda, como días festivos, así como de zonas con diferentes características demográficas, permite mejorar la precisión de los modelos predictivos.
+>
+
+Para reflexionar...
+
+> **¿Cómo afecta la falta de diversidad en los datos a la equidad y precisión de un modelo de machine learning?**
+>
+> **Clave**: Piensa en los posibles sesgos que pueden surgir en las predicciones del modelo cuando los datos de entrenamiento no son suficientemente representativos de la población o del fenómeno estudiado.

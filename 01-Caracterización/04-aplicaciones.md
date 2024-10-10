@@ -168,8 +168,6 @@ Por último, se puede citar el uso de **modelos de IA en trading**. En este caso
 > **¿Qué implicaciones éticas surgen del uso de IA en la gestión automatizada de inversiones y cómo podría afectar la equidad en el acceso a servicios financieros?**
 > **Clave**: Considera cómo el uso de IA puede sesgar la toma de decisiones hacia ciertos perfiles de usuarios, y si el acceso desigual a la tecnología puede generar diferencias en las oportunidades de inversión.
 
-
-
 ### Aplicaciones en comercio electrónico y retail
 
 El uso de la **inteligencia artificial (IA)** en el comercio electrónico y retail ha revolucionado la forma en que las empresas interactúan con sus clientes y gestionan sus procesos operativos. Uno de los impactos más significativos se encuentra en los **sistemas de recomendación personalizados**, que emplean algoritmos de IA para analizar patrones de comportamiento de los usuarios, detectar preferencias y sugerir productos adecuados. Este enfoque mejora notablemente la experiencia de compra al ofrecer recomendaciones relevantes y personalizadas. Ello, a su vez, incrementa tanto la tasa de conversión así como la fidelización de los clientes, ya que estos perciben una experiencia más ajustada a sus necesidades.
@@ -239,8 +237,6 @@ En conjunto, la IA ha revolucionado sectores fundamentales de la economía globa
 > [!IMPORTANT]
 >
 > En las últimas décadas, la inteligencia artificial (IA) ha revolucionado la vida cotidiana al automatizar tareas, mejorar la toma de decisiones y optimizar procesos. Su capacidad para analizar grandes volúmenes de datos en tiempo real ha incrementado la eficiencia y precisión en múltiples áreas, aunque también ha planteado importantes retos éticos y de seguridad.
-
-
 
 > **¿Cuál de estas aplicaciones que se han mencionado en esta sección crees que podría tener un mayor impacto en la sociedad a corto o medio plazo?**
 >
