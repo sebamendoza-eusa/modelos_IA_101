@@ -199,13 +199,13 @@ Además, la codificación binaria depende completamente del conjunto de datos co
 
 > **Ejemplo**: En el análisis de diagnósticos médicos, donde se manejan miles de categorías de enfermedades, la codificación binaria permite representar cada diagnóstico de manera más eficiente, lo que facilita el procesamiento de los datos y mejora el rendimiento de los modelos.
 
-### Para reflexionar...
+##### Para reflexionar...
 
 > **¿Qué tipos de problemas crees que se beneficiarían más de la codificación binaria, en comparación con otras técnicas de codificación?**
 >
 > **Pistas**: Considera cómo la codificación binaria puede reducir la dimensionalidad en conjuntos de datos con muchas categorías y cómo puede afectar a la precisión del modelo en ciertos contextos.
 
-### Codificación de imágenes y representación numérica
+### Codificación de imágenes
 
 La **codificación de imágenes** en proyectos de inteligencia artificial es fundamental para que los modelos puedan interpretar visualmente la información. A diferencia de los datos tabulares o textuales, las imágenes están formadas por una enorme cantidad de información en bruto que debe ser procesada y transformada en representaciones numéricas manejables. Este proceso de **codificación** es esencial para reducir la dimensionalidad de las imágenes y extraer características relevantes que los modelos puedan utilizar para tomar decisiones. En esta sección, abordaremos las técnicas más comunes de codificación de imágenes, con un enfoque basado en la **reducción dimensional** y la **representación de características**.
 
@@ -235,7 +235,7 @@ En la práctica, PCA puede ser útil cuando se trabaja con grandes conjuntos de 
 
 > **Ejemplo:** Al analizar imágenes de resonancias magnéticas, se puede aplicar PCA para reducir la cantidad de datos de cada imagen, centrándose en las regiones cerebrales más relevantes, lo que permite que el modelo se entrene de manera más eficiente y con menos recursos computacionales.
 
-#### Autoencoders
+##### Autoencoders
 
 Al igual que la técnica PCA, los **autoencoders** son un tipo de red neuronal utilizada principalmente para la **reducción de dimensionalidad** en proyectos de reconocimiento de imágenes. Se componen de dos partes principales: el **encoder** y el **decoder**. El encoder comprime los datos de entrada a una representación más pequeña, mientras que el decoder intenta reconstruir la entrada original a partir de esa representación comprimida. El objetivo es minimizar la diferencia entre la entrada original y la reconstrucción, de modo que se capturen las características más importantes de los datos.
 
@@ -249,7 +249,7 @@ Una vez que la imagen ha sido codificada y su dimensionalidad reducida, es cruci
 
 En la **representación de características**, se utilizan diferentes herramientas para transformar los píxeles de la imagen en vectores de características que el modelo pueda analizar. Entre las técnicas más populares para extraer características se encuentran las **redes neuronales convolucionales (CNNs)**.
 
-#### Redes neuronales convolucionales (CNN)
+##### Redes neuronales convolucionales (CNN)
 
 Las **redes neuronales convolucionales** son uno de los métodos más eficaces para la codificación y extracción de características de imágenes. A través de capas convolucionales, las CNN aplican filtros sobre la imagen para identificar patrones locales, como bordes, texturas o detalles de un objeto. Estas capas convolucionales permiten reducir la dimensionalidad espacial de las imágenes a medida que avanzan por la red, sin perder la información más relevante.
 
@@ -292,11 +292,13 @@ Aunque las CNN son la técnica dominante en la representación de característic
 
 El procesamiento de texto en machine learning y modelos de inteligencia artificial ha avanzado de manera significativa en los últimos años gracias al uso de **embeddings** y **representaciones distribuidas**. Estos enfoques han permitido una representación más eficiente y rica del texto, capturando relaciones semánticas entre palabras y conceptos que las técnicas tradicionales, como el **one-hot encoding**, no podían ofrecer. El texto, a diferencia de los datos numéricos o categóricos, es inherentemente complejo. Las palabras pueden tener múltiples significados según el contexto, y el simple hecho de representar una palabra con un número o vector binario (como en **one-hot encoding**) no captura las relaciones semánticas entre las palabras.
 
-**Embeddings** y **representaciones distribuidas** resuelven este problema al proyectar palabras en un espacio vectorial continuo donde las palabras con significados similares están cerca unas de otras. Esta propiedad es crucial para tareas como **clasificación de textos**, **traducción automática**, **análisis de sentimientos**, y muchos otros campos del **procesamiento del lenguaje natural (NLP)**.
+Los **embeddings** y las **representaciones distribuidas** resuelven este problema al proyectar palabras en un espacio vectorial continuo donde las palabras con significados similares están cerca unas de otras. Esta propiedad es crucial para tareas como **clasificación de textos**, **traducción automática**, **análisis de sentimientos**, y muchos otros campos del **procesamiento del lenguaje natural (NLP)**.
 
 Sin embargo, antes de los embbedings la codificación de textos se basó en una técnica denominada ***Bag of words***
 
-#### Codificación Bag of Words: Precedente en la codificación de textos.
+#### Primeros pasos en la codificación de textos
+
+##### Bag of Words
 
 La **codificación Bag of Words (BoW)** es uno de los primeros enfoques utilizados para representar texto de manera que los algoritmos de machine learning puedan procesarlo. Este método convierte el texto en una representación numérica simple, basada en la **frecuencia de aparición** de palabras dentro de un documento. En su forma más básica, BoW ignora la estructura gramatical y el orden de las palabras, considerando solo cuántas veces aparece cada palabra en un documento. Cada documento se representa como un vector en el que cada dimensión corresponde a una palabra del vocabulario del conjunto de datos, y el valor de cada dimensión es la cantidad de veces que esa palabra aparece en el documento.
 
@@ -331,6 +333,66 @@ Sin embargo, su simplicidad hizo que fuera ampliamente utilizado en los primeros
 > **¿Cuáles son las limitaciones de BoW en la representación del significado de las palabras, y cómo los métodos más avanzados, como los embeddings, superan estas limitaciones?**
 >
 > **Clave**: Reflexiona sobre cómo BoW ignora el contexto y la semántica de las palabras, mientras que los embeddings capturan relaciones más complejas y representaciones continuas.
+
+##### TF-IDF
+
+La **codificación TF-IDF (Term Frequency-Inverse Document Frequency)** ha sido y es una técnica ampliamente utilizada en el procesamiento del lenguaje natural (NLP) para representar textos de manera numérica. A diferencia de la codificación basada en la frecuencia de términos simple, como el **Bag of Words**, TF-IDF pondera las palabras en función de su relevancia dentro de un documento y su frecuencia en un conjunto de documentos (corpus).
+
+El **TF (frecuencia de término)** mide cuántas veces aparece una palabra en un documento particular. Sin embargo, palabras comunes como "el", "y" o "de" aparecerán con frecuencia en muchos documentos, lo que podría darles más peso del que deberían tener. Aquí es donde entra el término **IDF (frecuencia inversa de documento)**, que reduce el peso de palabras que aparecen en muchos documentos del corpus, asignando más importancia a las palabras que son relevantes pero no demasiado comunes.
+
+La fórmula del TF-IDF es
+
+$$
+\text{TF-IDF}(t, d) = \text{TF}(t, d) \times \text{IDF}(t, D)
+$$
+
+Donde $t$ es un término, $d$ es un documento y $D$ es el corpus de documentos.
+
+Esta técnica es útil para tareas como la clasificación de textos, búsqueda de información y detección de similitud de documentos, ya que ayuda a identificar las palabras clave más significativas en cada documento, mejorando el rendimiento de los modelos que dependen de estas representaciones numéricas de texto.
+
+Por contra, las principales desventajas de **TF-IDF** son su incapacidad para capturar el significado debido a que trata cada término de forma independiente, sin considerar las relaciones entre ellos. Además, **TF-IDF** no tiene en cuenta el orden de las palabras en un documento. Las dos cuestiones anteriores pueden limitar su eficacia en problemas donde el contexto es importante. También puede ser sensible a documentos muy largos o muy cortos, y no maneja adecuadamente las palabras que no están en el corpus de entrenamiento, afectando la representación de términos raros o fuera de vocabulario.
+
+
+
+> **Ejemplo:** Imagina que tenemos un pequeño corpus de tres documentos:
+>
+> 1. **Documento 1**: "El gato está durmiendo"
+> 2. **Documento 2**: "El perro está jugando"
+> 3. **Documento 3**: "El gato y el perro están corriendo"
+>
+> **Paso 1: Calcular la Frecuencia de Términos (TF)**
+>
+> Vamos a contar cuántas veces aparece cada palabra en cada documento:
+>
+> - **Documento 1**: "El" (1), "gato" (1), "está" (1), "durmiendo" (1)
+> - **Documento 2**: "El" (1), "perro" (1), "está" (1), "jugando" (1)
+> - **Documento 3**: "El" (1), "gato" (1), "y" (1), "perro" (1), "están" (1), "corriendo" (1)
+>
+> **Paso 2: Calcular la Frecuencia Inversa de Documento (IDF)**
+>
+> La **IDF** reduce la importancia de las palabras comunes. Se calcula usando la fórmula:
+>
+> $$
+> IDF(t) = \log\left(\frac{N}{1 + DF(t)}\right)
+> $$
+>
+> Donde $N$ es el número total de documentos y $DF(t)$ es el número de documentos que contienen el término $t$.
+>
+> - "El" aparece en los 3 documentos, así que su IDF es $ \log\left(\frac{3}{1+3}\right) = 0$
+> - "Gato" aparece en 2 documentos, su IDF es $ \log\left(\frac{3}{1+2}\right) = 0.18$
+> - "Durmiendo", "jugando", "corriendo", que aparecen solo en un documento, tendrán una IDF mayor.
+>
+> **Paso 3: Multiplicar TF por IDF**
+>
+> Finalmente, multiplicamos la frecuencia de cada término en cada documento por su IDF para obtener el **TF-IDF**.
+>
+> Por ejemplo, en el Documento 1, la palabra "gato" tendrá un **TF-IDF** de:
+>
+> $$
+> \text{TF-IDF}(gato, Documento 1) = 1 \times 0.18 = 0.18
+> $$
+>
+> Este valor sería mucho menor para palabras comunes como "El".
 
 #### ¿Qué son los embeddings?
 
