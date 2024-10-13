@@ -23,15 +23,17 @@
 
 > 1. Codificar la información
 > 2. Modelos predictivos
-> 3. Modelos de procesamiento de imágenes
-> 4. Modelos de procesamiento de audio
-> 5. Modelos de lenguaje
+> 3. Modelos de clasificación
+> 4. Modelos de procesamiento de imágenes
+> 5. Modelos de procesamiento de audio
+> 6. Introducción a los modelos de lenguaje
 ---
 
 ### Temporalización
 
 - **Codificar la información (2 horas)**: Técnicas avanzadas de representación de datos.
-- **Modelos predictivos (4 horas)**: Detallar algoritmos como regresión, redes neuronales y técnicas de modelado avanzado.
+- **Modelos predictivos (2 horas)**: Detallar algoritmos como regresión, redes neuronales y técnicas de modelado avanzado.
+- **Modelos de clasificación (2 horas):** Detallar algoritmos relacionados con tareas de clasificación
 - **Modelos de procesamiento de imágenes (2 horas)**: Uso de CNNs, visión por computador y otras técnicas avanzadas.
 - **Modelos de procesamiento de audio (2 horas)**: Reconocimiento de voz, análisis de señales y aplicaciones reales.
 - **Modelos de lenguaje (4 horas)**: Enfoque en BERT, GPT y otros modelos avanzados de procesamiento de lenguaje.
