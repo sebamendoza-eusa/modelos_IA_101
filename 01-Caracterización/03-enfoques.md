@@ -1,18 +1,15 @@
----
-title: "Tema 1. Caracterización de la inteligencia artificial"
-subtitle: "Máster en FP de Inteligencia Artificial y Big Data"
----
-
 # Tema 1. Caracterización de la inteligencia artificial
 
 > 1. Definición de Inteligencia Artificial
-> 2. **Principales Enfoques**
-> 3. Componentes Fundamentales
-> 4. Aplicaciones principales
-> 5. Desafíos éticos y técnicos
+> 2. Caracterización de los modelos de IA
+> 3. **Principales Enfoques**
+> 4. Componentes Fundamentales
+> 5. Aplicaciones principales
+> 6. Codificar la información
+> 7. Desafíos éticos y técnicos
 ---
 
-## 2. Principales enfoques en IA
+## 3. Principales enfoques en IA
 
 ### De qué hablamos cuando nos referimos a *enfoques* en IA
 
@@ -232,8 +229,6 @@ Las aplicaciones de **deep learning** son numerosas, incluyendo la **visión por
 >
 > Los **transformers** son una arquitectura diseñada para manejar secuencias de datos usando un mecanismo de **atención** para procesar toda la secuencia a la vez, lo que permite un procesamiento más eficiente. Son ampliamente utilizados en **procesamiento de lenguaje natural (PLN)**, en modelos como GPT y BERT, para tareas como traducción, clasificación y generación de textos.
 
-
-
 #### Caso de uso: Redes Neuronales para Reconocimiento de Imágenes Médicas
 
 El **enfoque conectivista** se centra en el uso de **redes neuronales** para simular la forma en que el cerebro humano procesa la información. Este enfoque se ha aplicado con éxito en diversos campos, y uno de los casos de uso más destacados es el **reconocimiento de imágenes médicas** para el diagnóstico de enfermedades.
@@ -304,99 +299,4 @@ En el ámbito de la **medicina**, el análisis de imágenes como radiografías, 
 > **Debate**: Imagina que tienes que desarrollar un **sistema de recomendación** para una tienda en línea. ¿Qué enfoque utilizarías?
 > **Clave**: Un sistema de recomendación puede beneficiarse de un enfoque basado en **aprendizaje automático**, donde el modelo aprende de los datos de los usuarios y adapta las sugerencias de productos de manera continua. Sin embargo, el **enfoque bayesiano** podría ser útil si los datos iniciales son escasos y es necesario actualizar las recomendaciones a medida que se obtiene más información sobre los usuarios.
 
----
 
-
-
-### Apéndice: Enfoque Bayesiano en IA
-
-#### **Definición y fundamentos**
-
-El **enfoque bayesiano** utiliza la **teoría de la probabilidad** para actualizar creencias o hipótesis en función de nueva evidencia. El teorema de Bayes permite **ajustar** las probabilidades de un evento basado en la información previa, lo que lo convierte en una herramienta eficaz para la toma de decisiones bajo incertidumbre.
-
-#### **Aplicaciones comunes**
-
-- **Modelos de clasificación**: Un ejemplo típico es el algoritmo **Naive Bayes**, utilizado en tareas como el **filtrado de spam** o la **clasificación de textos**.
-- **Redes bayesianas**: Se usan en áreas como la **toma de decisiones** médicas, donde es importante actualizar las probabilidades de diagnóstico a medida que se reciben nuevos síntomas o pruebas.
-
-El enfoque bayesiano es crucial para la **inteligencia artificial probabilística**, especialmente cuando se trabaja con datos incompletos o inciertos. Este enfoque tiene bastante relevancia en la toma de decisiones bajo incertidumbre, como en el diagnóstico médico, donde la IA puede actualizar las probabilidades de una enfermedad a medida que se reciben nuevas pruebas. Es importante resaltar que los modelos bayesianos son efectivos en situaciones donde los **datos son escasos** o **incompletos**, lo que les otorga una ventaja en áreas como la **gestión de riesgos** y la **predicción en mercados financieros**.
-
-#### **Ventajas y Desafíos**
-
-- **Ventajas**:
-
-  - **Manejo de la incertidumbre**: Los modelos bayesianos pueden manejar datos incompletos o ambiguos de manera eficiente.
-  - **Actualización continua**: Permiten ajustar las probabilidades conforme se recibe nueva información.
-
-- **Desafíos**:
-
-  - **Costo computacional**: Para problemas complejos, el cálculo de probabilidades puede ser **costoso en términos computacionales**.
-  - **Dependencia de probabilidades previas**: Los resultados dependen en gran medida de las **probabilidades iniciales** asignadas, lo que puede influir en la precisión del modelo.
-
-  
-
-> **Pregunta para reflexión**: ¿En qué tipos de problemas es más adecuado el enfoque bayesiano frente a otros enfoques, como las redes neuronales?
->
-> **Clave**: El enfoque bayesiano es más adecuado en situaciones con **datos limitados** o donde la **incertidumbre** es alta, como en el diagnóstico médico, donde es crucial ajustar las probabilidades a medida que se obtiene más información.
-
-#### Caso de uso típico: **Filtrado de correo no deseado (spam) con un enfoque bayesiano**
-
-El **enfoque bayesiano** es ampliamente utilizado en sistemas de **filtrado de correo electrónico** para clasificar los correos entrantes como **spam** o **no spam** (legítimos). El **algoritmo Naive Bayes**, basado en el teorema de Bayes, es uno de los métodos más efectivos y comúnmente empleados para esta tarea, ya que permite **actualizar las probabilidades** de que un correo sea spam a medida que se reciben más correos y se identifican patrones en ellos.
-
-##### **Descripción del caso de uso**
-
-En los sistemas de **correo electrónico**, los usuarios reciben diariamente una mezcla de correos legítimos y mensajes no deseados (spam). La tarea de los filtros de spam es detectar estos correos no deseados basándose en ciertas **características del mensaje** (palabras clave, enlaces sospechosos, remitentes) y clasificarlos en consecuencia. El enfoque bayesiano se utiliza para **calcular la probabilidad** de que un correo electrónico sea spam en función de estas características, actualizando estas probabilidades conforme se identifican nuevos patrones de spam.
-
-##### **Cómo funciona el modelo**
-
-1. **Probabilidades previas (prior)**:
-
-   - El modelo comienza con una **probabilidad previa** de que un correo sea spam basándose en datos históricos de correos que ya han sido clasificados como spam o no spam.
-
-   > **Ejemplo**: Si históricamente el 20% de los correos recibidos en una cuenta son spam, esta será la **probabilidad previa** de que cualquier correo nuevo que llegue sea spam antes de analizarlo.
-
-2. **Recolección de nueva información (evidencia)**:
-
-   - El sistema analiza las características del correo entrante, como el contenido del asunto, el cuerpo del mensaje, la frecuencia de palabras comunes en correos spam (como "gratis", "descuento", "haz clic aquí"), la presencia de enlaces sospechosos, la dirección del remitente, y otros factores. Estos elementos constituyen la **evidencia** que el modelo utilizará para actualizar las probabilidades.
-
-   > **Ejemplo**: Si el asunto del correo incluye la palabra "oferta", y esta palabra aparece frecuentemente en correos identificados como spam, la probabilidad de que este nuevo correo sea spam aumentará.
-
-3. **Cálculo de la probabilidad posterior**:
-
-   - El sistema utiliza el **teorema de Bayes** para combinar la probabilidad previa con la nueva información (evidencia) y calcular una **probabilidad posterior**, que indica la probabilidad de que el correo sea spam dada la información disponible.
-
-   $$
-   P(\text{Spam} | \text{Evidencia}) = \frac{P(\text{Evidencia} | \text{Spam}) \cdot P(\text{Spam})}{P(\text{Evidencia})}
-   $$
-
-   > **Ejemplo**: Si el cuerpo del correo contiene enlaces y términos comúnmente asociados con spam (como "¡Has ganado!" o "Haz clic para obtener un premio"), el sistema ajusta la probabilidad posterior de que el correo sea spam. Si esta probabilidad supera un cierto umbral, el correo es marcado como spam y enviado a la carpeta de correo no deseado.
-
-4. **Actualización y mejora del filtro**:
-
-   - A medida que se recibe más correo y el usuario clasifica manualmente correos como spam o no spam, el sistema continúa aprendiendo y ajustando las **probabilidades previas** basadas en estos nuevos datos, lo que permite que el filtro de spam se vuelva cada vez más preciso y adaptativo.
-
-   > **Ejemplo**: Si un tipo específico de correo, como una newsletter legítima, es repetidamente marcado como "no spam" por el usuario, el sistema ajustará la probabilidad de que correos similares en el futuro sean etiquetados como spam.
-
-#### **Ventajas del uso del enfoque bayesiano en el filtrado de spam**:
-
-- **Capacidad de aprendizaje continuo**: Los filtros de spam basados en modelos bayesianos se adaptan continuamente a las nuevas formas de spam que surgen, mejorando su precisión con el tiempo a medida que reciben más datos y ejemplos.
-
-- **Eficiencia computacional**: El **algoritmo Naive Bayes** es computacionalmente ligero, lo que permite su implementación en tiempo real para analizar y clasificar correos de manera rápida y eficaz.
-
-- **Manejo de múltiples características**: El modelo puede evaluar muchas características de los correos electrónicos de manera simultánea (como las palabras clave, la estructura del mensaje, los enlaces) y combinarlas para hacer una predicción.
-
-#### **Limitaciones**:
-
-- **Dependencia de la calidad de los datos**: Si el modelo es entrenado con datos que no representan adecuadamente la variedad de correos que un usuario puede recibir, o si no está bien ajustado para tipos específicos de spam, su precisión puede verse afectada.
-
-- **Falsos positivos**: A veces, el modelo puede marcar como spam correos que no lo son, especialmente si contienen palabras o características que aparecen comúnmente en correos de spam. Esto es un desafío para mantener una buena **experiencia del usuario**.
-
-> **Ejemplo práctico: Filtros de spam en Gmail**
->
-> **Gmail** utiliza un sistema de **filtros de spam** basado en aprendizaje automático, que incluye un enfoque bayesiano para analizar las características de los correos y calcular la probabilidad de que sean spam. El sistema no solo se basa en reglas fijas, sino que también aprende de las decisiones del usuario (cuando marcan correos como spam o no spam) para mejorar continuamente.
-
-
-
-> **Pregunta para reflexión**: ¿Qué ventajas ofrece el enfoque bayesiano frente a un sistema basado solo en reglas predefinidas para detectar spam?
->
-> **Pista**: Considera la capacidad del enfoque bayesiano para **adaptarse** a nuevas tácticas de spam a medida que emergen, sin tener que reescribir manualmente reglas cada vez que cambian los patrones.

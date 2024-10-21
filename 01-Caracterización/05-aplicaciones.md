@@ -1,18 +1,15 @@
----
-title: "Tema 1. Caracterización de la inteligencia artificial"
-subtitle: "Máster en FP de Inteligencia Artificial y Big Data"
----
-
 # Tema 1. Caracterización de la inteligencia artificial
 
 > 1. Definición de Inteligencia Artificial
-> 2. Principales Enfoques
-> 3. Componentes Fundamentales
-> 4. **Aplicaciones principales**
-> 5. Desafíos éticos y técnicos
+> 2. Caracterización de los modelos de IA
+> 3. Principales Enfoques
+> 4. Componentes Fundamentales
+> 5. **Aplicaciones principales**
+> 6. Codificar la información
+> 7. Desafíos éticos y técnicos
 ---
 
-## 4. Aplicaciones principales de los modelos de IA en la vida cotidiana
+## 5. Aplicaciones principales de los modelos de IA en la vida cotidiana
 
 El objetivo de esta sección es explorar de modo introductorio algunas de las aplicaciones más habituales de la Inteligencia Artificial (IA) en diversos campos de la vida real. La IA tiene un impacto profundo en muchas áreas de negocio, desde la atención médica hasta los vehículos autónomos. Se trata de entender cómo opera la IA en estos ámbitos, cuáles serían los beneficios más inmediatos y cuáles los desafíos a los que se enfrenta la sociedad en su conjunto a la hora de integrar esta nueva tecnología en la vida diaria.
 
