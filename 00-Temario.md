@@ -19,26 +19,28 @@
 - **Utilización de modelos de IA (2 horas)**
 - **Desafíos Éticos y Técnicos (1 horas)**: Discutir los principales retos, como la falta de transparencia y problemas de escalabilidad.
 
-## 2. Sistemas de razonamiento impreciso (6 horas)
+## 2. Sistemas de razonamiento impreciso (7 horas)
 
 > 1. Introducción a los sistemas de razonamiento impreciso
 > 2. Fundamentos teóricos
-> 3. Principales enfoques
+> 3. Principales modelos de razonamiento impreciso
 > 4. Algoritmos de inferencia
 > 5. Aplicaciones prácticas
-> 6. Ventajas y limitaciones de los sistemas de razonamiento impreciso
+> 6. Comparación con otros enfoques en IA
+> 7. Tendencias futuras
 ---
 
 ### Temporalización
 
 - **Introducción a los sistemas de razonamiento impreciso (1 hora)** 
 - **Fundamentos teóricos (1 hora)**
-- **Principales enfoques (1 hora)**
+- **Principales modelos de razonamiento impreciso(1 hora)**
 - **Algoritmos de inferencia (1 hora)**
 - **Aplicaciones prácticas (1 hora)**
-- **Ventajas y limitaciones de los sistemas de razonamiento impreciso (1 hora)**
+- **Comparación con otros enfoques en IA (1 hora)**
+- **Tendencias futuras (1 hora)**
 
-## 4. Sistemas Expertos (6 horas)
+## 3. Sistemas Expertos (6 horas)
 
 > 1. Definición y caracterización
 >
@@ -58,7 +60,7 @@
 
 
 
-## 3. Modelos basados en deep learning (6 horas)
+## 4. Modelos basados en deep learning (6 horas)
 
 > 1. Caracterización del “deep learning”
 > 2. Modelos de proceso de imágenes
@@ -74,7 +76,7 @@
 - **Procesamiento de audio (1 hora)**: Reconocimiento de voz, análisis de señales y aplicaciones reales.
 - **Procesamiento de vídeo (1 hora)**:
 
-## 4. Modelos de procesamiento de lenguaje (8 horas)
+## 5. Modelos de procesamiento de lenguaje (8 horas)
 
 > 1. Procesamiento de lenguaje natural
 >
@@ -87,7 +89,7 @@
 
 - **Modelos de lenguaje: (4 horas)**
 
-## 5. Sistemas robotizados (4 horas)
+## 6. Sistemas robotizados (4 horas)
 
 > 1. ¿Qué son?
 > 2. Componentes Clave
@@ -107,7 +109,7 @@
 
 
 
-## 6. Aplicación de principios legales y éticos a la Inteligencia Artificial (10 horas)
+## 7. Aplicación de principios legales y éticos a la Inteligencia Artificial (10 horas)
 
 > 1. Ética aplicada a la IA
 > 2. Riegos y desafíos del aprendizaje automático

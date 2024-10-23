@@ -1,13 +1,12 @@
-# Tema 2. Modelos de Inteligencia Artificial
+# Tema 4. Modelos basados en deep learning
 
-> 1. Utilización de modelos de IA
-> 2. Codificar la información
-> 3. **Procesamiento de imágenes**
-> 4. Procesamiento de audio
-> 5. Procesamiento de vídeo
+> 1. Caracterización del “deep learning”
+> 2. **Modelos de proceso de imágenes**
+> 3. Modelos de procesamiento de audio
+> 4. Modelos de procesamiento de vídeo
 ---
 
-## 3. Procesamiento de imágenes
+## 2. Procesamiento de imágenes
 
 ### Introducción al procesamiento de imágenes con IA
 
