@@ -36,7 +36,7 @@ El razonamiento probabilístico es fundamental en IA por su capacidad para manej
 
 **La inferencia en redes complejas**: En sistemas donde las relaciones entre variables son complejas y no siempre directas, como en redes bayesianas, el razonamiento probabilístico ayuda a modelar dependencias indirectas y a realizar inferencias en escenarios multivariables.
 
-> [!important]	
+> [!important] 
 >
 > La capacidad de manejar **incertidumbre y adaptarse a nuevos datos** hace del razonamiento probabilístico una herramienta fundamental para el desarrollo de sistemas de IA que deben operar de manera efectiva en entornos del mundo real, donde las condiciones pueden cambiar y la información es muchas veces ambigua o incompleta.
 
@@ -50,10 +50,10 @@ Un **experimento aleatorio** es un proceso cuyo resultado no se puede predecir c
 
 > **Ejemplo**: Lanzar una moneda es un experimento aleatorio, ya que no se puede prever si el resultado será cara o cruz en un lanzamiento específico.
 
-El **espacio muestral** (denotado como $ S $) es el conjunto de todos los resultados posibles de un experimento aleatorio. Para el caso de lanzar una moneda, el espacio muestral es:
+El **espacio muestral** (denotado como $S$) es el conjunto de todos los resultados posibles de un experimento aleatorio. Para el caso de lanzar una moneda, el espacio muestral es:
 
 $$
-S = \{ \text{cara, cruz} \}
+S=\{\text{cara, cruz}\}
 $$
 
 Para experimentos más complejos, el espacio muestral puede contener un número mayor de resultados, y su conocimiento es fundamental para calcular las probabilidades de los eventos de interés.
@@ -64,97 +64,98 @@ Un **evento** es cualquier subconjunto del espacio muestral y representa una sit
 
 ##### **Unión de eventos**
 
-La unión de dos eventos $ A $ y $ B $ (denotada como  $A \cup B$) es el conjunto de resultados que pertenecen a $ A $, a $ B $ o a ambos. En términos de probabilidad, representa la ocurrencia de al menos uno de los dos eventos:
+La unión de dos eventos $A$ y $B$ (denotada como $A \cup B$) es el conjunto de resultados que pertenecen a $A$, a $B$ o a ambos. En términos de probabilidad, representa la ocurrencia de al menos uno de los dos eventos:
 $$
-P(A \cup B) = P(A) + P(B) - P(A \cap B)
+P(A \cup B)=P(A)+P(B)-P(A \cap B)
 $$
 > **Ejemplo**: Supongamos que lanzamos un dado de seis caras y definimos dos eventos:
 >
-> - **Evento A**: Obtener un número par, es decir, $ A = \{2, 4, 6\} $.
-> - **Evento B**: Obtener un número mayor que 4, es decir, $ B = \{5, 6\} $.
+> - **Evento A**: Obtener un número par, es decir,$A=\{2, 4, 6\}$.
+> - **Evento B**: Obtener un número mayor que 4, es decir, $B=\{5, 6\}$.
 >
-> La **unión de los eventos A y B** representa obtener un número que sea par o mayor que 4. Para calcular $ P(A \cup B) $, usamos la fórmula de la unión de eventos:
+> La **unión de los eventos A y B** representa obtener un número que sea par o mayor que 4. Para calcular $P(A \cup B)$, usamos la fórmula de la unión de eventos:
 >
-> $$
-> P(A \cup B) = P(A) + P(B) - P(A \cap B)
-> $$
+>$$ 
+> P(A \cup B)=P(A)+P(B)-P(A \cap B)
+>$$ 
 >
 > Primero, calculamos cada probabilidad:
 >
-> - $ P(A) = \frac{3}{6} = \frac{1}{2} $, ya que hay tres resultados favorables para $ A $ en seis posibles.
-> - $ P(B) = \frac{2}{6} = \frac{1}{3} $, ya que hay dos resultados favorables para $ B $ en seis posibles.
-> - La **intersección de los eventos** $ A $ y $ B $ es el conjunto de resultados que cumplen ambos eventos, es decir, $ A \cap B = \{6\} $.
-> - Por lo tanto, $ P(A \cap B) = \frac{1}{6} $, ya que solo el número 6 satisface ambos eventos.
+> -$P(A)=\frac{3}{6}=\frac{1}{2}$, ya que hay tres resultados favorables para $A$ en seis posibles.
+> -$P(B)=\frac{2}{6}=\frac{1}{3}$, ya que hay dos resultados favorables para $B$ en seis posibles.
+> - La **intersección de los eventos** $A$ y $B$ es el conjunto de resultados que cumplen ambos eventos, es decir, $A \cap B=\{6\}$.
+> - Por lo tanto, $P(A \cap B)=\frac{1}{6}$, ya que solo el número 6 satisface ambos eventos.
 >
 > Sustituyendo estos valores en la fórmula, obtenemos:
 >
-> $$
-> P(A \cup B) = \frac{1}{2} + \frac{1}{3} - \frac{1}{6} = \frac{2}{3}
-> $$
+>$$ 
+> P(A \cup B)=\frac{1}{2}+\frac{1}{3}-\frac{1}{6}=\frac{2}{3}
+>$$ 
 >
-> La probabilidad de la unión de los eventos $ A $ y $ B $, $ P(A \cup B) $, es $ \frac{2}{3} $.
->
+> La probabilidad de la unión de los eventos $A$ y $B$, $P(A \cup B)$, es $\frac{2}{3}$.
 
 ##### **Intersección de eventos**
 
-La intersección de dos eventos $ A $ y $ B $ (denotada como $A \cap B$) es el conjunto de resultados que pertenecen tanto a $ A $ como a $ B $. En términos de probabilidad, representa la ocurrencia simultánea de ambos eventos:
+La intersección de dos eventos $A$ y $B$ (denotada como $A \cap B$) es el conjunto de resultados que pertenecen tanto a $A$ como a $B$. En términos de probabilidad, representa la ocurrencia simultánea de ambos eventos:
 $$
 P(A \cap B)
 $$
 
 > **Ejemplo**: Supongamos que lanzamos un dado de seis caras y definimos dos eventos:
 >
-> - **Evento A**: Obtener un número par, es decir, $ A = \{2, 4, 6\} $.
-> - **Evento B**: Obtener un número mayor que 3, es decir, $ B = \{4, 5, 6\} $.
+> - **Evento A**: Obtener un número par, es decir, $A=\{2, 4, 6\}$.
+> - **Evento B**: Obtener un número mayor que 3, es decir, $B=\{4, 5, 6\}$.
 >
 > La **intersección de los eventos A y B** representa el conjunto de resultados que cumplen ambos eventos, es decir, aquellos números que son pares y mayores que 3. En este caso:
 >
-> $$
-> A \cap B = \{4, 6\}
-> $$
+>$$ 
+> A \cap B=\{4, 6\}
+>$$ 
 >
-> Si asumimos que cada número tiene la misma probabilidad de salir, la probabilidad de que ocurra la intersección de $ A $ y $ B $, denotada $ P(A \cap B) $, es:
+> Si asumimos que cada número tiene la misma probabilidad de salir, la probabilidad de que ocurra la intersección de $A$ y $B$, denotada $P(A \cap B)$, es:
 >
-> $$
-> P(A \cap B) = \frac{\text{número de elementos en } A \cap B}{\text{número total de posibles resultados}} = \frac{2}{6} = \frac{1}{3}
-> $$
+>$$ 
+> P(A \cap B)=\frac{\text{número de elementos en }A \cap B}{\text{número total de posibles resultados}}=\frac{2}{6}=\frac{1}{3}
+>$$ 
 >
-> Así, la probabilidad de obtener un número que sea par y mayor que 3 es $ \frac{1}{3} $.
+> Así, la probabilidad de obtener un número que sea par y mayor que 3 es
+
+ $\frac{1}{3}$.
 
 ##### **Complemento de un evento**
 
-El complemento de un evento $ A $ (denotado como $A^c $ o $\overline{A}$) es el conjunto de resultados en $ S $ que no pertenecen a $ A $. En términos de probabilidad, representa la no ocurrencia del evento $ A $:
+El complemento de un evento $A$ (denotado como $A^c$o$\overline{A}$) es el conjunto de resultados en $S$ que no pertenecen a $A$. En términos de probabilidad, representa la no ocurrencia del evento $A$:
 $$
-P(A^c) = 1 - P(A)
+P(A^c)=1-P(A)
 $$
 Estas operaciones entre eventos son herramientas fundamentales para combinar y analizar probabilidades en experimentos complejos.
 
 #### Definición de probabilidad y axiomas de Kolmogorov
 
-La **probabilidad** de un evento $ A $, denotada como $ P(A) $, es una medida numérica que expresa la posibilidad de que ocurra dicho evento dentro del espacio muestral. Los valores de probabilidad siempre están en el intervalo $ [0, 1] $, donde:
+La **probabilidad** de un evento $A$, denotada como $P(A)$, es una medida numérica que expresa la posibilidad de que ocurra dicho evento dentro del espacio muestral. Los valores de probabilidad siempre están en el intervalo $[0, 1]$, donde:
 
-- $ P(A) = 1 $: El evento $ A $ es cierto y ocurrirá en cada realización del experimento.
-- $ P(A) = 0 $: El evento $ A $ es imposible y no ocurrirá en ninguna realización del experimento.
-- $ 0 < P(A) < 1 $: Existe una probabilidad intermedia para el evento $ A $, indicando una incertidumbre en su ocurrencia.
+- $P(A)=1$: El evento $A$ es cierto y ocurrirá en cada realización del experimento.
+- $P(A)=0$: El evento $A$ es imposible y no ocurrirá en ninguna realización del experimento.
+- $0 < P(A) < 1$: Existe una probabilidad intermedia para el evento $A$, indicando una incertidumbre en su ocurrencia.
 
 La teoría de la probabilidad se fundamenta en los **axiomas de Kolmogorov**, los cuales son los principios básicos para cualquier cálculo de probabilidades:
 
 1. **Axioma de no negatividad**: La probabilidad de un evento es siempre mayor o igual a cero.
 
-   $$
+  $$ 
    P(A) \geq 0
-   $$
+  $$ 
 
 2. **Axioma de certeza**: La probabilidad de que ocurra algún resultado en el espacio muestral es 1.
 
-   $$
-   P(S) = 1
-   $$
+  $$ 
+   P(S)=1
+  $$ 
 
-3. **Axioma de aditividad**: Para cualquier conjunto de eventos mutuamente excluyentes $ A_1, A_2, \dots, A_n $, la probabilidad de que ocurra al menos uno de ellos es la suma de sus probabilidades individuales.
-   $$
-   P(A_1 \cup A_2 \cup \dots \cup A_n) = P(A_1) + P(A_2) + \dots + P(A_n)
-   $$
+3. **Axioma de aditividad**: Para cualquier conjunto de eventos mutuamente excluyentes $A_1, A_2, \dots, A_n$, la probabilidad de que ocurra al menos uno de ellos es la suma de sus probabilidades individuales.
+  $$ 
+   P(A_1 \cup A_2 \cup \dots \cup A_n)=P(A_1)+P(A_2)+\dots+P(A_n)
+  $$ 
 
 Estos axiomas establecen las bases de la teoría de probabilidad y permiten realizar cálculos con eventos simples y compuestos en experimentos aleatorios. En IA, estos conceptos son cruciales para modelar y manejar la incertidumbre en la toma de decisiones.
 
@@ -164,58 +165,55 @@ La **probabilidad condicionada** es una extensión fundamental de la probabilida
 
 ##### Definición de probabilidad condicionada
 
-La probabilidad condicionada de un evento $ A $ dado que otro evento $ B $ ha ocurrido (denotada como $ P(A|B) $) mide la probabilidad de que ocurra $ A $ bajo la condición de que $ B $ ya ha sucedido. La fórmula general para la probabilidad condicionada es:
+La probabilidad condicionada de un evento $A$ dado que otro evento $B$ ha ocurrido (denotada como $P(A|B)$) mide la probabilidad de que ocurra $A$ bajo la condición de que $B$ ya ha sucedido. La fórmula general para la probabilidad condicionada es:
 
 $$
-P(A|B) = \frac{P(A \cap B)}{P(B)}
+P(A|B)=\frac{P(A \cap B)}{P(B)}
 $$
 
-donde $ P(A \cap B) $ es la probabilidad de que ambos eventos $ A $ y $ B $ ocurran simultáneamente, y $ P(B) $ es la probabilidad de que ocurra $ B $. Esta definición es válida solo cuando $ P(B) > 0 $, ya que no es posible condicionar sobre un evento de probabilidad cero.
+donde $P(A \cap B)$ es la probabilidad de que ambos eventos $A$ y $B$ ocurran simultáneamente, y $P(B)$ es la probabilidad de que ocurra $B$. Esta definición es válida solo cuando $P(B)>0$, ya que no es posible condicionar sobre un evento de probabilidad cero.
 
 > **Ejemplo**: Supongamos que tenemos un mazo de 52 cartas, y seleccionamos una carta al azar. Definimos los siguientes eventos:
 >
 > - **Evento A**: La carta seleccionada es un as.
 > - **Evento B**: La carta seleccionada es negra.
 >
-> Sabemos que hay 4 ases en total, de los cuales 2 son negros (de picas y tréboles). **La probabilidad de obtener un as (evento $ A $) sabiendo que la carta es negra (evento $ B $)** sería:
+> Sabemos que hay 4 ases en total, de los cuales 2 son negros (de picas y tréboles). **La probabilidad de obtener un as (evento $A$) sabiendo que la carta es negra (evento $B$)** sería:
 >
-> - $ P(B) = \frac{26}{52} = \frac{1}{2} $, ya que la mitad del mazo son cartas negras.
-> - $ P(A \cap B) = \frac{2}{52} = \frac{1}{26} $, porque hay 2 ases negros en el mazo de 52 cartas.
+> - $P(B)=\frac{26}{52}=\frac{1}{2}$, ya que la mitad del mazo son cartas negras.
+> - $P(A \cap B)=\frac{2}{52}=\frac{1}{26}$, porque hay 2 ases negros en el mazo de 52 cartas.
 >
 > Aplicando la fórmula de probabilidad condicionada:
 >
-> $$
-> P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{\frac{1}{26}}{\frac{1}{2}} = \frac{1}{13}
-> $$
+>$$
+> P(A|B)=\frac{P(A \cap B)}{P(B)}=\frac{\frac{1}{26}}{\frac{1}{2}}=\frac{1}{13}
+>$$
 >
-> Por lo tanto, la probabilidad de que la carta seleccionada sea un as, sabiendo que es negra, es $ \frac{1}{13} $.
+> Por lo tanto, la probabilidad de que la carta seleccionada sea un as, sabiendo que es negra, es $\frac{1}{13}$.
 
 #### Regla de la multiplicación
 
 La **regla de la multiplicación** es una propiedad fundamental que permite descomponer la probabilidad conjunta de dos eventos en términos de sus probabilidades condicionadas:
 
 $$
-P(A \cap B) = P(A|B) \cdot P(B)
+P(A \cap B)=P(A|B) \cdot P(B)
 $$
 
 Esta propiedad es especialmente útil en el cálculo de probabilidades conjuntas y en la descomposición de probabilidades complejas en probabilidades más manejables.
 
 > **Ejemplo**: Supongamos que un 30% de los estudiantes de una clase estudian matemáticas y que, de esos estudiantes, el 20% también estudian física. Si elegimos un estudiante al azar, la probabilidad de que estudie tanto matemáticas como física es:
 >
-> - $ P(\text{Matemáticas}) = 0.3 $
-> - $ P(\text{Física | Matemáticas}) = 0.2 $
+> - $P(\text{Matemáticas})=0.3$
+> - $P(\text{Física | Matemáticas})=0.2$
 >
 > Aplicando la regla de la multiplicación:
 >
-> $$
-> P(\text{Física} \cap \text{Matemáticas}) = P(\text{Física | Matemáticas}) \cdot P(\text{Matemáticas}) = 0.2 \cdot 0.3 = 0.06
-> $$
+>$$
+> P(\text{Física} \cap \text{Matemáticas})=P(\text{Física | Matemáticas}) \cdot P(\text{Matemáticas})=0.2 \cdot 0.3=0.06
+>$$
 >
 > Así, la probabilidad de que un estudiante al azar estudie tanto matemáticas como física es 0.06 o 6%.
 
-> [!important]
->
-> La probabilidad condicionada y la regla de la multiplicación son herramientas esenciales para el análisis de eventos en IA, ya que permiten calcular probabilidades conjuntas y ajustar la probabilidad de eventos en función de información adicional, facilitando un razonamiento adaptativo en sistemas que requieren actualización de creencias o toma de decisiones en entornos inciertos.
 
 #### Independencia y dependencia entre eventos
 
@@ -223,42 +221,42 @@ La **independencia entre eventos** es un concepto central en teoría de probabil
 
 ##### Independencia de eventos
 
-Dos eventos $ A $ y $ B $ son **independientes** si la probabilidad de que ambos ocurran es igual al producto de sus probabilidades individuales. En términos matemáticos, esto se expresa como:
+Dos eventos $A$ y $B$ son **independientes** si la probabilidad de que ambos ocurran es igual al producto de sus probabilidades individuales. En términos matemáticos, esto se expresa como:
 
 $$
-P(A \cap B) = P(A) \cdot P(B)
+P(A \cap B)=P(A) \cdot P(B)
 $$
 
-Otra forma de expresar independencia es a través de la **probabilidad condicionada**. Si $ A $ y $ B $ son independientes, entonces la probabilidad de que ocurra $ A $ dado que $ B $ ha ocurrido es simplemente la probabilidad de $ A $:
+Otra forma de expresar independencia es a través de la **probabilidad condicionada**. Si $A$ y $B$ son independientes, entonces la probabilidad de que ocurra $A$ dado que $B$ ha ocurrido es simplemente la probabilidad de $A$:
 
 $$
-P(A|B) = P(A)
+P(A|B)=P(A)
 $$
 
-Esta propiedad también se cumple en sentido inverso: $P(B|A) = P(B)$. La independencia es útil en el cálculo de probabilidades porque permite simplificar las expresiones conjuntas, lo que facilita el análisis de sistemas complejos.
+Esta propiedad también se cumple en sentido inverso: $P(B|A)=P(B)$. La independencia es útil en el cálculo de probabilidades porque permite simplificar las expresiones conjuntas, lo que facilita el análisis de sistemas complejos.
 
-> **Ejemplo**: En un experimento donde lanzamos dos dados, el resultado del primer dado no influye en el resultado del segundo dado. Por lo tanto, el evento de obtener un "3" en el primer dado es independiente del evento de obtener un "5" en el segundo dado. Si la probabilidad de obtener un "3" en el primer dado es  $\frac{1}{6} $ y la probabilidad de obtener un "5" en el segundo dado es $\frac{1}{6}$ , la probabilidad conjunta de obtener un "3" en el primer dado y un "5" en el segundo es:
-> $$
-> P(\text{3 en el primer dado} \cap \text{5 en el segundo dado}) = \frac{1}{6} \cdot \frac{1}{6} = \frac{1}{36}
-> $$
+> **Ejemplo**: En un experimento donde lanzamos dos dados, el resultado del primer dado no influye en el resultado del segundo dado. Por lo tanto, el evento de obtener un "3" en el primer dado es independiente del evento de obtener un "5" en el segundo dado. Si la probabilidad de obtener un "3" en el primer dado es $\frac{1}{6}$ y la probabilidad de obtener un "5" en el segundo dado es $\frac{1}{6}$, la probabilidad conjunta de obtener un "3" en el primer dado y un "5" en el segundo es:
+>$$
+> P(\text{3 en el primer dado} \cap \text{5 en el segundo dado})=\frac{1}{6} \cdot \frac{1}{6}=\frac{1}{36}
+>$$
 
 ##### Dependencia de eventos
 
-Dos eventos son **dependientes** si la ocurrencia de uno afecta la probabilidad de ocurrencia del otro. En este caso, la probabilidad de la intersección de $ A $ y $ B $ no se puede descomponer como el producto de sus probabilidades individuales. En términos de probabilidad condicionada, si $ A $ y $ B $ son dependientes, entonces $P(A|B) \neq P(A)$
+Dos eventos son **dependientes** si la ocurrencia de uno afecta la probabilidad de ocurrencia del otro. En este caso, la probabilidad de la intersección de $A$ y $B$ no se puede descomponer como el producto de sus probabilidades individuales. En términos de probabilidad condicionada, si $A$ y $B$ son dependientes, entonces $P(A|B) \neq P(A)$
 
 > **Ejemplo**: Supongamos que en una bolsa hay 5 bolas rojas y 5 bolas azules. Si extraemos una bola al azar sin reemplazo, el evento de sacar una bola roja afecta la probabilidad de sacar una bola azul en la siguiente extracción, ya que ahora habrá menos bolas en la bolsa. Esto hace que los eventos "sacar una bola roja" y "sacar una bola azul" en extracciones consecutivas sean dependientes.
 
 #### Independencia condicional
 
-La **independencia condicional** es un concepto clave en modelos probabilísticos más avanzados, como las redes bayesianas. Dos eventos $ A $ y $ B $ son condicionalmente independientes dado un tercer evento $ C $ si, al conocer la ocurrencia de $ C $, la ocurrencia de $ A $ no afecta la probabilidad de $ B $, y viceversa. Matemáticamente, la independencia condicional se expresa como:
+La **independencia condicional** es un concepto clave en modelos probabilísticos más avanzados, como las redes bayesianas. Dos eventos $A$ y $B$ son condicionalmente independientes dado un tercer evento $C$ si, al conocer la ocurrencia de $C$, la ocurrencia de $A$ no afecta la probabilidad de $B$, y viceversa. Matemáticamente, la independencia condicional se expresa como:
 
 $$
-P(A \cap B | C) = P(A | C) \cdot P(B | C)
+P(A \cap B | C)=P(A | C) \cdot P(B | C)
 $$
 
-Esto implica que, bajo la condición de $ C $, los eventos $ A $ y $ B $ pueden tratarse como si fueran independientes. Este principio es fundamental en la construcción de modelos de inferencia probabilística, donde se descomponen probabilidades complejas en relaciones condicionales más simples.
+Esto implica que, bajo la condición de $C$, los eventos $A$ y $B$ pueden tratarse como si fueran independientes. Este principio es fundamental en la construcción de modelos de inferencia probabilística, donde se descomponen probabilidades complejas en relaciones condicionales más simples.
 
-> **Ejemplo**: Supongamos que tenemos información sobre la probabilidad de que un estudiante apruebe un examen (evento $ A $), la probabilidad de que haya estudiado (evento $ B $), y sabemos si ha asistido a clases (evento $ C $). Si sabemos que el estudiante ha asistido a clases, entonces el evento de haber estudiado puede ser condicionalmente independiente del evento de aprobar. Esto quiere decir que, dado el conocimiento de que el estudiante asistió a clase, el hecho de que haya estudiado ya no afecta directamente la probabilidad de aprobar.
+> **Ejemplo**: Supongamos que tenemos información sobre la probabilidad de que un estudiante apruebe un examen (evento $A$), la probabilidad de que haya estudiado (evento $B$), y sabemos si ha asistido a clases (evento $C$). Si sabemos que el estudiante ha asistido a clases, entonces el evento de haber estudiado puede ser condicionalmente independiente del evento de aprobar. Esto quiere decir que, dado el conocimiento de que el estudiante asistió a clase, el hecho de que haya estudiado ya no afecta directamente la probabilidad de aprobar.
 
 La independencia condicional permite que modelos como las redes bayesianas simplifiquen cálculos al representar sólo las dependencias directas, lo que hace más eficiente el manejo de grandes cantidades de variables interrelacionadas.
 
@@ -292,7 +290,7 @@ El Teorema de Bayes establece una relación entre las probabilidades condicionad
 Matemáticamente, el Teorema de Bayes se expresa como:
 
 $$
-P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+P(A|B)=\frac{P(B|A) \cdot P(A)}{P(B)}
 $$
 
 donde:
@@ -307,94 +305,94 @@ donde:
 La derivación del Teorema de Bayes parte de la definición de probabilidad condicionada. Sabemos que:
 
 $$
-P(A|B) = \frac{P(A \cap B)}{P(B)}
+P(A|B)=\frac{P(A \cap B)}{P(B)}
 $$
 
 y, de manera similar:
 
 $$
-P(B|A) = \frac{P(A \cap B)}{P(A)}
+P(B|A)=\frac{P(A \cap B)}{P(A)}
 $$
 
 Al despejar $P(A \cap B)$ en ambas ecuaciones, obtenemos:
 
 $$
-P(A \cap B) = P(A|B) \cdot P(B) = P(B|A) \cdot P(A)
+P(A \cap B)=P(A|B) \cdot P(B)=P(B|A) \cdot P(A)
 $$
 
 Igualando las expresiones, llegamos a la forma del Teorema de Bayes:
 
 $$
-P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+P(A|B)=\frac{P(B|A) \cdot P(A)}{P(B)}
 $$
 
 ##### Interpretación del Teorema de Bayes: Evidencia y creencias
 
 El Teorema de Bayes se interpreta como un mecanismo de actualización de **creencias** en función de **nueva evidencia**. En el contexto de IA, esta interpretación es útil para ajustar las probabilidades en problemas de diagnóstico, predicción o clasificación, donde se deben adaptar las probabilidades de diferentes hipótesis al recibir nueva información.
 
-> **Ejemplo**: Supongamos que queremos diagnosticar si un paciente tiene una enfermedad $D$ en función de un síntoma $S$ (por ejemplo, fiebre). Inicialmente, sabemos que la probabilidad de que cualquier persona tenga la enfermedad (probabilidad previa) es $P(D) = 0.01$. También sabemos que si alguien tiene la enfermedad, hay una alta probabilidad de que presente fiebre, es decir, $P(S|D) = 0.8$. Además, conocemos que la probabilidad de fiebre en la población general es $P(S) = 0.1$.
+> **Ejemplo**: Supongamos que queremos diagnosticar si un paciente tiene una enfermedad $D$ en función de un síntoma $S$ (por ejemplo, fiebre). Inicialmente, sabemos que la probabilidad de que cualquier persona tenga la enfermedad (probabilidad previa) es $P(D)=0.01$. También sabemos que si alguien tiene la enfermedad, hay una alta probabilidad de que presente fiebre, es decir, $P(S|D)=0.8$. Además, conocemos que la probabilidad de fiebre en la población general es $P(S)=0.1$.
 >
 > Aplicando el Teorema de Bayes, podemos calcular la **probabilidad a posteriori** de que un paciente tenga la enfermedad dado que presenta fiebre:
 >
-> $$
-> P(D|S) = \frac{P(S|D) \cdot P(D)}{P(S)} = \frac{0.8 \cdot 0.01}{0.1} = 0.08
-> $$
+>$$
+> P(D|S)=\frac{P(S|D) \cdot P(D)}{P(S)}=\frac{0.8 \cdot 0.01}{0.1}=0.08
+>$$
 >
 > Esto significa que, dado que el paciente presenta fiebre, la probabilidad de que tenga la enfermedad se actualiza al 8%. Esta técnica de actualización de creencias permite a los modelos de IA mejorar sus predicciones al incorporar nueva información relevante.
 
 #### Aplicaciones del Teorema de Bayes: El clasificador Naïve Bayes
 
-El Teorema de Bayes es una herramienta fundamental en la inteligencia artificial, especialmente útil en problemas de clasificación, inferencia probabilística, diagnóstico médico, y toma de decisiones en situaciones con incertidumbre. Su capacidad para actualizar la probabilidad de un evento a partir de evidencia observada permite a los modelos de IA adaptarse y responder de manera dinámica a la nueva información. A efectos del presente curso vamos a exponer una de las aplicaciones más comunes en IA: **El clasificador Naïve Bayes**
+El Teorema de Bayes es una herramienta fundamental en la inteligencia artificial, especialmente útil en problemas de clasificación, inferencia probabilística, diagnóstico médico y toma de decisiones en situaciones con incertidumbre. Su capacidad para actualizar la probabilidad de un evento a partir de evidencia observada permite a los modelos de IA adaptarse y responder de manera dinámica a la nueva información. A efectos del presente curso vamos a exponer una de las aplicaciones más comunes en IA: **El clasificador Naïve Bayes**
 
 El **clasificador Naive Bayes** es un modelo probabilístico simple, basado en el teorema de Bayes, que se utiliza para resolver problemas de clasificación. La premisa clave del clasificador es la suposición de **independencia condicional** entre las características, es decir, que cada característica es independiente de las demás dado el valor de la clase. A pesar de esta simplificación (que raramente se cumple en el mundo real), el clasificador Naive Bayes ofrece buenos resultados en muchos casos prácticos y es eficiente para grandes conjuntos de datos.
 
 ##### Fundamento teórico del clasificador Naive Bayes
 
-Dado un conjunto de datos con instancias (o ejemplos) y sus características asociadas, el clasificador Naive Bayes utiliza la probabilidad para predecir la clase de una instancia desconocida. La predicción se basa en el **teorema de Bayes**, que calcula la probabilidad de una clase específica $ C $ dada una instancia con características $ X = (x_1, x_2, \ldots, x_n) $.
+Dado un conjunto de datos con instancias (o ejemplos) y sus características asociadas, el clasificador Naive Bayes utiliza la probabilidad para predecir la clase de una instancia desconocida. La predicción se basa en el **teorema de Bayes**, que calcula la probabilidad de una clase específica $C$ dada una instancia con características $X=(x_1, x_2, \ldots, x_n)$.
 
 El teorema de Bayes establece que:
 
 $$
-P(C | X) = \frac{P(X | C) \cdot P(C)}{P(X)}
+P(C|X)=\frac{P(X|C) \cdot P(C)}{P(X)}
 $$
 
 donde:
 
-- $ P(C | X) $: Es la **probabilidad posterior** de la clase $ C $ dado el conjunto de características $ X $.
-- $ P(X | C) $: Es la **verosimilitud** o la probabilidad de observar $ X $ dado que la clase es $ C $.
-- $ P(C) $: Es la **probabilidad a priori** de la clase $ C $.
-- $ P(X) $: Es la **probabilidad marginal** de observar el conjunto de características $ X $, independientemente de la clase.
+- $P(C|X)$ es la **probabilidad posterior** de la clase $C$ dado el conjunto de características $X$.
+- $P(X|C)$ es la **verosimilitud** o la probabilidad de observar $X$ dado que la clase es $C$.
+- $P(C)$ es la **probabilidad a priori** de la clase $C$.
+- $P(X)$ es la **probabilidad marginal** de observar el conjunto de características $X$, independientemente de la clase.
 
-Para el clasificador Naive Bayes, queremos encontrar la clase $ C $ que **maximiza la probabilidad posterior** $ P(C | X) $, lo cual se expresa como:
+Para el clasificador Naive Bayes, queremos encontrar la clase $C$ que **maximiza la probabilidad posterior** $P(C|X)$, lo cual se expresa como:
 
 $$
-\hat{C} = \arg \max_C P(C | X)
+\hat{C}=\arg \max_C P(C|X)
 $$
 
 Al aplicar el teorema de Bayes, podemos reescribir esta expresión como:
 
 $$
-\hat{C} = \arg \max_C \frac{P(X | C) \cdot P(C)}{P(X)}
+\hat{C}=\arg \max_C \frac{P(X|C) \cdot P(C)}{P(X)}
 $$
 
-Dado que $ P(X) $ es constante para todas las clases, se puede simplificar:
+Dado que $P(X)$ es constante para todas las clases, se puede simplificar:
 
 $$
-\hat{C} = \arg \max_C P(X | C) \cdot P(C)
+\hat{C}=\arg \max_C P(X|C) \cdot P(C)
 $$
 
 ##### Suposición de independencia condicional
 
-Para simplificar el cálculo de $ P(X | C) $, el clasificador Naive Bayes asume que **cada característica $ x_i $ es independiente de las demás dado el valor de la clase $ C $.** Bajo esta suposición, la verosimilitud se descompone en el producto de las probabilidades individuales de cada característica $ x_i $ dada la clase $ C $:
+Para simplificar el cálculo de $P(X|C)$, el clasificador Naive Bayes asume que **cada característica $i$ es independiente de las demás dado el valor de la clase $C$.** Bajo esta suposición, la verosimilitud se descompone en el producto de las probabilidades individuales de cada característica $i$ dada la clase $C$:
 
 $$
-P(X | C) = P(x_1, x_2, \ldots, x_n | C) = \prod_{i=1}^n P(x_i | C)
+P(X|C)=P(x_1, x_2, \ldots, x_n|C)=\prod_{i=1}^n P(x_i|C)
 $$
 
 La fórmula final para el clasificador Naive Bayes es:
 
 $$
-\hat{C} = \arg \max_C P(C) \cdot \prod_{i=1}^n P(x_i | C)
+\hat{C}=\arg \max_C P(C) \cdot \prod_{i=1}^n P(x_i|C)
 $$
 
 La simplicidad del clasificador Naive Bayes lo hace eficiente y efectivo en muchos escenarios, aunque su rendimiento puede verse afectado cuando la suposición de independencia condicional no se cumple. Sin embargo, es ampliamente utilizado en aplicaciones de texto (como filtrado de spam y análisis de sentimiento) y ofrece buenos resultados en conjuntos de datos de gran dimensión.
@@ -403,41 +401,41 @@ La simplicidad del clasificador Naive Bayes lo hace eficiente y efectivo en much
 
 Para entrenar el clasificador Naive Bayes, se debe:
 
-1. **Calcular las probabilidades a priori** $ P(C) $ para cada clase $ C $. Esto se hace contando la frecuencia de cada clase en el conjunto de entrenamiento y dividiendo por el número total de instancias.
-  
-2. **Calcular las probabilidades condicionales** $ P(x_i | C) $ para cada característica $ x_i $ dada cada clase $ C $. El método de cálculo depende del tipo de características:
-   - **Características categóricas**: Se calcula la probabilidad condicional contando la frecuencia de cada valor de $ x_i $ en cada clase $ C $.
-   - **Características continuas**: Se asume generalmente una **distribución normal** y se calcula $ P(x_i | C) $ usando la función de densidad de probabilidad normal con la media y varianza estimadas a partir de los datos de entrenamiento.
+1. **Calcular las probabilidades a priori** $P(C)$ para cada clase $C$. Esto se hace contando la frecuencia de cada clase en el conjunto de entrenamiento y dividiendo por el número total de instancias.
+
+2. **Calcular las probabilidades condicionales** $P(x_i|C)$ para cada característica $i$ dada cada clase $C$. El método de cálculo depende del tipo de características:
+   - **Características categóricas**: Se calcula la probabilidad condicional contando la frecuencia de cada valor de $i$ en cada clase $C$.
+   - **Características continuas**: Se asume generalmente una **distribución normal** y se calcula $P(x_i|C)$ usando la función de densidad de probabilidad normal con la media y varianza estimadas a partir de los datos de entrenamiento.
 
 ##### Clasificación de una nueva instancia
 
-Para clasificar una nueva instancia con características $ X = (x_1, x_2, \ldots, x_n) $:
+Para clasificar una nueva instancia con características $X=(x_1, x_2, \ldots, x_n)$:
 
-1. Para cada clase $ C $, se calcula el valor $ P(C) \cdot \prod_{i=1}^n P(x_i | C) $.
-2. La clase predicha $ \hat{C} $ es aquella que maximiza este valor.
+1. Para cada clase $C$, se calcula el valor $P(C) \cdot \prod_{i=1}^n P(x_i|C)$.
+2. La clase predicha $\hat{C}$ es aquella que maximiza este valor.
 
-> **Ejemplo**: Supongamos que tenemos un conjunto de datos para predecir si un correo es "spam" o "no spam" basado en las palabras que contiene (por ejemplo, "gratis", "oferta", "urgente"). 
+> **Ejemplo**: Supongamos que tenemos un conjunto de datos para predecir si un correo es "spam" o "no spam" basado en las palabras que contiene (por ejemplo, "gratis", "oferta", "urgente").
 >
-> - Calculamos $ P(\text{spam}) $ y $ P(\text{no spam}) $ como la frecuencia de correos spam y no spam en los datos.
-> - Para cada palabra relevante, calculamos $ P(\text{"gratis"} | \text{spam}) $, $ P(\text{"oferta"} | \text{spam}) $, y así sucesivamente, y hacemos lo mismo para los correos no spam.
+> - Calculamos $P(\text{spam})$ y $P(\text{no spam})$ como la frecuencia de correos spam y no spam en los datos.
+> - Para cada palabra relevante, calculamos $P(\text{"gratis"}|\text{spam})$, $P(\text{"oferta"}|\text{spam})$, y así sucesivamente, y hacemos lo mismo para los correos no spam.
 > - Para clasificar un correo que contiene las palabras "gratis" y "urgente", calculamos:
 >
-> $$
-> P(\text{spam}) \cdot P(\text{"gratis"} | \text{spam}) \cdot P(\text{"urgente"} | \text{spam})
-> $$
+>$$
+> P(\text{spam}) \cdot P(\text{"gratis"}|\text{spam}) \cdot P(\text{"urgente"}|\text{spam})
+>$$
 >
 > y
 >
-> $$
-> P(\text{no spam}) \cdot P(\text{"gratis"} | \text{no spam}) \cdot P(\text{"urgente"} | \text{no spam})
-> $$
+>$$
+> P(\text{no spam}) \cdot P(\text{"gratis"}|\text{no spam}) \cdot P(\text{"urgente"}|\text{no spam})
+>$$
 >
 > La categoría que dé el valor mayor será la predicción del clasificador Naive Bayes.
->
+
 
 ##### Ejemplo resuelto de aplicación del algoritmo Naïve Bayes
 
-Vamos a resolver de forma manual un ejemplo relacionado con un caso de clasificación siguiendo el algoritmo Naïve-Bayes. Supongamos que queremos usar dicho algoritmo para saber si podemos jugar o no al golf. En efecto, imaginemos un conjunto de datos en el que cada registro representa un día y contiene las siguientes características:
+Vamos a resolver de forma manual un ejemplo relacionado con un caso de clasificación siguiendo el algoritmo Naïve Bayes. Supongamos que queremos usar dicho algoritmo para saber si podemos jugar o no al golf. Imaginemos un conjunto de datos en el que cada registro representa un día y contiene las siguientes características:
 
 - **Tiempo**: Puede ser soleado, nublado o lluvioso.
 - **Temperatura**: Puede ser alta, templada o baja.
@@ -464,12 +462,13 @@ La variable de salida (*target*) es **Jugar al Golf**, que indica si el día fue
 | Lluvioso | Templada    | Alta    | Sí     | No            |
 
 **Objetivo:** Supongamos que queremos predecir si alguien jugará al golf en un día que tiene las siguientes condiciones:
+
 - **Tiempo**: Soleado
 - **Temperatura**: Alta
 - **Humedad**: Alta
 - **Viento**: No
 
-Lo primero que tenemos que hacer es calcular las probabilidades a priori. Para ello observamos cuántos días se clasificaron como "Jugar al Golf = Sí" y "Jugar al Golf = No".
+Primero, debemos calcular las probabilidades a priori observando cuántos días se clasificaron como "Jugar al Golf = Sí" y "Jugar al Golf = No".
 
 - Total de días = 14
 - Días en que se juega al golf (Sí) = 9
@@ -481,55 +480,53 @@ $$
 P(\text{Sí}) = \frac{9}{14}, \quad P(\text{No}) = \frac{5}{14}
 $$
 
-El siguiente paso tiene que ver con el cálculo de las probabilidades condicionadas para cada característica
-
-Para cada característica en las condiciones dadas, calculamos la probabilidad condicional, por ejemplo, $P(\text{Tiempo} = \text{Soleado} | \text{Sí})$ y $P(\text{Tiempo} = \text{Soleado} | \text{No})$.
+A continuación, calculamos las probabilidades condicionadas para cada característica en las condiciones dadas, por ejemplo, $P(\text{Tiempo} = \text{Soleado}|\text{Sí})$ y $P(\text{Tiempo} = \text{Soleado}|\text{No})$.
 
 1. **Tiempo = Soleado**
-   - $P(\text{Tiempo} = \text{Soleado} | \text{Sí}) = \frac{2}{9}$
-   - $P(\text{Tiempo} = \text{Soleado} | \text{No}) = \frac{3}{5}$
+   - $P(\text{Tiempo} = \text{Soleado}|\text{Sí}) = \frac{2}{9}$
+   - $P(\text{Tiempo} = \text{Soleado}|\text{No}) = \frac{3}{5}$
 
 2. **Temperatura = Alta**
-   - $P(\text{Temperatura} = \text{Alta} | \text{Sí}) = \frac{3}{9}$
-   - $P(\text{Temperatura} = \text{Alta} | \text{No}) = \frac{2}{5}$
+   - $P(\text{Temperatura} = \text{Alta}|\text{Sí}) = \frac{3}{9}$
+   - $P(\text{Temperatura} = \text{Alta}|\text{No}) = \frac{2}{5}$
 
 3. **Humedad = Alta**
-   - $P(\text{Humedad} = \text{Alta} | \text{Sí}) = \frac{3}{9}$
-   - $P(\text{Humedad} = \text{Alta} | \text{No}) = \frac{4}{5}$
+   - $P(\text{Humedad} = \text{Alta}|\text{Sí}) = \frac{3}{9}$
+   - $P(\text{Humedad} = \text{Alta}|\text{No}) = \frac{4}{5}$
 
 4. **Viento = No**
-   - $P(\text{Viento} = \text{No} | \text{Sí}) = \frac{6}{9}$
-   - $P(\text{Viento} = \text{No} | \text{No}) = \frac{2}{5}$
+   - $P(\text{Viento} = \text{No}|\text{Sí}) = \frac{6}{9}$
+   - $P(\text{Viento} = \text{No}|\text{No}) = \frac{2}{5}$
 
 Para predecir si se jugará al golf en un día con las condiciones dadas, calculamos la probabilidad de "Sí" y "No" usando el teorema de Bayes.
 
-**Calcular $P(\text{Sí} | \text{Condiciones})$**
+**Calcular $P(\text{Sí}|\text{Condiciones})$**
+
 $$
-P(\text{Sí} | \text{Condiciones}) \propto P(\text{Sí}) \cdot P(\text{Tiempo} = \text{Soleado} | \text{Sí}) \cdot P(\text{Temperatura} = \text{Alta} | \text{Sí}) \cdot P(\text{Humedad} = \text{Alta} | \text{Sí}) \cdot P(\text{Viento} = \text{No} | \text{Sí})
+P(\text{Sí}|\text{Condiciones}) \propto P(\text{Sí}) \cdot P(\text{Tiempo} = \text{Soleado}|\text{Sí}) \cdot P(\text{Temperatura} = \text{Alta}|\text{Sí}) \cdot P(\text{Humedad} = \text{Alta}|\text{Sí}) \cdot P(\text{Viento} = \text{No}|\text{Sí})
 $$
 
 Sustituyendo valores:
 
 $$
-P(\text{Sí} | \text{Condiciones}) \propto \frac{9}{14} \cdot \frac{2}{9} \cdot \frac{3}{9} \cdot \frac{3}{9} \cdot \frac{6}{9}
+P(\text{Sí}|\text{Condiciones}) \propto \frac{9}{14} \cdot \frac{2}{9} \cdot \frac{3}{9} \cdot \frac{3}{9} \cdot \frac{6}{9}
 $$
 
-**Calcular $P(\text{No} | \text{Condiciones})$**
+**Calcular $P(\text{No}|\text{Condiciones})$**
+
 $$
-P(\text{No} | \text{Condiciones}) \propto P(\text{No}) \cdot P(\text{Tiempo} = \text{Soleado} | \text{No}) \cdot P(\text{Temperatura} = \text{Alta} | \text{No}) \cdot P(\text{Humedad} = \text{Alta} | \text{No}) \cdot P(\text{Viento} = \text{No} | \text{No})
+P(\text{No}|\text{Condiciones}) \propto P(\text{No}) \cdot P(\text{Tiempo} = \text{Soleado}|\text{No}) \cdot P(\text{Temperatura} = \text{Alta}|\text{No}) \cdot P(\text{Humedad} = \text{Alta}|\text{No}) \cdot P(\text{Viento} = \text{No}|\text{No})
 $$
 
 Sustituyendo valores:
 
 $$
-P(\text{No} | \text{Condiciones}) \propto \frac{5}{14} \cdot \frac{3}{5} \cdot \frac{2}{5} \cdot \frac{4}{5} \cdot \frac{2}{5}
+P(\text{No}|\text{Condiciones}) \propto \frac{5}{14} \cdot \frac{3}{5} \cdot \frac{2}{5} \cdot \frac{4}{5} \cdot \frac{2}{5}
 $$
 
-Comparando los valores resultantes de $P(\text{Sí} | \text{Condiciones})$ y $P(\text{No} | \text{Condiciones})$, la opción con el mayor valor será la predicción final. En este caso, si $P(\text{Sí} | \text{Condiciones})$ es mayor, **concluimos que es probable que se juegue al golf en estas condiciones**.
+Comparando los valores resultantes de $P(\text{Sí}|\text{Condiciones})$ y $P(\text{No}|\text{Condiciones})$, la opción con el mayor valor será la predicción final. En este caso, si $P(\text{Sí}|\text{Condiciones})$ es mayor, **concluimos que es probable que se juegue al golf en estas condiciones**.
 
 Este ejemplo de Naive Bayes ilustra cómo combinar la información de múltiples características para realizar una predicción probabilística en un problema de clasificación.
-
----
 
 ### Redes bayesianas: representación gráfica de probabilidades
 
@@ -545,7 +542,7 @@ Una red bayesiana se define por los siguientes elementos:
 
 - **Nodos**: Cada nodo representa una variable aleatoria que puede tomar distintos valores. Por ejemplo, en un sistema de diagnóstico médico, un nodo puede representar la variable "enfermedad" y otro nodo, la variable "síntoma".
   
-- **Aristas (flechas)**: Las flechas entre nodos representan dependencias condicionales entre las variables. Si existe una flecha desde el nodo $ A $ hacia el nodo $ B $, esto indica que $ A $ afecta directamente la probabilidad de $ B $.
+- **Aristas (flechas)**: Las flechas entre nodos representan dependencias condicionales entre las variables. Si existe una flecha desde el nodo $A$ hacia el nodo $B$, esto indica que $A$ afecta directamente la probabilidad de $B$.
 
 - **Probabilidades condicionales**: Para cada nodo, se especifica una tabla de probabilidad condicional (CPT, por sus siglas en inglés) que detalla la probabilidad de cada valor de la variable dado el valor de sus nodos padres. Si un nodo no tiene padres, la probabilidad que se define es simplemente su probabilidad marginal.
 
@@ -572,7 +569,7 @@ Una red bayesiana se define por los siguientes elementos:
 
 #### Interpretación probabilística en una red bayesiana
 
-Una red bayesiana permite descomponer la **probabilidad conjunta** de un conjunto de variables en términos de las probabilidades condicionales de cada nodo dado sus nodos padres. Para un conjunto de variables $ X_1, X_2, \dots, X_n $, la probabilidad conjunta se expresa como:
+Una red bayesiana permite descomponer la **probabilidad conjunta** de un conjunto de variables en términos de las probabilidades condicionales de cada nodo dado sus nodos padres. Para un conjunto de variables $X_1, X_2, \dots, X_n $, la probabilidad conjunta se expresa como:
 
 $$
 P(X_1, X_2, \dots, X_n) = \prod_{i=1}^n P(X_i | \text{padres}(X_i))
@@ -592,9 +589,9 @@ Esta descomposición facilita los cálculos al aprovechar las dependencias condi
 > 
 >
 > Esto indica que tanto "Fiebre" como "Dolor" dependen de la presencia de "Enfermedad". La probabilidad conjunta para estos tres eventos se expresa como:
-> $$
+>$$
 > P(D, F, P) = P(D) \cdot P(F|D) \cdot P(P|D)
-> $$
+>$$
 >
 > En esta red, la probabilidad de observar fiebre y dolor puede calcularse en función de la probabilidad de tener la enfermedad y las probabilidades condicionales de presentar fiebre o dolor si se tiene la enfermedad. Esta descomposición permite al sistema calcular probabilidades de manera más eficiente y facilita la interpretación del impacto de cada variable en el diagnóstico.
 
@@ -649,9 +646,9 @@ Para cada variable que tiene nodos padres, definimos la **tabla de probabilidad 
 
 > **Ejemplo**: Supongamos que conocemos las siguientes probabilidades:
 >
-> - $ P(R = \text{sí}) = 0.1 $ (probabilidad de tener resfriado).
-> - $ P(F = \text{sí} | R = \text{sí}) = 0.8 $ y $ P(F = \text{sí} | R = \text{no}) = 0.2 $ (probabilidad de fiebre con y sin resfriado).
-> - $ P(T = \text{sí} | R = \text{sí}) = 0.7 $ y $ P(T = \text{sí} | R = \text{no}) = 0.1 $ (probabilidad de tos con y sin resfriado).
+> - $P(R = \text{sí}) = 0.1$ (probabilidad de tener resfriado).
+> - $P(F = \text{sí} | R = \text{sí}) = 0.8$ y $P(F = \text{sí} | R = \text{no}) = 0.2$ (probabilidad de fiebre con y sin resfriado).
+> - $P(T = \text{sí} | R = \text{sí}) = 0.7$ y $P(T = \text{sí} | R = \text{no}) = 0.1$ (probabilidad de tos con y sin resfriado).
 >
 > Con estos valores, podemos calcular la probabilidad conjunta de cada combinación posible de **Resfriado**, **Fiebre** y **Tos**, simplificando los cálculos y permitiendo que el modelo opere de forma eficiente. 
 
@@ -682,15 +679,15 @@ La estructura de nuestra red es simple: la variable **Lluvia (R)** afecta la pro
 Supongamos que conocemos las siguientes probabilidades:
 
 - Probabilidad a priori de que haya lluvia:
-  - $ P(R = \text{sí}) = 0.3 $
-  - $ P(R = \text{no}) = 0.7 $
+  -$P(R = \text{sí}) = 0.3 $
+  -$P(R = \text{no}) = 0.7 $
 
 - Probabilidades condicionales de que el césped esté mojado dependiendo de si ha llovido o no:
-  - $ P(W = \text{sí} | R = \text{sí}) = 0.9 $
-  - $ P(W = \text{sí} | R = \text{no}) = 0.1 $
+  -$P(W = \text{sí} | R = \text{sí}) = 0.9 $
+  -$P(W = \text{sí} | R = \text{no}) = 0.1 $
 
 ### Inferencia Bayesiana
-Queremos calcular la probabilidad de que haya llovido **dado que observamos que el césped está mojado**, es decir, $ P(R = \text{sí} | W = \text{sí}) $.
+Queremos calcular la probabilidad de que haya llovido **dado que observamos que el césped está mojado**, es decir, $P(R = \text{sí} | W = \text{sí}) $.
 
 Usamos el **Teorema de Bayes** para actualizar la probabilidad de lluvia a partir de la evidencia observada (césped mojado):
 
@@ -698,7 +695,7 @@ $$
 P(R = \text{sí} | W = \text{sí}) = \frac{P(W = \text{sí} | R = \text{sí}) \cdot P(R = \text{sí})}{P(W = \text{sí})}
 $$
 
-Donde $ P(W = \text{sí}) $ es la **probabilidad marginal** de que el césped esté mojado, que podemos calcular sumando las probabilidades de todas las formas en que el césped puede estar mojado:
+Donde $P(W = \text{sí})$ es la **probabilidad marginal** de que el césped esté mojado, que podemos calcular sumando las probabilidades de todas las formas en que el césped puede estar mojado:
 
 $$
 P(W = \text{sí}) = P(W = \text{sí} | R = \text{sí}) \cdot P(R = \text{sí}) + P(W = \text{sí} | R = \text{no}) \cdot P(R = \text{no})
@@ -723,13 +720,13 @@ Dado que hemos observado que el césped está mojado, la probabilidad de que hay
 
 Supongamos una red bayesiana que representa el diagnóstico de una **Enfermedad (E)** en función de los síntomas **Fiebre (F)** y **Dolor (D)**.
 
-**Objetivo:** Queremos calcular la probabilidad de que una persona tenga fiebre dado que presenta dolor, es decir, $ P(F | D) $.
+**Objetivo:** Queremos calcular la probabilidad de que una persona tenga fiebre dado que presenta dolor, es decir, $P(F | D) $.
 
 Partimos de los siguientes datos:
 
-- $ P(E = \text{sí}) = 0.1 $ y $ P(E = \text{no}) = 0.9 $.
-- $ P(F = \text{sí} | E = \text{sí}) = 0.8 $ y $ P(F = \text{sí} | E = \text{no}) = 0.2 $.
-- $ P(D = \text{sí} | E = \text{sí}) = 0.7 $ y $ P(D = \text{sí} | E = \text{no}) = 0.1 $.
+-$P(E = \text{sí}) = 0.1$ y $P(E = \text{no}) = 0.9$.
+-$P(F = \text{sí} | E = \text{sí}) = 0.8$ y $P(F = \text{sí} | E = \text{no}) = 0.2$.
+-$P(D = \text{sí} | E = \text{sí}) = 0.7$ y $P(D = \text{sí} | E = \text{no}) = 0.1$.
 
 En forma de grafo es más fácil visualizar los datos del problema
 
@@ -756,37 +753,37 @@ Esta red indica que la **Enfermedad** es la causa probable de **Fiebre** y **Dol
 
 **Inferencia bayesiana**
 
-1. **Descomponer la probabilidad deseada**: Para calcular $ P(F | D) $, utilizamos la definición de probabilidad condicional:
-   $$
+1. **Descomponer la probabilidad deseada**: Para calcular $P(F | D) $, utilizamos la definición de probabilidad condicional:
+  $$
    P(F | D) = \frac{P(F \cap D)}{P(D)}
-   $$
+  $$
 
 2. **Expresar la probabilidad conjunta en términos de la red**: En una red bayesiana, la probabilidad conjunta de las variables se descompone en probabilidades condicionales. Así, para esta red tenemos:
 
-   $$
+  $$
    P(F, D) = \sum_{E} P(F | E) \cdot P(D | E) \cdot P(E)
-   $$
-   Sumamos las probabilidades conjuntas para cada posible valor de $ E $:
-   $$
+  $$
+   Sumamos las probabilidades conjuntas para cada posible valor de $E$:
+  $$
    P(F \cap D) = P(F = \text{sí}, D = \text{sí}) = (0.8 \cdot 0.7 \cdot 0.1) + (0.2 \cdot 0.1 \cdot 0.9) = 0.056 + 0.018 = 0.074
-   $$
+  $$
 
-3. **Calcular $ P(D) $**: Sumamos las probabilidades de que haya dolor en ambos casos de $ E $:
-   $$
+3. **Calcular $P(D) $**: Sumamos las probabilidades de que haya dolor en ambos casos de $E$:
+  $$
    P(D = \text{sí}) = P(D = \text{sí} | E = \text{sí}) \cdot P(E = \text{sí}) + P(D = \text{sí} | E = \text{no}) \cdot P(E = \text{no})
-   $$
+  $$
 
    Sustituyendo:
 
-   $$
+  $$
    P(D = \text{sí}) = (0.7 \cdot 0.1) + (0.1 \cdot 0.9) = 0.07 + 0.09 = 0.16
-   $$
+  $$
 
-4. **Calcular $ P(F | D) $**: Finalmente, aplicamos la fórmula de probabilidad condicional:
+4. **Calcular $P(F | D) $**: Finalmente, aplicamos la fórmula de probabilidad condicional:
 
-   $$
+  $$
    P(F | D) = \frac{P(F = \text{sí}, D = \text{sí})}{P(D = \text{sí})} = \frac{0.074}{0.16} \approx 0.4625
-   $$
+  $$
 
 En conclusión, la probabilidad de fiebre dado que la persona presenta dolor es aproximadamente 46.25%. Este tipo de cálculo facilita la inferencia en redes bayesianas, lo que permite realizar diagnósticos o tomar decisiones en función de la probabilidad condicional en un sistema con dependencias probabilísticas.
 
@@ -796,13 +793,13 @@ Aquí tienes un ejemplo de inferencia en una red bayesiana en el contexto de la 
 
 Supongamos una red bayesiana para analizar si una **Transacción (T)** es fraudulenta, en función de dos variables relacionadas: si la transacción ocurre en un **Horario inusual (H)** y si el **Monto (M)** es elevado.
 
-**Objetivo:** Calcular la probabilidad de que una transacción sea en un horario inusual dado que el monto es elevado, es decir, $ P(H | M) $.
+**Objetivo:** Calcular la probabilidad de que una transacción sea en un horario inusual dado que el monto es elevado, es decir, $P(H | M) $.
 
 Los datos son los siguientes:
 
-- $ P(T = \text{fraudulenta}) = 0.05 $ y $ P(T = \text{no fraudulenta}) = 0.95 $
-- $ P(H = \text{sí} | T = \text{fraudulenta}) = 0.7 $  y $ P(H = \text{sí} | T = \text{no fraudulenta}) = 0.1 $
-- $ P(M = \text{alto} | T = \text{fraudulenta}) = 0.8 $  y $ P(M = \text{alto} | T = \text{no fraudulenta}) = 0.2 $
+-$P(T = \text{fraudulenta}) = 0.05$ y $P(T = \text{no fraudulenta}) = 0.95$
+-$P(H = \text{sí} | T = \text{fraudulenta}) = 0.7$ y $P(H = \text{sí} | T = \text{no fraudulenta}) = 0.1$
+-$P(M = \text{alto} | T = \text{fraudulenta}) = 0.8$ y $P(M = \text{alto} | T = \text{no fraudulenta}) = 0.2$
 
 En forma de grafo se representa así:
 
@@ -819,45 +816,45 @@ T_no_fraudulenta --> H_T_no_fraud(Horario Inusual: P = 0.1)
 T_no_fraudulenta --> M_T_no_fraud(Monto Alto: P = 0.2)
 ```
 
-Esta red indica que la **Transacción** (T) puede afectar la probabilidad de que ocurra en un **Horario inusual** (H) o tenga un **Monto alto** (M). A continuación, calcularemos $ P(H | M) $ usando inferencia bayesiana.
+Esta red indica que la **Transacción** (T) puede afectar la probabilidad de que ocurra en un **Horario inusual** (H) o tenga un **Monto alto** (M). A continuación, calcularemos $P(H | M)$ usando inferencia bayesiana.
 
 **Inferencia bayesiana**
 
-1. **Descomposición de la probabilidad deseada**: Queremos calcular $ P(H | M) $ usando probabilidad condicional:
+1. **Descomposición de la probabilidad deseada**: Queremos calcular $P(H | M)$ usando probabilidad condicional:
   
-   $$
+  $$
    P(H | M) = \frac{P(H \cap M)}{P(M)}
-   $$
+  $$
 
 2. **Expresión de la probabilidad conjunta en términos de la red**: Utilizamos la descomposición en la red:
 
-   $$
+  $$
    P(H, M) = \sum_{T} P(H | T) \cdot P(M | T) \cdot P(T)
-   $$
+  $$
 
-3. **Cálculo de $ P(H \cap M) $**: Sumamos las probabilidades conjuntas para cada valor de $ T $:
+3. **Cálculo de $P(H \cap M) $**: Sumamos las probabilidades conjuntas para cada valor de $T$:
 
-   $$
+  $$
    P(H = \text{sí}, M = \text{alto}) = (0.7 \cdot 0.8 \cdot 0.05) + (0.1 \cdot 0.2 \cdot 0.95) = 0.028 + 0.019 = 0.047
-   $$
+  $$
 
-4. **Cálculo de $ P(M) $**: Sumamos las probabilidades de que el monto sea alto en ambos casos de $ T $:
+4. **Cálculo de $P(M) $**: Sumamos las probabilidades de que el monto sea alto en ambos casos de $T$:
 
-   $$
+  $$
    P(M = \text{alto}) = P(M = \text{alto} | T = \text{fraudulenta}) \cdot P(T = \text{fraudulenta}) + P(M = \text{alto} | T = \text{no fraudulenta}) \cdot P(T = \text{no fraudulenta})
-   $$
+  $$
 
    Sustituyendo:
 
-   $$
+  $$
    P(M = \text{alto}) = (0.8 \cdot 0.05) + (0.2 \cdot 0.95) = 0.04 + 0.19 = 0.23
-   $$
+  $$
 
-5. **Cálculo de $ P(H | M) $**: Finalmente, aplicamos la fórmula de probabilidad condicional:
+5. **Cálculo de $P(H | M) $**: Finalmente, aplicamos la fórmula de probabilidad condicional:
 
-   $$
+  $$
    P(H | M) = \frac{P(H = \text{sí}, M = \text{alto})}{P(M = \text{alto})} = \frac{0.047}{0.23} \approx 0.204
-   $$
+  $$
 
 La probabilidad de que una transacción ocurra en un horario inusual dado que el monto es elevado es aproximadamente 20.4%. Esta inferencia es útil para sistemas de detección de fraudes, ya que permite calcular probabilidades condicionales y evaluar la presencia de indicios de fraude en función de patrones de datos.
 
@@ -892,29 +889,29 @@ Ahora usamos el teorema de Bayes para calcular la **probabilidad posterior** de 
 
 1. **Calcular el término de evidencia** $P(\text{roja})$, que es la probabilidad total de sacar una bola roja, sumando las probabilidades para cada tipo de urna:
 
-   $$
+  $$
    P(\text{roja}) = P(\text{roja} | \text{A}) \cdot P(\text{A}) + P(\text{roja} | \text{B}) \cdot P(\text{B})
-   $$
+  $$
 
    Sustituyendo los valores:
 
-   $$
+  $$
    P(\text{roja}) = (0.7 \cdot 0.5) + (0.3 \cdot 0.5) = 0.35 + 0.15 = 0.5
-   $$
+  $$
 
 2. **Calcular las probabilidades posteriores** para cada tipo de urna:
 
    - Para la hipótesis **A** (urna de tipo A):
 
-     $$
+    $$
      P(\text{A} | \text{roja}) = \frac{P(\text{roja} | \text{A}) \cdot P(\text{A})}{P(\text{roja})} = \frac{0.7 \cdot 0.5}{0.5} = 0.7
-     $$
+    $$
 
    - Para la hipótesis **B** (urna de tipo B):
 
-     $$
+    $$
      P(\text{B} | \text{roja}) = \frac{P(\text{roja} | \text{B}) \cdot P(\text{B})}{P(\text{roja})} = \frac{0.3 \cdot 0.5}{0.5} = 0.3
-     $$
+    $$
 
 **Interpretación**
 
@@ -935,9 +932,9 @@ En términos generales, un HMM consiste en:
 
 2. **Observaciones**: Representan la información observable en cada paso de tiempo. Estas observaciones se generan a partir de los estados ocultos.
 
-3. **Probabilidades de transición**: Representan la probabilidad de transición entre los estados ocultos. Si denotamos por $ S_t $ el estado en el tiempo $ t $, entonces la probabilidad de transición de un estado $ S_t = s_i $ a un estado $ S_{t+1} = s_j $ es $ P(S_{t+1} = s_j | S_t = s_i) $.
+3. **Probabilidades de transición**: Representan la probabilidad de transición entre los estados ocultos. Si denotamos por $t$ el estado en el tiempo $t$, entonces la probabilidad de transición de un estado $S_t = s_i$ a un estado $S_{t+1} = s_j$ es $P(S_{t+1} = s_j | S_t = s_i) $.
 
-4. **Probabilidades de emisión**: Son las probabilidades de que un estado oculto genere una observación particular. Si denotamos por $ O_t $ la observación en el tiempo $ t $, entonces la probabilidad de emisión de una observación $ O_t = o_k $ desde un estado $ S_t = s_i $ es $ P(O_t = o_k | S_t = s_i) $.
+4. **Probabilidades de emisión**: Son las probabilidades de que un estado oculto genere una observación particular. Si denotamos por $t$ la observación en el tiempo $t$, entonces la probabilidad de emisión de una observación $O_t = o_k$ desde un estado $S_t = s_i$ es $P(O_t = o_k | S_t = s_i) $.
 
 > **Ejemplo**: Un HMM es útil en el análisis de secuencias temporales, como el reconocimiento de voz o la predicción de secuencias de ADN, donde las observaciones visibles (por ejemplo, el sonido) son producidas por estados ocultos (por ejemplo, fonemas o palabras en el caso del habla).
 
@@ -957,17 +954,17 @@ El proceso general del algoritmo de Viterbi se basa en:
 
 1. **Inicialización**: Establecemos las probabilidades iniciales para cada estado en el primer paso de tiempo, considerando tanto las probabilidades de inicio como las probabilidades de emisión para la primera observación.
   
-   Para el tiempo $ t = 1 $, en cada estado $ s_i $:
-   $$
+   Para el tiempo $ t = 1$, en cada estado $i$:
+  $$
    \delta_1(i) = P(O_1 | S_1 = s_i) \cdot P(S_1 = s_i)
-   $$
+  $$
 
-2. **Recursión**: Para cada tiempo $ t $ posterior, calculamos la probabilidad de cada estado en función de las probabilidades de transición desde el estado anterior y de las probabilidades de emisión para la observación actual.
+2. **Recursión**: Para cada tiempo $t$ posterior, calculamos la probabilidad de cada estado en función de las probabilidades de transición desde el estado anterior y de las probabilidades de emisión para la observación actual.
   
-   Para cada $ t $ y $ s_j $:
-   $$
+   Para cada $t$ y $j$:
+  $$
    \delta_t(j) = \max_i \left[ \delta_{t-1}(i) \cdot P(S_t = s_j | S_{t-1} = s_i) \right] \cdot P(O_t | S_t = s_j)
-   $$
+  $$
 
 3. **Terminación**: Al final de la secuencia de observaciones, seleccionamos la probabilidad máxima en los últimos estados, lo que nos da la probabilidad de la secuencia de estados más probable.
 
@@ -983,25 +980,25 @@ El resultado del algoritmo de Viterbi es la secuencia de estados más probable p
 
 El **algoritmo Forward-Backward** es otro método de inferencia en HMM, y se utiliza principalmente para calcular las **probabilidades posteriores** de los estados en cada tiempo, dados todos los datos de observación.
 
-1. **Algoritmo Forward**: En esta primera etapa, calculamos la probabilidad de llegar a cada estado en el tiempo $ t $, dado el conjunto de observaciones anteriores hasta $ t $. Para cada $ t $ y $ s_j $:
+1. **Algoritmo Forward**: En esta primera etapa, calculamos la probabilidad de llegar a cada estado en el tiempo $t$, dado el conjunto de observaciones anteriores hasta $t$. Para cada $t$ y $j$:
 
-   $$
+  $$
    \alpha_t(j) = P(O_1, O_2, \ldots, O_t, S_t = s_j)
-   $$
+  $$
 
    Este cálculo se realiza de forma recursiva a partir de las probabilidades de transición y de emisión.
 
-2. **Algoritmo Backward**: En la segunda etapa, calculamos la probabilidad de observar el conjunto de datos **futuros** desde un estado específico $ s_j $ en el tiempo $ t $, usando las observaciones posteriores a $ t $. Para cada $ t $ y $ s_j $:
+2. **Algoritmo Backward**: En la segunda etapa, calculamos la probabilidad de observar el conjunto de datos **futuros** desde un estado específico $j$ en el tiempo $t$, usando las observaciones posteriores a $t$. Para cada $t$ y $j$:
 
-   $$
+  $$
    \beta_t(j) = P(O_{t+1}, O_{t+2}, \ldots, O_T | S_t = s_j)
-   $$
+  $$
 
-3. **Cálculo de la Probabilidad Posterior**: La probabilidad posterior de estar en un estado específico $ s_j $ en el tiempo $ t $, dados los datos completos de observación, se calcula combinando los pasos forward y backward:
+3. **Cálculo de la Probabilidad Posterior**: La probabilidad posterior de estar en un estado específico $j$ en el tiempo $t$, dados los datos completos de observación, se calcula combinando los pasos forward y backward:
 
-   $$
+  $$
    P(S_t = s_j | O_1, O_2, \ldots, O_T) \propto \alpha_t(j) \cdot \beta_t(j)
-   $$
+  $$
 
 El algoritmo Forward-Backward se utiliza en aplicaciones donde queremos conocer la probabilidad de los estados en cada paso temporal, dados todos los datos de observación. Este tipo de inferencia es especialmente útil en aplicaciones de filtrado y para ajustar los parámetros del modelo HMM en el caso de secuencias con observaciones conocidas.
 
@@ -1019,7 +1016,7 @@ A lo largo de las próximas subsecciones, se verán aplicaciones concretas de al
 
 El **teorema de Bayes** se utiliza ampliamente en la clasificación de documentos y en el **filtrado de correo spam**. Uno de los métodos más comunes es el clasificador **Naïve Bayes**, que aplica el teorema de Bayes asumiendo independencia condicional entre características. En el caso del correo electrónico, este clasificador evalúa la probabilidad de que un mensaje sea spam dado el contenido de sus palabras.
 
-La idea básica es calcular la probabilidad de que un correo sea spam en función de la presencia de ciertas palabras clave. Dado un correo con palabras $ w_1, w_2, \ldots, w_n $, el clasificador calcula la probabilidad posterior de cada clase (spam y no spam) según:
+La idea básica es calcular la probabilidad de que un correo sea spam en función de la presencia de ciertas palabras clave. Dado un correo con palabras $w_1, w_2, \ldots, w_n $, el clasificador calcula la probabilidad posterior de cada clase (spam y no spam) según:
 
 $$
 P(\text{Spam} | w_1, w_2, \ldots, w_n) \propto P(\text{Spam}) \prod_{i=1}^n P(w_i | \text{Spam})

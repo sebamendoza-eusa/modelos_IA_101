@@ -59,9 +59,9 @@ La **función de pertenencia** es la clave para definir conjuntos difusos. Exist
 >
 > Matemáticamente, la **función de pertenencia gaussiana** se expresa como:
 >
-> $$
+>$
 > G(x) = e^{-\frac{(x - c)^2}{2\sigma^2}}
-> $$
+>$
 >
 > Donde:
 >
@@ -79,9 +79,9 @@ La **función de pertenencia** es la clave para definir conjuntos difusos. Exist
 >
 > Matemáticamente, una de las formas más comunes de la función sigmoide es la **sigmoide logística**, que se expresa como:
 >
-> $$
+>$
 > S(x) = \frac{1}{1 + e^{-x}}
-> $$
+>$
 >
 > Esta función se utiliza frecuentemente en redes neuronales, donde ayuda a modelar probabilidades o a activar neuronas, y en sistemas de control difuso, donde es útil para representar transiciones suaves entre diferentes estados, como entre "poca luz" y "mucha luz" o "frío" y "calor".
 
@@ -114,17 +114,17 @@ $$
 Ahora, calcularemos el grado de pertenencia para diferentes temperaturas:
 
 1. **Si la temperatura es 22 °C**:
-   - Aplicamos la regla: $$ \mu_{\text{alta}}(x) = \frac{x - 20}{5} $$
-   - Sustituyendo: $$ \mu_{\text{alta}}(22) = \frac{22 - 20}{5} = 0.4 $$
+   - Aplicamos la regla: $\mu_{\text{alta}}(x) = \frac{x - 20}{5}$
+   - Sustituyendo: $\mu_{\text{alta}}(22) = \frac{22 - 20}{5} = 0.4$
    - La pertenencia de 22 °C a "temperatura alta" es 0.4.
 
 2. **Si la temperatura es 28 °C**:
    - Como 28 °C está entre 25 y 35, su pertenencia es máxima.
-   - Por tanto, $$ \mu_{\text{alta}}(28) = 1 $$
+   - Por tanto, $\mu_{\text{alta}}(28) = 1$
 
 3. **Si la temperatura es 38 °C**:
-   - Aplicamos la regla: $$ \mu_{\text{alta}}(x) = \frac{40 - x}{5} $$
-   - Sustituyendo: $$ \mu_{\text{alta}}(38) = \frac{40 - 38}{5} = 0.4 $$
+   - Aplicamos la regla: $\mu_{\text{alta}}(x) = \frac{40 - x}{5}$
+   - Sustituyendo: $\mu_{\text{alta}}(38) = \frac{40 - 38}{5} = 0.4$
    - La pertenencia de 38 °C a "temperatura alta" es 0.4.
 
 ##### Ejemplo 2: Cálculo de función de pertenencia sigmoide para “persona joven”
@@ -152,25 +152,25 @@ Vamos a calcular el grado de pertenencia para diferentes edades usando esta func
 1. **Si la persona tiene 20 años**:
 
    Sustituyendo en la función: 
-   $$
+  $
    \mu_{\text{joven}}(20) = \frac{1}{1 + e^{-(20 - 30) / 5}} \approx 0.12
-   $$
+  $$
    Es decir, la pertenencia de 20 años a "persona joven" es aproximadamente 0.12.
 
 2. **Si la persona tiene 30 años**:
 
    Como 30 años es el punto de inflexión:
-   $$
+  $$
    \mu_{\text{joven}}(30) = \frac{1}{1 + e^{-(30 - 30) / 5}} = \frac{1}{1 + e^0} = 0.5
-   $$
+  $$
    La pertenencia de 30 años a "persona joven" es 0.5, reflejando una transición.
 
 3. **Si la persona tiene 40 años**:
 
    Sustituyendo en la función:
-   $$
+  $$
    \mu_{\text{joven}}(40) = \frac{1}{1 + e^{-(40 - 30) / 5}} \approx 0.88
-   $$
+  $$
    La pertenencia de 40 años a "persona joven" es aproximadamente 0.88.
 
 En este ejemplo vemos cómo la función de pertenencia sigmoide permite modelar la pertenencia al conjunto "persona joven" con una transición gradual en torno a los 30 años. Este tipo de función es especialmente útil para representar conceptos con bordes suaves, donde no existe una distinción clara entre pertenecer o no al conjunto.
@@ -222,16 +222,16 @@ Y esto significa que el grado de pertenencia del elemento `x` al conjunto `A OR 
 > - `Humedad ALTA` tiene un grado de pertenencia de 0.4.
 >
 > **Intersección (AND)**: Para evaluar "Si la temperatura es ALTA **y** la humedad es ALTA", aplicamos la intersección:
-> $$
+>$$
 > \mu_{\text{ALTA AND ALTA}} = \min(0.7, 0.4) = 0.4
-> $$
+>$$
 >
 > Esto indica que el grado de pertenencia combinado de cumplir ambas condiciones simultáneamente es 0.4.
 >
 > **Unión (OR)**: Para evaluar "Si la temperatura es ALTA **o** la humedad es ALTA", aplicamos la unión:
-> $$
+>$$
 > \mu_{\text{ALTA OR ALTA}} = \max(0.7, 0.4) = 0.7
-> $$
+>$$
 >
 > Aquí, el grado de pertenencia combinado es 0.7, reflejando que basta con que una de las dos condiciones se cumpla en mayor medida.
 
@@ -248,9 +248,9 @@ donde:
 - $ \mu_{\text{NOT A}}(x) $ es el grado de pertenencia de $ x $ en el conjunto complementario de $ A $.
 
 > **Ejemplo:** Supongamos que tenemos un conjunto difuso que representa "temperatura ALTA", y para una temperatura de 25 °C, el grado de pertenencia a "temperatura ALTA" es 0.7. El complemento difuso de "temperatura ALTA" representaría "temperatura NO ALTA", y su cálculo sería:
-> $$
+>$$
 > \mu_{\text{NO ALTA}}(25) = 1 - 0.7 = 0.3
-> $$
+>$$
 >
 > Esto significa que el grado de pertenencia de 25 °C a "temperatura NO ALTA" es 0.3, indicando que 25 °C pertenece en un 30 % al conjunto de temperaturas que no son altas.
 >
@@ -356,34 +356,34 @@ La temperatura puede variar de 0 °C a 30 °C, y los conjuntos difusos para la t
 
 - **Temperatura Baja**: Triangular, con máximo en 0 °C y baja en 15 °C.
   
-  $$
+ $$
   \mu_{\text{Baja}}(T) = 
   \begin{cases}
       1 - \frac{T}{15} & \text{si } 0 \leq T \leq 15 \\
       0 & \text{si } T > 15
   \end{cases}
-  $$
+ $$
 
 - **Temperatura Media**: Triangular, centrada en 15 °C con un valor de 0 en 0 °C y 30 °C.
   
-  $$
+ $$
   \mu_{\text{Media}}(T) = 
   \begin{cases}
       \frac{T}{15} & \text{si } 0 \leq T \leq 15 \\
       1 - \frac{T - 15}{15} & \text{si } 15 < T \leq 30 \\
       0 & \text{en otro caso}
   \end{cases}
-  $$
+ $$
 
 - **Temperatura Alta**: Triangular, con mínimo en 15 °C y máximo en 30 °C.
   
-  $$
+ $$
   \mu_{\text{Alta}}(T) = 
   \begin{cases}
       \frac{T - 15}{15} & \text{si } 15 \leq T \leq 30 \\
       0 & \text{si } T < 15
   \end{cases}
-  $$
+ $$
 
 ###### 2. Conjuntos difusos para la calefacción (salida)
 
@@ -403,9 +403,9 @@ Para simplificar, definimos que cada conjunto de calefacción en este caso tiene
 
 Supongamos que la temperatura actual es **10 °C**. Calculamos el grado de pertenencia de esta temperatura en cada conjunto de temperatura:
 
-1. **Temperatura Baja**: $$ \mu_{\text{Baja}}(10) = 1 - \frac{10}{15} = 0.33 $$.
-2. **Temperatura Media**: $$\mu_{\text{Media}}(10) = \frac{10}{15} = 0.67 $$
-3. **Temperatura Alta**: $$ \mu_{\text{Alta}}(10) = 0$$ (ya que 10 °C está fuera del rango de "Alta")
+1. **Temperatura Baja**: $\mu_{\text{Baja}}(10) = 1 - \frac{10}{15} = 0.33$.
+2. **Temperatura Media**: $\mu_{\text{Media}}(10) = \frac{10}{15} = 0.67$
+3. **Temperatura Alta**: $\mu_{\text{Alta}}(10) = 0$ (ya que 10 °C está fuera del rango de "Alta")
 
 ##### Paso 2: Aplicación de reglas y agregación
 
@@ -435,7 +435,7 @@ $$
 z^* = \frac{\sum z_i \cdot \mu_{\text{salida}}(z_i)}{\sum \mu_{\text{salida}}(z_i)}
 $$
 
-Donde \( z_i \) es el valor de calefacción en cada conjunto, y $$\mu_{\text{salida}}(z_i)$$ es el grado de pertenencia asociado:
+Donde $z_i$ es el valor de calefacción en cada conjunto, y $\mu_{\text{salida}}(z_i)$ es el grado de pertenencia asociado:
 
 - Calefacción Alta (80 %) con grado de pertenencia 0.33
 - Calefacción Media (50 %) con grado de pertenencia 0.67
@@ -449,9 +449,9 @@ $$
 
 Calculamos cada término:
 
-1. $$80 \times 0.33 = 26.4$$
-2. $$0 \times 0.67 = 33.5$$
-3. $$20 \times 0 = 0$$
+1. $80 \times 0.33 = 26.4$
+2. $0 \times 0.67 = 33.5$
+3. $20 \times 0 = 0$
 
 Sumamos los valores:
 
