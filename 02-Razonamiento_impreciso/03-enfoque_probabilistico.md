@@ -53,7 +53,7 @@ Un **experimento aleatorio** es un proceso cuyo resultado no se puede predecir c
 El **espacio muestral** (denotado como $S$) es el conjunto de todos los resultados posibles de un experimento aleatorio. Para el caso de lanzar una moneda, el espacio muestral es:
 
 $$
-S=\{\text{cara, cruz}\}
+S=\{ \text{cara, cruz} \}
 $$
 
 Para experimentos más complejos, el espacio muestral puede contener un número mayor de resultados, y su conocimiento es fundamental para calcular las probabilidades de los eventos de interés.
@@ -70,7 +70,6 @@ $$
 P(A \cup B)=P(A)+P(B)-P(A \cap B)
 $$
 
-
 > **Ejemplo**: Supongamos que lanzamos un dado de seis caras y definimos dos eventos:
 >
 > - **Evento A**: Obtener un número par, es decir, $A=\{2, 4, 6\}$.
@@ -79,8 +78,9 @@ $$
 > La **unión de los eventos A y B** representa obtener un número que sea par o mayor que 4. Para calcular $P(A \cup B)$, usamos la fórmula de la unión de eventos:
 >
 > $$
-> P(A \cup B)=P(A)+P(B)-P(A \cap B)
+P(A \cup B)=P(A)+P(B)-P(A \cap B)
 > $$
+> 
 > Primero, calculamos cada probabilidad:
 >
 > - $P(A)=\frac{3}{6}=\frac{1}{2}$, ya que hay tres resultados favorables para $A$ en seis posibles.
@@ -291,7 +291,7 @@ El **Teorema de Bayes** es uno de los fundamentos clave en el razonamiento proba
 
 #### Definición y explicación del Teorema de Bayes
 
-El Teorema de Bayes establece una relación entre las probabilidades condicionadas de eventos, proporcionando una forma de "invertir" el orden de la probabilidad condicionada. Dado un evento $A$ y un evento $B$, la probabilidad de $A$ dado $B$ (denotada $P(A|B)$) se puede expresar en términos de la probabilidad de $B$ dado $A$ y las probabilidades individuales de $A$ y $B$.
+El Teorema de Bayes establece una relación entre las probabilidades condicionadas de eventos, proporcionando una forma de "invertir" el orden de la probabilidad condicionada. Dado un evento $A$ y un evento $B$, la probabilidad de $A$ dado $B$ (denotada $P(A | B)$) se puede expresar en términos de la probabilidad de $B$ dado $A$ y las probabilidades individuales de $A$ y $B$.
 
 ##### Enunciado del Teorema de Bayes
 
@@ -911,17 +911,17 @@ Ahora usamos el teorema de Bayes para calcular la **probabilidad posterior** de 
 
 2. **Calcular las probabilidades posteriores** para cada tipo de urna:
 
-   - Para la hipótesis **A** (urna de tipo A):
+- Para la hipótesis **A** (urna de tipo A):
 
-   $$
-     P(\text{A} | \text{roja}) = \frac{P(\text{roja} | \text{A}) \cdot P(\text{A})}{P(\text{roja})} = \frac{0.7 \cdot 0.5}{0.5} = 0.7
-   $$
+$$
+P(\text{A} | \text{roja}) = \frac{P(\text{roja} | \text{A}) \cdot P(\text{A})}{P(\text{roja})} = \frac{0.7 \cdot 0.5}{0.5} = 0.7
+$$
 
    - Para la hipótesis **B** (urna de tipo B):
 
-   $$
-     P(\text{B} | \text{roja}) = \frac{P(\text{roja} | \text{B}) \cdot P(\text{B})}{P(\text{roja})} = \frac{0.3 \cdot 0.5}{0.5} = 0.3
-   $$
+$$
+P(\text{B} | \text{roja}) = \frac{P(\text{roja} | \text{B}) \cdot P(\text{B})}{P(\text{roja})} = \frac{0.3 \cdot 0.5}{0.5} = 0.3
+$$
 
 **Interpretación**
 
