@@ -65,6 +65,7 @@ Un **evento** es cualquier subconjunto del espacio muestral y representa una sit
 ##### **Unión de eventos**
 
 La unión de dos eventos $A$ y $B$ (denotada como $A \cup B$) es el conjunto de resultados que pertenecen a $A$, a $B$ o a ambos. En términos de probabilidad, representa la ocurrencia de al menos uno de los dos eventos:
+
 $$
 P(A \cup B)=P(A)+P(B)-P(A \cap B)
 $$
@@ -82,8 +83,8 @@ $$
 > $$
 > Primero, calculamos cada probabilidad:
 >
-> -$P(A)=\frac{3}{6}=\frac{1}{2}$, ya que hay tres resultados favorables para $A$ en seis posibles.
-> -$P(B)=\frac{2}{6}=\frac{1}{3}$, ya que hay dos resultados favorables para $B$ en seis posibles.
+> - $P(A)=\frac{3}{6}=\frac{1}{2}$, ya que hay tres resultados favorables para $A$ en seis posibles.
+> - $P(B)=\frac{2}{6}=\frac{1}{3}$, ya que hay dos resultados favorables para $B$ en seis posibles.
 >
 > - La **intersección de los eventos** $A$ y $B$ es el conjunto de resultados que cumplen ambos eventos, es decir, $A \cap B=\{6\}$.
 > - Por lo tanto, $P(A \cap B)=\frac{1}{6}$, ya que solo el número 6 satisface ambos eventos.
@@ -91,7 +92,7 @@ $$
 > Sustituyendo estos valores en la fórmula, obtenemos:
 >
 > $$
-> P(A \cup B)=\frac{1}{2}+\frac{1}{3}-\frac{1}{6}=\frac{2}{3}
+P(A \cup B)=\frac{1}{2}+\frac{1}{3}-\frac{1}{6}=\frac{2}{3}
 > $$
 >
 > La probabilidad de la unión de los eventos $A$ y $B$, $P(A \cup B)$, es $\frac{2}{3}$.
@@ -118,7 +119,7 @@ $$
 > Si asumimos que cada número tiene la misma probabilidad de salir, la probabilidad de que ocurra la intersección de $A$ y $B$, denotada $P(A \cap B)$, es:
 >
 >$$
-> P(A \cap B)=\frac{\text{número de elementos en }A \cap B}{\text{número total de posibles resultados}}=\frac{2}{6}=\frac{1}{3}
+P(A \cap B)=\frac{\text{número de elementos en }A \cap B}{\text{número total de posibles resultados}}=\frac{2}{6}=\frac{1}{3}
 >$$
 >
 > Así, la probabilidad de obtener un número que sea par y mayor que 3 es
@@ -171,7 +172,7 @@ La **probabilidad condicionada** es una extensión fundamental de la probabilida
 
 ##### Definición de probabilidad condicionada
 
-La probabilidad condicionada de un evento $A$ dado que otro evento $B$ ha ocurrido (denotada como $P(A|B)$) mide la probabilidad de que ocurra $A$ bajo la condición de que $B$ ya ha sucedido. La fórmula general para la probabilidad condicionada es:
+La probabilidad condicionada de un evento $A$ dado que otro evento $B$ ha ocurrido (denotada como $P(A|B)$ ) mide la probabilidad de que ocurra $A$ bajo la condición de que $B$ ya ha sucedido. La fórmula general para la probabilidad condicionada es:
 
 $$
 P(A|B)=\frac{P(A \cap B)}{P(B)}
@@ -242,8 +243,9 @@ $$
 Esta propiedad también se cumple en sentido inverso: $P(B|A)=P(B)$. La independencia es útil en el cálculo de probabilidades porque permite simplificar las expresiones conjuntas, lo que facilita el análisis de sistemas complejos.
 
 > **Ejemplo**: En un experimento donde lanzamos dos dados, el resultado del primer dado no influye en el resultado del segundo dado. Por lo tanto, el evento de obtener un "3" en el primer dado es independiente del evento de obtener un "5" en el segundo dado. Si la probabilidad de obtener un "3" en el primer dado es $\frac{1}{6}$ y la probabilidad de obtener un "5" en el segundo dado es $\frac{1}{6}$, la probabilidad conjunta de obtener un "3" en el primer dado y un "5" en el segundo es:
+> 
 >$$
-> P(\text{3 en el primer dado} \cap \text{5 en el segundo dado})=\frac{1}{6} \cdot \frac{1}{6}=\frac{1}{36}
+>P(\text{3 en el primer dado} \cap \text{5 en el segundo dado})=\frac{1}{6} \cdot \frac{1}{6}=\frac{1}{36}
 >$$
 
 ##### Dependencia de eventos
@@ -587,17 +589,18 @@ Esta descomposición facilita los cálculos al aprovechar las dependencias condi
 >
 > ```mermaid
 > graph LR
->     D(Enfermedad) --> F(Fiebre)
->     D --> P(Dolor)
+>  D(Enfermedad) --> F(Fiebre)
+>  D --> P(Dolor)
 > 
 > ```
 >
 > 
 >
 > Esto indica que tanto "Fiebre" como "Dolor" dependen de la presencia de "Enfermedad". La probabilidad conjunta para estos tres eventos se expresa como:
->$$
+> 
+> $$
 > P(D, F, P) = P(D) \cdot P(F|D) \cdot P(P|D)
->$$
+> $$
 >
 > En esta red, la probabilidad de observar fiebre y dolor puede calcularse en función de la probabilidad de tener la enfermedad y las probabilidades condicionales de presentar fiebre o dolor si se tiene la enfermedad. Esta descomposición permite al sistema calcular probabilidades de manera más eficiente y facilita la interpretación del impacto de cada variable en el diagnóstico.
 
@@ -685,15 +688,17 @@ La estructura de nuestra red es simple: la variable **Lluvia (R)** afecta la pro
 Supongamos que conocemos las siguientes probabilidades:
 
 - Probabilidad a priori de que haya lluvia:
-  -$P(R = \text{sí}) = 0.3 $
-  -$P(R = \text{no}) = 0.7 $
+
+  - $P(R = \text{sí}) = 0.3$
+  - $P(R = \text{no}) = 0.7$
 
 - Probabilidades condicionales de que el césped esté mojado dependiendo de si ha llovido o no:
-  -$P(W = \text{sí} | R = \text{sí}) = 0.9 $
-  -$P(W = \text{sí} | R = \text{no}) = 0.1 $
+
+  - $P(W = \text{sí} | R = \text{sí}) = 0.9$
+  - $P(W = \text{sí} | R = \text{no}) = 0.1$
 
 ### Inferencia Bayesiana
-Queremos calcular la probabilidad de que haya llovido **dado que observamos que el césped está mojado**, es decir, $P(R = \text{sí} | W = \text{sí}) $.
+Queremos calcular la probabilidad de que haya llovido **dado que observamos que el césped está mojado**, es decir, $P(R = \text{sí} | W = \text{sí})$.
 
 Usamos el **Teorema de Bayes** para actualizar la probabilidad de lluvia a partir de la evidencia observada (césped mojado):
 
@@ -730,9 +735,9 @@ Supongamos una red bayesiana que representa el diagnóstico de una **Enfermedad 
 
 Partimos de los siguientes datos:
 
--$P(E = \text{sí}) = 0.1$ y $P(E = \text{no}) = 0.9$.
--$P(F = \text{sí} | E = \text{sí}) = 0.8$ y $P(F = \text{sí} | E = \text{no}) = 0.2$.
--$P(D = \text{sí} | E = \text{sí}) = 0.7$ y $P(D = \text{sí} | E = \text{no}) = 0.1$.
+- $P(E = \text{sí}) = 0.1$ y $P(E = \text{no}) = 0.9$.
+- $P(F = \text{sí} | E = \text{sí}) = 0.8$ y $P(F = \text{sí} | E = \text{no}) = 0.2$.
+- $P(D = \text{sí} | E = \text{sí}) = 0.7$ y $P(D = \text{sí} | E = \text{no}) = 0.1$.
 
 En forma de grafo es más fácil visualizar los datos del problema
 
@@ -748,11 +753,6 @@ E_si --> D_E_si(Dolor: P=0.7)
 
 E_no --> F_E_no(Fiebre: P=0.2)
 E_no --> D_E_no(Dolor: P=0.1)
- 
-
- 
-
-
 ```
 
 Esta red indica que la **Enfermedad** es la causa probable de **Fiebre** y **Dolor**. La inferencia paso a paso es la siguiente:
@@ -760,6 +760,7 @@ Esta red indica que la **Enfermedad** es la causa probable de **Fiebre** y **Dol
 **Inferencia bayesiana**
 
 1. **Descomponer la probabilidad deseada**: Para calcular $P(F | D) $, utilizamos la definición de probabilidad condicional:
+
   $$
    P(F | D) = \frac{P(F \cap D)}{P(D)}
   $$
@@ -769,12 +770,15 @@ Esta red indica que la **Enfermedad** es la causa probable de **Fiebre** y **Dol
   $$
    P(F, D) = \sum_{E} P(F | E) \cdot P(D | E) \cdot P(E)
   $$
+
    Sumamos las probabilidades conjuntas para cada posible valor de $E$:
+
   $$
    P(F \cap D) = P(F = \text{sí}, D = \text{sí}) = (0.8 \cdot 0.7 \cdot 0.1) + (0.2 \cdot 0.1 \cdot 0.9) = 0.056 + 0.018 = 0.074
   $$
 
 3. **Calcular $P(D) $**: Sumamos las probabilidades de que haya dolor en ambos casos de $E$:
+
   $$
    P(D = \text{sí}) = P(D = \text{sí} | E = \text{sí}) \cdot P(E = \text{sí}) + P(D = \text{sí} | E = \text{no}) \cdot P(E = \text{no})
   $$
@@ -803,9 +807,9 @@ Supongamos una red bayesiana para analizar si una **Transacción (T)** es fraudu
 
 Los datos son los siguientes:
 
--$P(T = \text{fraudulenta}) = 0.05$ y $P(T = \text{no fraudulenta}) = 0.95$
--$P(H = \text{sí} | T = \text{fraudulenta}) = 0.7$ y $P(H = \text{sí} | T = \text{no fraudulenta}) = 0.1$
--$P(M = \text{alto} | T = \text{fraudulenta}) = 0.8$ y $P(M = \text{alto} | T = \text{no fraudulenta}) = 0.2$
+- $P(T = \text{fraudulenta}) = 0.05$ y $P(T = \text{no fraudulenta}) = 0.95$
+- $P(H = \text{sí} | T = \text{fraudulenta}) = 0.7$ y $P(H = \text{sí} | T = \text{no fraudulenta}) = 0.1$
+- $P(M = \text{alto} | T = \text{fraudulenta}) = 0.8$ y $P(M = \text{alto} | T = \text{no fraudulenta}) = 0.2$
 
 En forma de grafo se representa así:
 
@@ -960,14 +964,16 @@ El proceso general del algoritmo de Viterbi se basa en:
 
 1. **Inicialización**: Establecemos las probabilidades iniciales para cada estado en el primer paso de tiempo, considerando tanto las probabilidades de inicio como las probabilidades de emisión para la primera observación.
   
-   Para el tiempo $ t = 1$, en cada estado $i$:
+   Para el tiempo $t = 1$, en cada estado $i$:
+
 $$
-   \delta_1(i) = P(O_1 | S_1 = s_i) \cdot P(S_1 = s_i)
+\delta_1(i) = P(O_1 | S_1 = s_i) \cdot P(S_1 = s_i)
 $$
 
 2. **Recursión**: Para cada tiempo $t$ posterior, calculamos la probabilidad de cada estado en función de las probabilidades de transición desde el estado anterior y de las probabilidades de emisión para la observación actual.
   
    Para cada $t$ y $j$:
+
 $$
    \delta_t(j) = \max_i \left[ \delta_{t-1}(i) \cdot P(S_t = s_j | S_{t-1} = s_i) \right] \cdot P(O_t | S_t = s_j)
 $$
