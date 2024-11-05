@@ -68,35 +68,38 @@ La unión de dos eventos $A$ y $B$ (denotada como $A \cup B$) es el conjunto de 
 $$
 P(A \cup B)=P(A)+P(B)-P(A \cap B)
 $$
+
+
 > **Ejemplo**: Supongamos que lanzamos un dado de seis caras y definimos dos eventos:
 >
-> - **Evento A**: Obtener un número par, es decir,$A=\{2, 4, 6\}$.
+> - **Evento A**: Obtener un número par, es decir, $A=\{2, 4, 6\}$.
 > - **Evento B**: Obtener un número mayor que 4, es decir, $B=\{5, 6\}$.
 >
 > La **unión de los eventos A y B** representa obtener un número que sea par o mayor que 4. Para calcular $P(A \cup B)$, usamos la fórmula de la unión de eventos:
 >
->$$ 
+> $$
 > P(A \cup B)=P(A)+P(B)-P(A \cap B)
->$$ 
->
+> $$
 > Primero, calculamos cada probabilidad:
 >
 > -$P(A)=\frac{3}{6}=\frac{1}{2}$, ya que hay tres resultados favorables para $A$ en seis posibles.
 > -$P(B)=\frac{2}{6}=\frac{1}{3}$, ya que hay dos resultados favorables para $B$ en seis posibles.
+>
 > - La **intersección de los eventos** $A$ y $B$ es el conjunto de resultados que cumplen ambos eventos, es decir, $A \cap B=\{6\}$.
 > - Por lo tanto, $P(A \cap B)=\frac{1}{6}$, ya que solo el número 6 satisface ambos eventos.
 >
 > Sustituyendo estos valores en la fórmula, obtenemos:
 >
->$$ 
+> $$
 > P(A \cup B)=\frac{1}{2}+\frac{1}{3}-\frac{1}{6}=\frac{2}{3}
->$$ 
+> $$
 >
 > La probabilidad de la unión de los eventos $A$ y $B$, $P(A \cup B)$, es $\frac{2}{3}$.
 
 ##### **Intersección de eventos**
 
 La intersección de dos eventos $A$ y $B$ (denotada como $A \cap B$) es el conjunto de resultados que pertenecen tanto a $A$ como a $B$. En términos de probabilidad, representa la ocurrencia simultánea de ambos eventos:
+
 $$
 P(A \cap B)
 $$
@@ -108,15 +111,15 @@ $$
 >
 > La **intersección de los eventos A y B** representa el conjunto de resultados que cumplen ambos eventos, es decir, aquellos números que son pares y mayores que 3. En este caso:
 >
->$$ 
+>$$
 > A \cap B=\{4, 6\}
->$$ 
+>$$
 >
 > Si asumimos que cada número tiene la misma probabilidad de salir, la probabilidad de que ocurra la intersección de $A$ y $B$, denotada $P(A \cap B)$, es:
 >
->$$ 
+>$$
 > P(A \cap B)=\frac{\text{número de elementos en }A \cap B}{\text{número total de posibles resultados}}=\frac{2}{6}=\frac{1}{3}
->$$ 
+>$$
 >
 > Así, la probabilidad de obtener un número que sea par y mayor que 3 es
 
@@ -142,20 +145,21 @@ La teoría de la probabilidad se fundamenta en los **axiomas de Kolmogorov**, lo
 
 1. **Axioma de no negatividad**: La probabilidad de un evento es siempre mayor o igual a cero.
 
-  $$ 
+  $$
    P(A) \geq 0
-  $$ 
+  $$
 
 2. **Axioma de certeza**: La probabilidad de que ocurra algún resultado en el espacio muestral es 1.
 
-  $$ 
+  $$
    P(S)=1
-  $$ 
+  $$
 
 3. **Axioma de aditividad**: Para cualquier conjunto de eventos mutuamente excluyentes $A_1, A_2, \dots, A_n$, la probabilidad de que ocurra al menos uno de ellos es la suma de sus probabilidades individuales.
-  $$ 
-   P(A_1 \cup A_2 \cup \dots \cup A_n)=P(A_1)+P(A_2)+\dots+P(A_n)
-  $$ 
+
+$$
+P(A_1 \cup A_2 \cup \dots \cup A_n)=P(A_1)+P(A_2)+\dots+P(A_n)
+$$
 
 Estos axiomas establecen las bases de la teoría de probabilidad y permiten realizar cálculos con eventos simples y compuestos en experimentos aleatorios. En IA, estos conceptos son cruciales para modelar y manejar la incertidumbre en la toma de decisiones.
 
@@ -903,15 +907,15 @@ Ahora usamos el teorema de Bayes para calcular la **probabilidad posterior** de 
 
    - Para la hipótesis **A** (urna de tipo A):
 
-    $$
+   $$
      P(\text{A} | \text{roja}) = \frac{P(\text{roja} | \text{A}) \cdot P(\text{A})}{P(\text{roja})} = \frac{0.7 \cdot 0.5}{0.5} = 0.7
-    $$
+   $$
 
    - Para la hipótesis **B** (urna de tipo B):
 
-    $$
+   $$
      P(\text{B} | \text{roja}) = \frac{P(\text{roja} | \text{B}) \cdot P(\text{B})}{P(\text{roja})} = \frac{0.3 \cdot 0.5}{0.5} = 0.3
-    $$
+   $$
 
 **Interpretación**
 
@@ -955,16 +959,16 @@ El proceso general del algoritmo de Viterbi se basa en:
 1. **Inicialización**: Establecemos las probabilidades iniciales para cada estado en el primer paso de tiempo, considerando tanto las probabilidades de inicio como las probabilidades de emisión para la primera observación.
   
    Para el tiempo $ t = 1$, en cada estado $i$:
-  $$
+$$
    \delta_1(i) = P(O_1 | S_1 = s_i) \cdot P(S_1 = s_i)
-  $$
+$$
 
 2. **Recursión**: Para cada tiempo $t$ posterior, calculamos la probabilidad de cada estado en función de las probabilidades de transición desde el estado anterior y de las probabilidades de emisión para la observación actual.
   
    Para cada $t$ y $j$:
-  $$
+$$
    \delta_t(j) = \max_i \left[ \delta_{t-1}(i) \cdot P(S_t = s_j | S_{t-1} = s_i) \right] \cdot P(O_t | S_t = s_j)
-  $$
+$$
 
 3. **Terminación**: Al final de la secuencia de observaciones, seleccionamos la probabilidad máxima en los últimos estados, lo que nos da la probabilidad de la secuencia de estados más probable.
 
