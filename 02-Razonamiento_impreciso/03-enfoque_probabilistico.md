@@ -291,7 +291,7 @@ El **Teorema de Bayes** es uno de los fundamentos clave en el razonamiento proba
 
 #### Definición y explicación del Teorema de Bayes
 
-El Teorema de Bayes establece una relación entre las probabilidades condicionadas de eventos, proporcionando una forma de "invertir" el orden de la probabilidad condicionada. Dado un evento $A$ y un evento $B$, la probabilidad de $A$ dado $B$ (denotada $P(A | B)$) se puede expresar en términos de la probabilidad de $B$ dado $A$ y las probabilidades individuales de $A$ y $B$.
+El Teorema de Bayes establece una relación entre las probabilidades condicionadas de eventos, proporcionando una forma de "invertir" el orden de la probabilidad condicionada. Dado un evento $A$ y un evento $B$, la probabilidad de $A$ dado $B$, denotada $P(A|B)$, se puede expresar en términos de la probabilidad de $B$ dado $A$ y las probabilidades individuales de $A$ y $B$.
 
 ##### Enunciado del Teorema de Bayes
 
