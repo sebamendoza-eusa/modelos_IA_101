@@ -127,10 +127,12 @@ $$
 
 ##### **Complemento de un evento**
 
-El complemento de un evento $A$ (denotado como $A^c$o$\overline{A}$) es el conjunto de resultados en $S$ que no pertenecen a $A$. En términos de probabilidad, representa la no ocurrencia del evento $A$:
+El complemento de un evento $A$ (denotado como $A^c$ o $\overline{A}$) es el conjunto de resultados en $S$ que no pertenecen a $A$. En términos de probabilidad, representa la no ocurrencia del evento $A$:
+
 $$
 P(A^c)=1-P(A)
 $$
+
 Estas operaciones entre eventos son herramientas fundamentales para combinar y analizar probabilidades en experimentos complejos.
 
 #### Definición de probabilidad y axiomas de Kolmogorov
