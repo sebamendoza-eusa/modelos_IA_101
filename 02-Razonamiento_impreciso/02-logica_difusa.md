@@ -152,25 +152,29 @@ Vamos a calcular el grado de pertenencia para diferentes edades usando esta func
 1. **Si la persona tiene 20 años**:
 
    Sustituyendo en la función: 
-  $
-   \mu_{\text{joven}}(20) = \frac{1}{1 + e^{-(20 - 30) / 5}} \approx 0.12
-  $$
-   Es decir, la pertenencia de 20 años a "persona joven" es aproximadamente 0.12.
+
+$$
+\mu_{\text{joven}}(20) = \frac{1}{1 + e^{-(20 - 30) / 5}} \approx 0.12
+$$
+
+Es decir, la pertenencia de 20 años a "persona joven" es aproximadamente 0.12.
 
 2. **Si la persona tiene 30 años**:
 
    Como 30 años es el punto de inflexión:
-  $$
-   \mu_{\text{joven}}(30) = \frac{1}{1 + e^{-(30 - 30) / 5}} = \frac{1}{1 + e^0} = 0.5
-  $$
+
+
+$$
+\mu_{\text{joven}}(30) = \frac{1}{1 + e^{-(30 - 30) / 5}} = \frac{1}{1 + e^0} = 0.5
+$$
    La pertenencia de 30 años a "persona joven" es 0.5, reflejando una transición.
 
 3. **Si la persona tiene 40 años**:
 
    Sustituyendo en la función:
-  $$
+$$
    \mu_{\text{joven}}(40) = \frac{1}{1 + e^{-(40 - 30) / 5}} \approx 0.88
-  $$
+$$
    La pertenencia de 40 años a "persona joven" es aproximadamente 0.88.
 
 En este ejemplo vemos cómo la función de pertenencia sigmoide permite modelar la pertenencia al conjunto "persona joven" con una transición gradual en torno a los 30 años. Este tipo de función es especialmente útil para representar conceptos con bordes suaves, donde no existe una distinción clara entre pertenecer o no al conjunto.
@@ -200,11 +204,9 @@ $$
 Para aplicar esta regla, es necesario operar entre los conjuntos difusos "alta" y "baja". Las operaciones como la **intersección (AND)** y **unión (OR)** permiten combinar conjuntos difusos y establecer relaciones entre ellos en las reglas, lo que es crucial para definir la lógica del sistema. Para aplicar estas operaciones hay que realizar un proceso de **inferencia difusa** (o *fuzzyficación*), quiere decir que, por ejemplo el operador **AND** determinará **el grado mínimo de pertenencia** y que el operador **OR**, **el grado máximo**.
 
 En lógica difusa, los operadores **AND** y **OR** tienen una relación directa con las operaciones de **intersección** y **unión** de conjuntos difusos, respectivamente. Esta relación permite combinar diferentes grados de pertenencia de los conjuntos, simulando el razonamiento humano en situaciones de incertidumbre o imprecisión. Así, en lógica difusa, el operador **AND** corresponde a la operación de **intersección** entre conjuntos difusos. Cuando tenemos una regla que implica condiciones conjuntas, como "Si `A` y `B`", estamos evaluando la intersección entre los conjuntos `A` y `B`. Matemáticamente, la intersección se define tomando el **mínimo** de los grados de pertenencia de los conjuntos involucrados. Esto se expresa así:
-
 $$
 \mu_{\text{A AND B}}(x) = \min(\mu_A(x), \mu_B(x))
 $$
-
 Esto significa que el grado de pertenencia del elemento `x` al conjunto `A AND B` será el valor más bajo entre sus grados de pertenencia individuales en los conjuntos `A` y `B`. Este enfoque refleja el concepto de **restricción conjunta**, donde ambas condiciones deben cumplirse simultáneamente.
 
 En cuanto al operador **OR**, tenemos que en lógica difusa corresponde a la operación de **unión** entre conjuntos difusos. Cuando una regla difusa implica una condición alternativa, como "Si `A` o `B`", se está evaluando la unión entre los conjuntos `A` y `B`.
@@ -213,7 +215,6 @@ Matemáticamente, la unión en lógica difusa se define como el **máximo** de l
 $$
 \mu_{\text{A OR B}}(x) = \max(\mu_A(x), \mu_B(x))
 $$
-
 Y esto significa que el grado de pertenencia del elemento `x` al conjunto `A OR B` será el mayor de sus grados de pertenencia en `A` o `B`. Este enfoque refleja el concepto de **alternativa permisiva**, donde basta con que una de las condiciones se cumpla.
 
 > **Ejemplo**: Imaginemos un sistema difuso que evalúa la temperatura y la humedad en un invernadero, donde:
@@ -238,11 +239,9 @@ Y esto significa que el grado de pertenencia del elemento `x` al conjunto `A OR 
 Por último señalar que también existe un relación de equivalencia entre la **operación de complemento difuso** y el operador **NOT**. En lógica difusa, la operación de complemento permite representar la idea de "no pertenencia" de un elemento a un conjunto difuso, similar a cómo la negación indica que una proposición no es verdadera.
 
 La fórmula para calcular el complemento de un grado de pertenencia $ \mu_A(x) $ es:
-
 $$
 \mu_{\text{NOT A}}(x) = 1 - \mu_A(x)
 $$
-
 donde:
 - $ \mu_A(x) $ es el grado de pertenencia del elemento $ x $ en el conjunto difuso $ A $,
 - $ \mu_{\text{NOT A}}(x) $ es el grado de pertenencia de $ x $ en el conjunto complementario de $ A $.
@@ -310,7 +309,6 @@ Es el método de desfuzzificación más utilizado. Calcula el "centro de masa" d
 $$
 z^* = \frac{\int z \cdot \mu_{\text{salida}}(z) \, dz}{\int \mu_{\text{salida}}(z) \, dz}
 $$
-
 donde $z^*$ es el valor desfuzzificado, y $\mu_{\text{salida}}(z)$ representa el grado de pertenencia en el conjunto de salida.
 
 Este método es preciso y produce un valor medio representativo, por lo que es ideal para sistemas de control que requieren decisiones suaves y continuas.
@@ -356,35 +354,32 @@ La temperatura puede variar de 0 °C a 30 °C, y los conjuntos difusos para la t
 
 - **Temperatura Baja**: Triangular, con máximo en 0 °C y baja en 15 °C.
   
- $$
+$$
   \mu_{\text{Baja}}(T) = 
   \begin{cases}
       1 - \frac{T}{15} & \text{si } 0 \leq T \leq 15 \\
       0 & \text{si } T > 15
   \end{cases}
- $$
-
+$$
 - **Temperatura Media**: Triangular, centrada en 15 °C con un valor de 0 en 0 °C y 30 °C.
   
- $$
+$$
   \mu_{\text{Media}}(T) = 
   \begin{cases}
       \frac{T}{15} & \text{si } 0 \leq T \leq 15 \\
       1 - \frac{T - 15}{15} & \text{si } 15 < T \leq 30 \\
       0 & \text{en otro caso}
   \end{cases}
- $$
-
+$$
 - **Temperatura Alta**: Triangular, con mínimo en 15 °C y máximo en 30 °C.
   
- $$
+$$
   \mu_{\text{Alta}}(T) = 
   \begin{cases}
       \frac{T - 15}{15} & \text{si } 15 \leq T \leq 30 \\
       0 & \text{si } T < 15
   \end{cases}
- $$
-
+$$
 ###### 2. Conjuntos difusos para la calefacción (salida)
 
 La calefacción puede variar de 0 % a 100 %, y sus conjuntos difusos son:
@@ -430,11 +425,9 @@ Esto nos da los siguientes grados de pertenencia para cada nivel de calefacción
 ##### Paso 3: Desfuzzificación por el método del centroide
 
 Para calcular el nivel de calefacción final, aplicamos la fórmula del centroide:
-
 $$
 z^* = \frac{\sum z_i \cdot \mu_{\text{salida}}(z_i)}{\sum \mu_{\text{salida}}(z_i)}
 $$
-
 Donde $z_i$ es el valor de calefacción en cada conjunto, y $\mu_{\text{salida}}(z_i)$ es el grado de pertenencia asociado:
 
 - Calefacción Alta (80 %) con grado de pertenencia 0.33
@@ -442,11 +435,9 @@ Donde $z_i$ es el valor de calefacción en cada conjunto, y $\mu_{\text{salida}}
 - Calefacción Baja (20 %) con grado de pertenencia 0
 
 Entonces:
-
 $$
 z^* = \frac{(80 \times 0.33) + (50 \times 0.67) + (20 \times 0)}{0.33 + 0.67 + 0}
 $$
-
 Calculamos cada término:
 
 1. $80 \times 0.33 = 26.4$
@@ -454,7 +445,6 @@ Calculamos cada término:
 3. $20 \times 0 = 0$
 
 Sumamos los valores:
-
 $$
 z^* = \frac{26.4 + 33.5 + 0}{0.33 + 0.67} = \frac{59.9}{1} = 59.9
 $$

@@ -24,7 +24,7 @@ En este capítulo exploraremos los **fundamentos teóricos de la probabilidad** 
 
 El objetivo final es ofrecer una visión clara de cómo el razonamiento probabilístico permite crear modelos de IA que no sólo realizan inferencias con datos completos, sino que también son capaces de **adaptarse a situaciones ambiguas o datos incompletos**. La lógica de la probabilidad aplicada a estos sistemas permite mejorar la robustez y flexibilidad de la IA en entornos dinámicos.
 
-#### Importancia del razonamiento probabilístico en sistemas de IA
+### Importancia del razonamiento probabilístico en sistemas de IA
 
 El razonamiento probabilístico es fundamental en IA por su capacidad para manejar **situaciones de incertidumbre**, lo cual es fundamental en aplicaciones que requieren la identificación de patrones y la toma de decisiones en contextos inciertos. Algunas de sus aplicaciones más destacadas incluyen:
 
@@ -122,9 +122,7 @@ $$
 P(A \cap B)=\frac{\text{número de elementos en }A \cap B}{\text{número total de posibles resultados}}=\frac{2}{6}=\frac{1}{3}
 >$$
 >
-> Así, la probabilidad de obtener un número que sea par y mayor que 3 es
-
- $\frac{1}{3}$.
+> Así, la probabilidad de obtener un número que sea par y mayor que 3 es $\frac{1}{3}$.
 
 ##### **Complemento de un evento**
 
@@ -166,11 +164,11 @@ $$
 
 Estos axiomas establecen las bases de la teoría de probabilidad y permiten realizar cálculos con eventos simples y compuestos en experimentos aleatorios. En IA, estos conceptos son cruciales para modelar y manejar la incertidumbre en la toma de decisiones.
 
-#### Probabilidad condicionada
+### Probabilidad condicionada
 
 La **probabilidad condicionada** es una extensión fundamental de la probabilidad que permite evaluar la ocurrencia de un evento **cuando ya se conoce cierta información sobre el resultado del experimento**. Esta herramienta es esencial en el análisis de dependencia e independencia entre eventos y es utilizada ampliamente en inferencia estadística y modelos de IA para ajustar probabilidades en función de nueva información.
 
-##### Definición de probabilidad condicionada
+#### Definición de probabilidad condicionada
 
 La probabilidad condicionada de un evento $A$ dado que otro evento $B$ ha ocurrido (denotada como $P(A|B)$ ) mide la probabilidad de que ocurra $A$ bajo la condición de que $B$ ya ha sucedido. La fórmula general para la probabilidad condicionada es:
 
@@ -222,11 +220,11 @@ Esta propiedad es especialmente útil en el cálculo de probabilidades conjuntas
 > Así, la probabilidad de que un estudiante al azar estudie tanto matemáticas como física es 0.06 o 6%.
 
 
-#### Independencia y dependencia entre eventos
+### Independencia y dependencia entre eventos
 
 La **independencia entre eventos** es un concepto central en teoría de probabilidad que simplifica el cálculo de probabilidades conjuntas. Dos eventos son independientes si la ocurrencia de uno no afecta la probabilidad de ocurrencia del otro. Esta propiedad es clave en muchos modelos probabilísticos, ya que permite descomponer problemas complejos en componentes más manejables.
 
-##### Independencia de eventos
+#### Independencia de eventos
 
 Dos eventos $A$ y $B$ son **independientes** si la probabilidad de que ambos ocurran es igual al producto de sus probabilidades individuales. En términos matemáticos, esto se expresa como:
 
@@ -248,7 +246,7 @@ Esta propiedad también se cumple en sentido inverso: $P(B|A)=P(B)$. La independ
 >P(\text{3 en el primer dado} \cap \text{5 en el segundo dado})=\frac{1}{6} \cdot \frac{1}{6}=\frac{1}{36}
 >$$
 
-##### Dependencia de eventos
+#### Dependencia de eventos
 
 Dos eventos son **dependientes** si la ocurrencia de uno afecta la probabilidad de ocurrencia del otro. En este caso, la probabilidad de la intersección de $A$ y $B$ no se puede descomponer como el producto de sus probabilidades individuales. En términos de probabilidad condicionada, si $A$ y $B$ son dependientes, entonces $P(A|B) \neq P(A)$
 
@@ -285,7 +283,7 @@ El **Teorema de Bayes** es uno de los fundamentos clave en el razonamiento proba
 >
 > Ahora, al observar el detalle de las **rayas**, surge un dato interesante. Aunque las rayas son un indicador claro de una cebra, es posible (aunque poco común) que un caballo pueda parecer que las tiene debido a sombras, pintura o un patrón inusual. Este detalle, aunque no definitivo, se convierte en una **evidencia** que modifica tu evaluación inicial.
 >
-> El teorema de Bayes te permite actualizar tus probabilidades iniciales al considerar esta nueva información. Aunque la observación de rayas aumenta la probabilidad de que sea una cebra, la probabilidad de ver caballos sigue siendo alta en comparación, y esto se tiene en cuenta en el cálculo.
+> **El teorema de Bayes te permite actualizar tus probabilidades iniciales al considerar esta nueva información. Aunque la observación de rayas aumenta la probabilidad de que sea una cebra, la probabilidad de ver caballos sigue siendo alta en comparación, y esto se tiene en cuenta en el cálculo.**
 >
 > En resumen, aunque el hecho de observar rayas hace que la hipótesis de que el animal sea una cebra sea más probable que antes, tus probabilidades iniciales (que favorecen ver un caballo) siguen siendo relevantes. Así, la evidencia de las rayas ajusta tu perspectiva, pero no necesariamente cambia tu hipótesis inicial de manera radical si los caballos siguen siendo abrumadoramente más comunes.
 
@@ -348,13 +346,13 @@ El Teorema de Bayes se interpreta como un mecanismo de actualización de **creen
 >
 > Esto significa que, dado que el paciente presenta fiebre, la probabilidad de que tenga la enfermedad se actualiza al 8%. Esta técnica de actualización de creencias permite a los modelos de IA mejorar sus predicciones al incorporar nueva información relevante.
 
-#### Aplicaciones del Teorema de Bayes: El clasificador Naïve Bayes
+### Aplicaciones del Teorema de Bayes: El clasificador Naïve Bayes
 
 El Teorema de Bayes es una herramienta fundamental en la inteligencia artificial, especialmente útil en problemas de clasificación, inferencia probabilística, diagnóstico médico y toma de decisiones en situaciones con incertidumbre. Su capacidad para actualizar la probabilidad de un evento a partir de evidencia observada permite a los modelos de IA adaptarse y responder de manera dinámica a la nueva información. A efectos del presente curso vamos a exponer una de las aplicaciones más comunes en IA: **El clasificador Naïve Bayes**
 
 El **clasificador Naive Bayes** es un modelo probabilístico simple, basado en el teorema de Bayes, que se utiliza para resolver problemas de clasificación. La premisa clave del clasificador es la suposición de **independencia condicional** entre las características, es decir, que cada característica es independiente de las demás dado el valor de la clase. A pesar de esta simplificación (que raramente se cumple en el mundo real), el clasificador Naive Bayes ofrece buenos resultados en muchos casos prácticos y es eficiente para grandes conjuntos de datos.
 
-##### Fundamento teórico del clasificador Naive Bayes
+#### Fundamento teórico del clasificador Naive Bayes
 
 Dado un conjunto de datos con instancias (o ejemplos) y sus características asociadas, el clasificador Naive Bayes utiliza la probabilidad para predecir la clase de una instancia desconocida. La predicción se basa en el **teorema de Bayes**, que calcula la probabilidad de una clase específica $C$ dada una instancia con características $X=(x_1, x_2, \ldots, x_n)$.
 
@@ -389,7 +387,7 @@ $$
 \hat{C}=\arg \max_C P(X|C) \cdot P(C)
 $$
 
-##### Suposición de independencia condicional
+#### Suposición de independencia condicional
 
 Para simplificar el cálculo de $P(X|C)$, el clasificador Naive Bayes asume que **cada característica $i$ es independiente de las demás dado el valor de la clase $C$.** Bajo esta suposición, la verosimilitud se descompone en el producto de las probabilidades individuales de cada característica $i$ dada la clase $C$:
 
@@ -405,7 +403,7 @@ $$
 
 La simplicidad del clasificador Naive Bayes lo hace eficiente y efectivo en muchos escenarios, aunque su rendimiento puede verse afectado cuando la suposición de independencia condicional no se cumple. Sin embargo, es ampliamente utilizado en aplicaciones de texto (como filtrado de spam y análisis de sentimiento) y ofrece buenos resultados en conjuntos de datos de gran dimensión.
 
-##### Entrenamiento del clasificador Naive Bayes
+#### Entrenamiento del clasificador Naive Bayes
 
 Para entrenar el clasificador Naive Bayes, se debe:
 
@@ -415,7 +413,7 @@ Para entrenar el clasificador Naive Bayes, se debe:
    - **Características categóricas**: Se calcula la probabilidad condicional contando la frecuencia de cada valor de $i$ en cada clase $C$.
    - **Características continuas**: Se asume generalmente una **distribución normal** y se calcula $P(x_i|C)$ usando la función de densidad de probabilidad normal con la media y varianza estimadas a partir de los datos de entrenamiento.
 
-##### Clasificación de una nueva instancia
+#### Clasificación de una nueva instancia
 
 Para clasificar una nueva instancia con características $X=(x_1, x_2, \ldots, x_n)$:
 
@@ -441,7 +439,7 @@ Para clasificar una nueva instancia con características $X=(x_1, x_2, \ldots, x
 > La categoría que dé el valor mayor será la predicción del clasificador Naive Bayes.
 
 
-##### Ejemplo resuelto de aplicación del algoritmo Naïve Bayes
+#### Ejemplo resuelto de aplicación del algoritmo Naïve Bayes
 
 Vamos a resolver de forma manual un ejemplo relacionado con un caso de clasificación siguiendo el algoritmo Naïve Bayes. Supongamos que queremos usar dicho algoritmo para saber si podemos jugar o no al golf. Imaginemos un conjunto de datos en el que cada registro representa un día y contiene las siguientes características:
 
@@ -684,7 +682,7 @@ Supongamos que tenemos dos variables:
 
 La estructura de nuestra red es simple: la variable **Lluvia (R)** afecta la probabilidad de que el **Césped esté mojado (W)**.
 
-### Probabilidades
+###### Probabilidades
 Supongamos que conocemos las siguientes probabilidades:
 
 - Probabilidad a priori de que haya lluvia:
@@ -697,7 +695,7 @@ Supongamos que conocemos las siguientes probabilidades:
   - $P(W = \text{sí} | R = \text{sí}) = 0.9$
   - $P(W = \text{sí} | R = \text{no}) = 0.1$
 
-### Inferencia Bayesiana
+###### Inferencia Bayesiana
 Queremos calcular la probabilidad de que haya llovido **dado que observamos que el césped está mojado**, es decir, $P(R = \text{sí} | W = \text{sí})$.
 
 Usamos el **Teorema de Bayes** para actualizar la probabilidad de lluvia a partir de la evidencia observada (césped mojado):
@@ -724,7 +722,7 @@ $$
 P(R = \text{sí} | W = \text{sí}) = \frac{0.9 \cdot 0.3}{0.34} = \frac{0.27}{0.34} \approx 0.794
 $$
 
-### Interpretación
+###### Interpretación
 Dado que hemos observado que el césped está mojado, la probabilidad de que haya llovido **aumenta a aproximadamente 79.4%** en comparación con la probabilidad inicial del 30%. Este proceso de inferencia bayesiana permite ajustar nuestras creencias iniciales sobre la lluvia al tener en cuenta la nueva evidencia del césped mojado.
 
 ##### Ejemplo: Probabilidad de síntomas en enfermedad
@@ -879,12 +877,12 @@ No sabemos de qué tipo es la urna, pero tenemos una **hipótesis inicial (a pri
 
 Decidimos extraer una bola al azar y observamos que es **roja**.
 
-**Paso 1: Definir las probabilidades iniciales (a priori)**
+###### **Paso 1: Definir las probabilidades iniciales (a priori)**
 
 - $P(\text{A}) = 0.5$ (probabilidad de que la urna sea de tipo A).
 - $P(\text{B}) = 0.5$ (probabilidad de que la urna sea de tipo B).
 
-**Paso 2: Calcular la verosimilitud**
+###### **Paso 2: Calcular la verosimilitud**
 
 La **verosimilitud** mide la probabilidad de observar el dato (en este caso, extraer una bola roja) bajo cada una de las hipótesis (A o B). Es decir:
 
@@ -893,7 +891,7 @@ La **verosimilitud** mide la probabilidad de observar el dato (en este caso, ext
 
 Estas probabilidades se interpretan como la **verosimilitud** de observar el evento "bola roja" bajo cada hipótesis sobre el tipo de urna.
 
-**Paso 3: Aplicar el teorema de Bayes para actualizar las creencias**
+###### **Paso 3: Aplicar el teorema de Bayes para actualizar las creencias**
 
 Ahora usamos el teorema de Bayes para calcular la **probabilidad posterior** de cada hipótesis tras observar que la bola extraída es roja.
 
@@ -923,7 +921,7 @@ $$
 P(\text{B} | \text{roja}) = \frac{P(\text{roja} | \text{B}) \cdot P(\text{B})}{P(\text{roja})} = \frac{0.3 \cdot 0.5}{0.5} = 0.3
 $$
 
-**Interpretación**
+###### **Interpretación**
 
 - La **verosimilitud** de la observación de una bola roja era mayor bajo la hipótesis de que la urna es de tipo A ($P(\text{roja} | \text{A}) = 0.7$) que bajo la hipótesis de que es de tipo B ($P(\text{roja} | \text{B}) = 0.3$).
 - Después de actualizar nuestras creencias usando el teorema de Bayes, la **probabilidad posterior** de que la urna sea de tipo A ha aumentado a 0.7, mientras que la de que sea de tipo B ha disminuido a 0.3.
@@ -1017,8 +1015,6 @@ El algoritmo Forward-Backward se utiliza en aplicaciones donde queremos conocer 
 > **Ejemplo**: En el reconocimiento de voz, el algoritmo Forward-Backward permite calcular las probabilidades de distintos fonemas (estados ocultos) en cada instante de tiempo, dados todos los sonidos (observaciones) de la secuencia. Esto es útil para identificar cómo cambian los fonemas a lo largo de la secuencia de habla.
 
 ### Aplicaciones de los Enfoques Probabilísticos en IA
-
-#### Introducción
 
 Los enfoques probabilísticos son herramientas fundamentales en inteligencia artificial, especialmente para manejar incertidumbre y realizar inferencias en entornos complejos. Esta sección explora algunas de las aplicaciones más destacadas de los modelos probabilísticos, abarcando ejemplos en áreas como la clasificación de texto, diagnóstico médico o la toma de decisiones en entornos dinámicos. Sin embargo, es importante destacar que los ejemplos que se presentan no agotan todas las posibilidades de aplicación. La versatilidad de estos métodos permite su integración en una amplia gama de problemas, desde sistemas de recomendación hasta análisis predictivo en finanzas o la optimización en procesos industriales.
 
