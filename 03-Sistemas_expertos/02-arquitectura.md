@@ -446,7 +446,6 @@ Por ejemplo, en un sistema experto de diagnóstico médico, una taxonomía podr�
 > 2. **Recomendaciones de productos**: Basándose en la categoría de productos que un usuario ha navegado o comprado, el sistema puede recomendar productos de la misma subcategoría o de categorías relacionadas.
 > 3. **Gestión de inventario**: La taxonomía permite al sistema experto analizar la cantidad de productos en cada subcategoría y ayudar en la toma de decisiones sobre el reabastecimiento o la promoción de productos específicos.
 >
-> 
 
 ##### Diferencias y sinergias entre ontologías y taxonomías
 

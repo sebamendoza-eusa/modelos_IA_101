@@ -38,21 +38,7 @@ Los componentes básicos de un sistema experto, que facilitan tanto la represent
 
 Además de estos elementos, algunos sistemas expertos incluyen un módulo de explicación, que permite al sistema justificar sus decisiones de manera comprensible para el usuario. Este módulo es especialmente útil en aplicaciones sensibles, como el diagnóstico médico o el asesoramiento financiero, donde los usuarios necesitan comprender cómo y por qué se llegó a una determinada conclusión.
 
-```mermaid
-graph LR
-    A[Sistema Experto] --> B[Base de Conocimiento]
-    A --> C[Motor de Inferencia]
-    A --> D[Módulo de Explicación]
-    A --> E[Interfaz de Usuario]
-    
-
-    subgraph Componentes Básicos
-        B
-        C
-        D
-        E
-    end
-```
+![image-20241113144202406](./assets/image-20241113144202406.png)
 
 ### Objetivos de aprendizaje
 
