@@ -113,6 +113,7 @@ Los embeddings son mucho más eficientes en términos computacionales. En lugar 
 Además de una representación densa, los modelos de word embeddings tienen una enorme ventaja frente a la arquitectura BoW o TF-IDF. Las representaciones mediante embeddings relacionan las palabras semánticamente en un espacio continuo a través de un concepto de "distancia". Por ejemplo, en un modelo de embeddings, "gato" y "felino" tendrían representaciones vectoriales cercanas debido a la relación entre ambas palabras. Esta característica los hace mucho más útiles para tareas complejas como la traducción automática o el análisis semántico.
 
 > **Ejemplo**: Un modelo de embeddings como por ejemplo **Word2Vec** puede capturar relaciones de significado a través de operaciones algebraicas simples. Por ejemplo, podríamos encontrar algo como esto:
+> 
 > $$
 > \text{Rey} - \text{Hombre} + \text{Mujer} \approx \text{Reina}
 > $$
