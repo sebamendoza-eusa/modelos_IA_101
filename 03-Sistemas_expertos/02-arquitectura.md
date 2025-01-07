@@ -359,8 +359,6 @@ Los marcos también permiten definir procedimientos (o “demonios”) que se ej
 
 
 
-
-
 > **Ejemplo:** Representación mediante **marcos** de las relaciones entre distintas entidades que forman parte de un sistema experto. Pueden asimilarse a los esquemas de representación en la programación orientada a objetos4
 >
 > ![image-20241111211235314](./assets/image-20241111211235314.png)
