@@ -2,7 +2,5 @@
 
 ## Large Language Models (*LLM*)
 
-1. 
-
 ---
 

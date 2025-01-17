@@ -2,7 +2,7 @@
 
 ## Uso de embeddings en NLP
 
-1. 
+
 
 ---
 
