@@ -135,7 +135,7 @@ Donde:
 - $t$ es el término de interés.
 - $d$ es el documento.
 - $N$ es el número total de documentos en el corpus.
-- $\text{DF}(t)$ es la cantidad de documentos que contienen el término $ t $.
+- $\text{DF}(t)$ es la cantidad de documentos que contienen el término $t$.
 
 **Word2Vec**
 Introducido por Google, Word2Vec **aprende el significado de las palabras observando el contexto en el que aparecen dentro de grandes cantidades de texto.** En lugar de trabajar con reglas explícitas o frecuencias de palabras, Word2Vec aprende a representar cada palabra como un **vector numérico** en un espacio multidimensional, de manera que palabras con significados similares estén más cerca unas de otras. Sus dos arquitecturas principales son **CBOW (Continuous Bag of Words)**, que predice una palabra a partir de su contexto, y **Skip-gram** , que, por el contrario, puede predecir el contexto a partir de una palabra dada. En cualquier caso ambas técnicas generan embeddings en los que palabras con significado similar se encuentran más cercanas en el espacio vectorial.
