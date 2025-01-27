@@ -125,24 +125,28 @@ Este enfoque representa un documento como un vector de recuentos de palabras, ig
 
 **TF-IDF (Term Frequency - Inverse Document Frequency)**
 TF-IDF es una mejora sobre la bolsa de palabras que pondera la frecuencia de una palabra en un documento con respecto a su frecuencia en el corpus completo. Esto permite destacar palabras relevantes y minimizar el impacto de palabras muy comunes. La fórmula de TF-IDF se define como:
+
 $$
 \text{TF-IDF}(t,d) = \text{TF}(t,d) \cdot \log \left(\frac{N}{\text{DF}(t)} \right)
 $$
+
 Donde:
 
-- $ t $ es el término de interés.
-- $ d $ es el documento.
-- $ N $ es el número total de documentos en el corpus.
-- $ \text{DF}(t) $ es la cantidad de documentos que contienen el término $ t $.
+- $t$ es el término de interés.
+- $d$ es el documento.
+- $N$ es el número total de documentos en el corpus.
+- $\text{DF}(t)$ es la cantidad de documentos que contienen el término $ t $.
 
 **Word2Vec**
 Introducido por Google, Word2Vec **aprende el significado de las palabras observando el contexto en el que aparecen dentro de grandes cantidades de texto.** En lugar de trabajar con reglas explícitas o frecuencias de palabras, Word2Vec aprende a representar cada palabra como un **vector numérico** en un espacio multidimensional, de manera que palabras con significados similares estén más cerca unas de otras. Sus dos arquitecturas principales son **CBOW (Continuous Bag of Words)**, que predice una palabra a partir de su contexto, y **Skip-gram** , que, por el contrario, puede predecir el contexto a partir de una palabra dada. En cualquier caso ambas técnicas generan embeddings en los que palabras con significado similar se encuentran más cercanas en el espacio vectorial.
 
 **GloVe (Global Vectors for Word Representation)**
 Un modelo de representación de palabras que **aprende relaciones entre palabras analizando la frecuencia con la que aparecen juntas en un gran corpus de texto.** En lugar de mirar cada oración de forma aislada (como lo hace Word2Vec), GloVe observa **toda la colección de textos** y cuenta con qué frecuencia aparecen juntas dos palabras en la misma ventana de contexto. La idea es que ciertas combinaciones de palabras deberían mantener relaciones matemáticas significativas. Por ejemplo, en el espacio aprendido por GloVe, podríamos ver que:
+
 $$
 \text{king} - \text{man} + \text{woman} \approx \text{queen}
 $$
+
 **FastText**
 Propuesto por Facebook, FastText mejora Word2Vec al descomponer palabras en n-gramas de caracteres.  En modelos tradicionales como Word2Vec, cada palabra es tratada como un único token con su propio vector. Si el modelo nunca ha visto una palabra antes, no puede asignarle un significado adecuado. Sin embargo, **FastText descompone cada palabra en pequeñas piezas (n-gramas de caracteres), lo que le permite entender palabras desconocidas basándose en fragmentos conocidos.** Gracias a este enfoque, FastText puede, a diferencia de otros modelos clásicos, manejar palabras fuera de vocabulario (OOV), manejar palabras morfológicamente complejas o mejorar la generalización semántica.
 
@@ -281,6 +285,7 @@ La calidad de un modelo de representación depende de múltiples factores, como 
 ###### Analogías léxicas: Comprendiendo relaciones semánticas
 
 Una de las formas más intuitivas de evaluar un modelo de representación es mediante la resolución de **analogías léxicas**, es decir, analizar si el modelo puede capturar relaciones entre palabras de manera significativa. Un ejemplo clásico de este enfoque es la famosa analogía:
+
 $$
 \text{rey} - \text{hombre} + \text{mujer} \approx \text{reina}
 $$
@@ -295,6 +300,7 @@ Las pruebas de analogías léxicas son útiles para modelos como **Word2Vec o Gl
 Otra métrica fundamental en la evaluación de modelos de representación es la **similitud de palabras**, que permite cuantificar qué tan cerca están dos palabras en el espacio vectorial del modelo. Una de las técnicas más utilizadas para esto es la **similitud del coseno**, que mide el ángulo entre dos vectores y proporciona un valor entre -1 y 1, donde valores más cercanos a 1 indican una mayor similitud semántica entre las palabras.
 
 La fórmula de la similitud del coseno es:
+
 $$
 \text{Similitud}(A, B) = \frac{A \cdot B}{\|A\| \|B\|}
 $$
