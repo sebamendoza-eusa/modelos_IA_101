@@ -116,7 +116,7 @@ Como ya hemos visto con anteriordad, la representación del lenguaje es un paso 
 
 Los modelos de representación del lenguaje se dividen en dos grandes categorías: los que están basados en **métodos clásicos**, sustentados en técnicas estadísticas y de aprendizaje automático tradicional, y los que están basados en **aprendizaje profundo**, y que aprovechan la potencia de las redes neuronales para generar representaciones más complejas y contextuales.
 
-#### Modelos clásicos de representación del lenguaje
+#### Modelos estadísticos de representación del lenguaje
 
 Los métodos clásicos se basan principalmente en la estadística para analizar la frecuencia y distribución de las palabras en un corpus de texto. Recordemos que algunos de los enfoques más utilizados incluyen:
 
@@ -174,7 +174,7 @@ Para lograr esto, BERT utiliza una arquitectura llamada **transformers**, que es
 
 > **Ejemplo intuitivo:** Si lees "El banco de madera está roto" y "Abrí una cuenta en el banco", BERT analizará ambas oraciones simultáneamente para asegurarse de asignar la representación correcta a la palabra "banco".
 
-##### Transformers como encoders universales: Variantes de BERT más eficientes
+##### Variantes de BERT más eficientes
 
 El éxito de BERT inspiró a investigadores a desarrollar modelos más optimizados que mantuvieran su precisión, pero con menor costo computacional. Algunas de las variantes más populares son:
 
@@ -378,8 +378,6 @@ El auge de bibliotecas como **Hugging Face Transformers** ha simplificado enorme
 > 
 > print(embedding.shape)  
 > ```
-
-
 
 ##### Limitaciones del uso de modelos pre-entrenados
 

@@ -20,29 +20,29 @@
 
 ### Diferencias entre modelos estáticos y dinámicos
 
-El procesamiento del lenguaje natural (NLP) ha experimentado una transformación significativa en las últimas décadas, especialmente en lo que respecta a la representación del lenguaje. Un punto crucial en esta evolución ha sido la transición de modelos **estáticos** a **dinámicos**, lo que ha permitido mejorar la capacidad de los modelos para captar el significado y el contexto en el que se emplean las palabras. Esta sección explora estas diferencias y destaca la importancia de capturar el contexto en NLP.
+El procesamiento del lenguaje natural (NLP) ha experimentado una transformación significativa en las últimas décadas, especialmente en lo que respecta a la representación del lenguaje. Un punto crucial en esta evolución ha sido la transición de modelos **estáticos** a **dinámicos**, lo que ha permitido mejorar la capacidad de los modelos para captar el significado y el contexto en el que se emplean las palabras. En este módulo exploraremos estas diferencias y se destacará la importancia de capturar el contexto en NLP.
 
-Los **modelos estáticos** representan cada palabra con un vector fijo, independiente del contexto en el que aparece. Técnicas como **TF-IDF, Bolsa de Palabras (BoW), Word2Vec y GloVe** han sido ampliamente utilizadas para convertir el lenguaje en representaciones numéricas que pueden alimentar algoritmos de aprendizaje automático. Sin embargo, una limitación clave de estos enfoques es su incapacidad para diferenciar entre los distintos significados que una palabra puede adoptar. Por ejemplo, en un modelo basado en **Word2Vec**, la palabra "banco" tendrá la misma representación numérica, sin importar si se refiere a un asiento o a una institución financiera.
+Como se vio en el módulo anterior, los **modelos estáticos** representan cada palabra con un vector fijo, independiente del contexto en el que aparece. Técnicas como **TF-IDF, Bolsa de Palabras (BoW), Word2Vec o GloVe** han sido ampliamente utilizadas para convertir el lenguaje en representaciones numéricas que pueden alimentar algoritmos de aprendizaje automático. Sin embargo, una limitación clave de estos enfoques es su incapacidad para diferenciar entre los distintos significados que una palabra puede adoptar en distintos contextos. Por ejemplo, en un modelo basado en **Word2Vec**, la palabra "banco" tendrá la misma representación numérica, sin importar si se refiere a un asiento o a una institución financiera.
 
-En contraposición, los **modelos dinámicos** generan representaciones que varían según el contexto en el que se usa cada palabra. Modelos como **ELMo, BERT y GPT** emplean redes neuronales profundas para asignar una representación contextualizada a cada término, permitiendo mejorar la comprensión del lenguaje y solucionar problemas que los modelos estáticos no pueden abordar, como la desambiguación semántica y la interpretación de significados implícitos.
+En contraposición, los **modelos dinámicos** generan representaciones que varían según el contexto en el que se usa cada palabra. Modelos como **ELMo, BERT o GPT** emplean redes neuronales profundas para asignar una representación contextualizada a cada término, permitiendo mejorar la comprensión del lenguaje y solucionar problemas que los modelos estáticos no pueden abordar, como la desambiguación semántica y la interpretación de significados implícitos.
 
 #### Limitaciones de los enfoques clásicos (TF-IDF, BoW, Word2Vec, GloVe)
 
-Si bien los modelos estáticos han permitido avances en NLP, presentan limitaciones fundamentales que han impulsado la búsqueda de representaciones más sofisticadas.
+Así pues, si bien los modelos estáticos han permitido avances en NLP, presentan limitaciones fundamentales que han impulsado la búsqueda de representaciones más sofisticadas.
 
 Un ejemplo clásico es la **Bolsa de Palabras (BoW)**, que representa un texto como un conjunto de palabras sin tener en cuenta su orden ni su relación semántica. Esto genera ambigüedades y errores interpretativos, por ejemplo, al considerar frases como "no me gusta el café" y "me gusta el café" como similares, a pesar de su significado opuesto.
 
 El modelo **TF-IDF (Term Frequency-Inverse Document Frequency)** introduce un peso basado en la frecuencia de las palabras en un documento en relación con un corpus más amplio. Aunque mejora la detección de términos clave, sigue sin captar la estructura semántica y genera representaciones dispersas de alta dimensionalidad.
 
-Los **embeddings densos**, como **Word2Vec, GloVe y FastText**, mejoraron la representación del lenguaje al mapear palabras a un espacio vectorial continuo y de baja dimensión. Estos modelos capturan relaciones semánticas a partir de la coocurrencia de términos en grandes corpus, posicionando palabras con significados similares en regiones cercanas del espacio vectorial. Sin embargo, su principal limitación es que asignan una única representación fija a cada palabra, sin considerar el contexto en el que se usa.
+Los **embeddings densos**, como **Word2Vec, GloVe y FastText**, mejoraron la representación del lenguaje al mapear palabras a un espacio vectorial continuo y de baja dimensión. Estos modelos intentan capturar **relaciones semánticas** a partir de la coocurrencia de términos en grandes corpus, posicionando palabras con significados similares en regiones cercanas del espacio vectorial. Sin embargo, también asignan una única representación fija a cada palabra, sin considerar el contexto en el que se usa.
 
 #### Importancia de capturar contexto en NLP
 
 La capacidad de un modelo para capturar el contexto es crucial para interpretar correctamente el lenguaje. La ambigüedad semántica es una característica inherente a los idiomas naturales, ya que una misma palabra puede adquirir distintos significados según su uso en una oración.
 
-Los modelos dinámicos abordan esta limitación mediante **representaciones contextuales**, en las que la interpretación de una palabra se ajusta en función de la oración completa. Por ejemplo, en modelos como **ELMo y BERT**, la palabra "banco" tendrá una representación distinta en la frase "me senté en el banco del parque" frente a "deposité dinero en el banco". Esto se logra a través de redes neuronales profundas que analizan la secuencia completa de palabras y ajustan la representación de cada una en función de su contexto inmediato.
+Los modelos dinámicos abordan esta limitación mediante **representaciones contextuales**, en las que la interpretación de una palabra se ajusta en función de la oración completa. Por ejemplo, en modelos como **ELMo o BERT**, la palabra "banco" tendrá una representación distinta en la frase "me senté en el banco del parque" frente a "deposité dinero en el banco". Este comportamiento puede conseguirse a través de redes neuronales profundas que analizan la secuencia completa de palabras y ajustan la representación de cada una en función de su contexto inmediato.
 
-Capturar el contexto no solo mejora la comprensión del lenguaje, sino que también incrementa el rendimiento en tareas como **traducción automática, respuesta a preguntas, clasificación de texto y análisis de sentimientos**. Modelos como **BERT y GPT** han demostrado ser altamente eficaces en estas aplicaciones, al aprovechar la bidireccionalidad y la generación autoregresiva para modelar el significado del lenguaje con una precisión sin precedentes.
+Capturar el contexto no solo mejora la comprensión del lenguaje, sino que también incrementa el rendimiento en tareas como **traducción automática, respuesta a preguntas, clasificación de texto y análisis de sentimientos**. Modelos como **BERT o GPT** han demostrado ser altamente eficaces en estas aplicaciones, al aprovechar la bidireccionalidad en el primer caso o la generación autoregresiva en el segundo para modelar el significado del lenguaje con una precisión nunca alcanzada por modelos anteriores.
 
 ##### Para reflexionar...
 
@@ -52,35 +52,29 @@ Capturar el contexto no solo mejora la comprensión del lenguaje, sino que tambi
 
 #### **Fundamentos de RNNs y procesamiento secuencial**
 
-Las **redes neuronales recurrentes (RNNs)** representan una de las primeras arquitecturas diseñadas para modelar datos secuenciales en **procesamiento del lenguaje natural (NLP)**. Su característica distintiva es la capacidad de retener información previa mientras procesan secuencias, lo que las hace adecuadas para tareas como **traducción automática, modelado del lenguaje y reconocimiento de voz**.
+Las **redes neuronales recurrentes (RNNs)** representan una de las primeras arquitecturas diseñadas para modelar datos secuenciales en **procesamiento del lenguaje natural**. Su característica distintiva es la capacidad de retener información previa mientras procesan secuencias, lo que las hace adecuadas para tareas como **traducción automática, modelado del lenguaje o reconocimiento de voz**.
 
-A diferencia de las redes neuronales feedforward, donde la información fluye en una sola dirección desde la capa de entrada hasta la salida, las RNNs incluyen conexiones recurrentes que les permiten **almacenar información de estados anteriores y utilizarla en la generación de la siguiente predicción**. Este mecanismo les otorga una ventaja en problemas donde el orden y la dependencia entre elementos son clave.
+A diferencia de las redes neuronales ***feedforward***, donde la información fluye en una sola dirección desde la capa de entrada hasta la salida, las RNNs incluyen conexiones recurrentes que les permiten **almacenar información de estados anteriores y utilizarla en la generación de la siguiente predicción**. Este mecanismo les otorga una ventaja en problemas donde **el orden y la dependencia entre elementos** son clave. En otras palabras: Son capaces de procesar **secuencias**.
 
-Por ejemplo, en una oración como *"El gato duerme en la cama"*, una RNN puede recordar que *"gato"* es el sujeto, ayudando a predecir correctamente el verbo *"duerme"*, incluso cuando aparecen palabras intermedias.
+Por ejemplo, en una oración como *"El gato duerme en la cama"*, una RNN puede recordar que *"gato"* es el sujeto, ayudando a predecir correctamente el verbo *"duerme"*, incluso cuando aparecen palabras intermedias, como podría ser un adjetivo como "*blanco*".
 
 ##### **Funcionamiento y propagación de información en secuencias**
 
-La arquitectura básica de una RNN consiste en una capa oculta que procesa la información en pasos temporales, utilizando la siguiente ecuación para actualizar su estado en cada instante **t**:
-$$
-h_t = f(W_h h_{t-1} + W_x x_t + b)
-$$
-Donde:
+Como se ha comentado, el aspecto fundamental de las **Redes Neuronales Recurrentes (RNN)** radica en su capacidad para **procesar información secuencial**, permitiendo que cada elemento de la secuencia influya en la interpretación de los siguientes. A diferencia de las redes neuronales tradicionales, que tratan cada entrada de manera aislada, las RNN incorporan una estructura que mantiene un **estado oculto** que se actualiza en cada paso temporal, proporcionando una memoria interna del contexto previo.
 
-- $h_t$ representa el **estado oculto** en el tiempo tt.
-- $x_t$ es la **entrada en el tiempo tt**.
-- $h_{t-1}$ es el **estado oculto previo**, que transmite información del paso anterior.
-- $W_h$ y $W_x$ son matrices de pesos aprendibles.
-- $b$ es el sesgo y $f$ es una función de activación, como **tanh o ReLU**.
+Así, el funcionamiento de estas redes se basa en un mecanismo recurrente en el que, en cada instante, la red recibe una nueva entrada y la combina con la información acumulada en su estado oculto. Este proceso genera una representación que encapsula tanto la información actual como la influencia de elementos previos de la secuencia. A partir de esta representación, la red produce una salida que puede alimentar otros niveles de procesamiento o continuar el flujo de información en el tiempo.
 
-Este proceso se repite en cada paso de la secuencia, permitiendo que la red acumule conocimiento del contexto previo. Sin embargo, a medida que las secuencias se alargan, las RNNs enfrentan **dificultades para retener información de estados muy anteriores** debido a problemas como el **gradiente desaparecido**.
+El objetivo final es modelar relaciones temporales y capturar dependencias en los datos de manera natural. A medida que la secuencia avanza, la memoria interna se actualiza progresivamente, permitiendo que la red estructure la información de manera coherente y contextualizada.
 
-##### **Problema del gradiente desaparecido y sus efectos**
+Sin embargo, a medida que las secuencias se alargan, las RNNs enfrentan **dificultades para retener información de estados muy anteriores** debido a problemas típicos de este tipo de redes como es el **desvanecimiento del gradiente**.
 
-El **gradiente desaparecido** es un problema común en el entrenamiento de RNNs cuando se utilizan técnicas de **retropropagación a través del tiempo (Backpropagation Through Time, BPTT)**. En este proceso, los gradientes de los pesos de la red se calculan y actualizan mediante la regla de la cadena. Sin embargo, cuando la secuencia de entrada es larga, los gradientes pueden volverse extremadamente pequeños a medida que retroceden a través de muchos pasos temporales, lo que dificulta la actualización de los pesos en las primeras capas.
+##### El problema del desvanecimiento del gradiente y sus efectos
 
-Este fenómeno impide que las RNNs capturen **dependencias a largo plazo**, ya que la información de palabras o eventos lejanos en la secuencia pierde influencia en la predicción final. Como resultado, una red puede recordar eficazmente los últimos pocos estados pero olvidar los anteriores, lo que limita su aplicabilidad en tareas como el análisis de texto o la traducción automática.
+El **desvanecimiento del gradiente** es un problema común en el entrenamiento de RNNs cuando se utilizan técnicas de **retropropagación a través del tiempo (Backpropagation Through Time, BPTT)**. En este proceso, los gradientes de los pesos de la red se calculan y actualizan mediante la denominada ***regla de la cadena***. Sin embargo, cuando la secuencia de entrada es larga, los gradientes que se originan con la aplicación de la regla de la cadena pueden volverse extremadamente pequeños a medida que retroceden a través de muchos pasos temporales. Al final, el problema aparecerá  con la actualización de los pesos en las primeras capas.
 
-Para abordar esta limitación, se introdujeron arquitecturas mejoradas como **Long Short-Term Memory (LSTM)** y **Gated Recurrent Unit (GRU)**, que incluyen mecanismos internos para **controlar el flujo de información y mitigar la pérdida de gradientes**. Estas arquitecturas han sido ampliamente adoptadas en NLP antes de la llegada de los **transformers**, que han superado en eficiencia y rendimiento a las RNNs en muchas aplicaciones modernas.
+De este modo, este fenómeno impide que las RNNs capturen **dependencias a largo plazo**, ya que la información de palabras o eventos lejanos en la secuencia pierde influencia en la predicción final. Como resultado, una red puede recordar eficazmente los últimos pocos estados pero olvidará los anteriores, lo que limita su aplicabilidad en tareas como el análisis de texto o la traducción automática.
+
+Para abordar esta limitación, se introdujeron arquitecturas mejoradas como **Long Short-Term Memory (LSTM)** y **Gated Recurrent Unit (GRU)**, que incluyen mecanismos internos para **controlar el flujo de información y mitigar el desvanecimiento del gradiente**. Estas arquitecturas han sido ampliamente adoptadas en NLP hasta la llegada de los **transformers**, que han superado en eficiencia y rendimiento a las RNNs en muchas aplicaciones modernas.
 
 ##### **Para reflexionar...**
 
@@ -89,50 +83,17 @@ Para abordar esta limitación, se introdujeron arquitecturas mejoradas como **Lo
 
 #### **Modelos mejorados: LSTM y GRU**
 
-La arquitectura de las **redes neuronales recurrentes (RNNs)** presenta limitaciones cuando se requiere modelar dependencias a largo plazo en secuencias extensas. Como se ha discutido, el problema del **gradiente desaparecido** dificulta la actualización de los pesos en pasos temporales lejanos, afectando la capacidad de las RNNs para capturar información relevante en contextos distantes. Para mitigar esta deficiencia, se introdujeron dos variantes mejoradas: **Long Short-Term Memory (LSTM)** y **Gated Recurrent Unit (GRU)**.
+Como se ha explicado, el problema del **desvanecimiento del gradiente** dificulta la actualización de los pesos en pasos temporales lejanos, afectando la capacidad de las RNNs para capturar información relevante en contextos distantes. Para mitigar esta deficiencia, se introdujeron dos variantes mejoradas: **Long Short-Term Memory (LSTM)** y **Gated Recurrent Unit (GRU)**.
 
 Estos modelos incorporan **mecanismos de control del flujo de información**, permitiendo a la red decidir qué información debe almacenarse y qué debe descartarse en cada paso de la secuencia. De este modo, las redes pueden mantener información relevante por períodos de tiempo más largos, lo que las hace especialmente útiles en tareas de **traducción automática, reconocimiento del habla y generación de texto**.
 
 ##### **LSTM: Estructura y funcionamiento**
 
-Las **LSTM (Long Short-Term Memory)** fueron diseñadas específicamente para resolver el problema del gradiente desaparecido. Su arquitectura introduce una **celda de memoria** que puede retener información a largo plazo, junto con tres puertas que regulan su actualización y uso en cada paso temporal. Estas puertas son:
+Las **LSTM (Long Short-Term Memory)** fueron diseñadas específicamente para resolver el problema del desvanecimiento del gradiente. Su arquitectura introduce una **celda de memoria** que puede retener información a largo plazo, junto con tres puertas que regulan su actualización y uso en cada paso temporal. Estas puertas son:
 
-1. **Puerta de entrada** (iti_t): controla cuánta información nueva se almacena en la celda de memoria.
-2. **Puerta de olvido** (ftf_t): determina qué información previa debe descartarse.
-3. **Puerta de salida** (oto_t): decide qué información de la celda de memoria se envía a la salida de la red.
-
-La actualización del estado de la celda de memoria se describe mediante las siguientes ecuaciones:
-$$
-f_t = \sigma(W_f x_t + U_f h_{t-1} + b_f)
-$$
-
-$$
-i_t = \sigma(W_i x_t + U_i h_{t-1} + b_i)
-$$
-
-$$
-\tilde{C}_t = \tanh(W_c x_t + U_c h_{t-1} + b_c)
-$$
-
-$$
-C_t = f_t \odot C_{t-1} + i_t \odot \tilde{C}_t
-$$
-
-$$
-o_t = \sigma(W_o x_t + U_o h_{t-1} + b_o)
-$$
-
-$$
-h_t = o_t \odot \tanh(C_t)
-$$
-
-Donde:
-
-- $x_t$ es la entrada en el tiempo $t$ es el estado oculto actual.
-- $C_t$ es el estado de la celda de memoria.
-- $W$ y $U$ son matrices de pesos, mientras que $b$ representa los términos de sesgo.
-- $\sigma$ es la función sigmoide, que restringe los valores entre 0 y 1.
-- $\odot$ denota el producto elemento a elemento.
+1. **Puerta de entrada**: controla cuánta información nueva se almacena en la celda de memoria.
+2. **Puerta de olvido**: determina qué información previa debe descartarse.
+3. **Puerta de salida**: decide qué información de la celda de memoria se envía a la salida de la red.
 
 Gracias a estas operaciones, la LSTM es capaz de **preservar información útil durante secuencias largas**, reteniendo solo aquellos datos que son relevantes para la tarea en cuestión.
 
@@ -140,25 +101,8 @@ Gracias a estas operaciones, la LSTM es capaz de **preservar información útil 
 
 Las **Gated Recurrent Units (GRU)** son una simplificación de las LSTM que reducen la cantidad de parámetros, mejorando la eficiencia computacional sin sacrificar significativamente la capacidad de modelado. En lugar de tres puertas, las GRU emplean únicamente dos:
 
-1. **Puerta de actualización** ($z_t$): controla cuánto del estado anterior debe mantenerse.
-2. **Puerta de reinicio** ($r_t$): regula cuánto de la memoria pasada debe olvidarse.
-
-Las ecuaciones que describen su funcionamiento son las siguientes:
-$$
-z_t = \sigma(W_z x_t + U_z h_{t-1} + b_z)
-$$
-
-$$
-r_t = \sigma(W_r x_t + U_r h_{t-1} + b_r)
-$$
-
-$$
-\tilde{h}_t = \tanh(W_h x_t + U_h (r_t \odot h_{t-1}) + b_h)
-$$
-
-$$
-h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tilde{h}_t
-$$
+1. **Puerta de actualización**: controla cuánto del estado anterior debe mantenerse.
+2. **Puerta de reinicio**: regula cuánto de la memoria pasada debe olvidarse.
 
 A diferencia de las LSTM, las GRU combinan las funciones de las puertas de entrada y olvido en una sola, lo que permite un diseño más compacto y una actualización más rápida de los estados ocultos. Esto hace que las GRU sean **más eficientes en términos computacionales**, especialmente en aplicaciones donde se requiere entrenamiento en grandes volúmenes de datos.
 
@@ -172,23 +116,26 @@ A diferencia de las LSTM, las GRU combinan las funciones de las puertas de entra
 | **Eficiencia en secuencias largas** | Deficiente      | Muy buena      | Buena                  |
 | **Número de parámetros**            | Bajo            | Alto           | Medio                  |
 
-En términos generales:
-
-- **Las RNN tradicionales** son útiles para secuencias cortas, pero ineficaces en tareas donde las dependencias a largo plazo son esenciales.
-- **Las LSTM** logran un equilibrio adecuado entre retención de información y capacidad de aprendizaje, aunque a costa de una mayor complejidad computacional.
-- **Las GRU** ofrecen una alternativa más simple y rápida, con un desempeño similar a las LSTM en muchas tareas de NLP.
+> [!note]
+>
+> - **Las RNN tradicionales** son útiles para secuencias cortas, pero ineficaces en tareas donde las dependencias a largo plazo son esenciales.
+> - **Las LSTM** logran un equilibrio adecuado entre retención de información y capacidad de aprendizaje, aunque a costa de una mayor complejidad computacional.
+> - **Las GRU** ofrecen una alternativa más simple y rápida, con un desempeño similar a las LSTM en muchas tareas de NLP.
+>
 
 #### **Aplicaciones prácticas de redes recurrentes en NLP**
 
-Tanto las LSTM como las GRU han sido ampliamente utilizadas en tareas de procesamiento del lenguaje natural antes de la aparición de los **transformers**, que han demostrado un rendimiento superior en múltiples aplicaciones. Sin embargo, estas redes recurrentes siguen siendo relevantes en ciertos contextos:
+Las **Redes Neuronales Recurrentes (RNN)** han desempeñado un papel fundamental en el desarrollo del **procesamiento del lenguaje natural (NLP)**, al proporcionar un enfoque capaz de modelar la naturaleza secuencial del lenguaje. Antes de la aparición de los **transformers**, las arquitecturas basadas en RNN, especialmente **LSTM** y **GRU**, permitieron avances significativos en la comprensión y generación de texto, estableciendo la base para muchas aplicaciones modernas.
 
-- **Modelado del lenguaje**: Predicción de palabras en secuencias de texto.
-- **Traducción automática**: Modelos como seq2seq que utilizan LSTM para codificar y decodificar frases en distintos idiomas.
-- **Reconocimiento de voz**: Conversión de señales de audio en texto mediante redes GRU.
-- **Análisis de sentimientos**: Clasificación de opiniones en categorías positivas o negativas.
-- **Generación de texto**: Creación de textos coherentes basados en un conjunto de datos inicial.
+Uno de los mayores impactos de estas redes ha sido en el **modelado del lenguaje**, donde su capacidad para aprender dependencias temporales hizo posible la predicción de palabras en una secuencia. A través de este mecanismo, los modelos de lenguaje basados en RNN lograron mejorar la fluidez en la generación de texto, optimizando tareas como la escritura asistida y la predicción de palabras en dispositivos móviles.
 
-A pesar de sus beneficios, el uso de **LSTM y GRU** ha disminuido en favor de los **transformers**, que han demostrado una mayor capacidad de escalabilidad y eficiencia en el modelado de secuencias largas.
+En el ámbito de la **traducción automática**, las redes recurrentes posibilitaron la implementación de arquitecturas **seq2seq**, en las que un codificador procesaba una oración completa y generaba una representación compacta, que luego era decodificada en otro idioma. Este enfoque permitió mejoras sustanciales en la calidad de los sistemas de traducción antes de la adopción de transformers.
+
+Otro aspecto clave de su impacto ha sido en la **comprensión del texto**, facilitando tareas como el **análisis de sentimientos** o la **clasificación de documentos**. Al procesar secuencias de palabras en contexto, las RNN permitieron modelar relaciones lingüísticas más profundas, mejorando la identificación de opiniones, intenciones y categorías temáticas en grandes volúmenes de datos textuales.
+
+Además, su capacidad para **generar texto de manera coherente** representó un avance en la automatización de la escritura, donde las RNN aprendían patrones estilísticos y estructuras gramaticales a partir de grandes corpus de datos. Aunque con ciertas limitaciones en la generación a largo plazo, estos modelos sentaron las bases para sistemas más avanzados de generación automática de contenido.
+
+El impacto de las **redes recurrentes en NLP** ha sido crucial para la evolución de la inteligencia artificial en el procesamiento del lenguaje. Aunque han sido en gran medida reemplazadas por los transformers, su legado sigue presente en la forma en que se modelan las secuencias textuales y en los avances que permitieron en la comprensión automática del lenguaje humano.
 
 ##### **Para reflexionar...**
 
@@ -197,109 +144,91 @@ A pesar de sus beneficios, el uso de **LSTM y GRU** ha disminuido en favor de lo
 
 ### Representaciones dinámicas con ELMo
 
-#### **Qué es ELMo y por qué fue un avance clave**
+#### ¿Qué es ELMo? Uso de redes neuronales profundas bidireccionales
 
-Los modelos de representación del lenguaje han evolucionado significativamente en las últimas décadas, pasando de enfoques estáticos a representaciones contextuales más avanzadas. En este contexto, **ELMo (Embeddings from Language Models)** marcó un hito al introducir un mecanismo basado en redes neuronales recurrentes bidireccionales, permitiendo generar representaciones dinámicas que se adaptan al contexto en el que se emplea cada palabra.
+Ya lo hemos explicado: Los modelos de representación del lenguaje han evolucionado significativamente en las últimas décadas, pasando de enfoques estáticos a representaciones contextuales más avanzadas. En este escenario, **ELMo (Embeddings from Language Models)** marcó un hito al introducir un mecanismo basado en **redes neuronales recurrentes bidireccionales**, que permitía generar representaciones dinámicas que se adaptan al contexto en el que se emplea cada palabra.
 
-A diferencia de métodos anteriores como **Word2Vec** y **GloVe**, que asignaban una única representación a cada palabra independientemente de su significado en distintos contextos, ELMo incorpora información de la oración completa para ajustar el significado de cada término. Esto resulta especialmente útil en casos de **polisemia**, donde una misma palabra puede adquirir sentidos completamente diferentes en función de su uso.
+A diferencia de métodos anteriores como **Word2Vec** y **GloVe**, que asignaban una única representación a cada palabra independientemente de su significado en distintos contextos, ELMo permitió por primera vez incorporar información de la oración completa para ajustar el significado de cada término. Esto resultaba especialmente útil en casos de **polisemia**, donde una misma palabra puede adquirir sentidos completamente diferentes en función de su uso.
 
-La clave de ELMo radica en su arquitectura basada en un **modelo de lenguaje profundo** que emplea **redes neuronales recurrentes bidireccionales (BiLSTM)**. Gracias a este diseño, el modelo es capaz de considerar tanto el contexto previo como el posterior de cada palabra dentro de una oración, capturando relaciones semánticas y sintácticas con una precisión significativamente mayor que los enfoques anteriores.
+¿Dónde radica la clave del éxito de ELMo? En su arquitectura basada en un **modelo de lenguaje profundo** que emplea **redes neuronales recurrentes bidireccionales (BiLSTM)**. Gracias a este diseño, el modelo es capaz de considerar tanto el contexto previo como el posterior de cada palabra dentro de una oración, capturando relaciones semánticas y sintácticas con una precisión significativamente mayor que los enfoques anteriores.
 
-#### **Uso de redes neuronales profundas bidireccionales**
-
-El modelo ELMo se construye sobre una arquitectura de **BiLSTM** entrenada con un modelo de lenguaje basado en caracteres. Esto permite representar palabras que no han sido vistas previamente en el entrenamiento, reduciendo la dependencia de un vocabulario fijo. La arquitectura de ELMo consta de tres niveles principales: una capa de entrada que procesa caracteres, dos capas de BiLSTM que generan representaciones intermedias y una combinación ponderada de estas representaciones para producir la salida final.
-
-Dado un token ww, la representación de ELMo se define como una combinación aprendida de los estados ocultos en diferentes capas del modelo:
-$$
-ELMo(w) = \gamma \sum_{i=0}^{L} s_i h_i(w)
-$$
-donde:
-
-- $h_i(w)$ es el estado oculto correspondiente a la palabra w en la capa $i$.
-- $s_i$ es un peso aprendido que determina la relevancia de la capa $i$.
-- $\gamma$ es un parámetro de escala que ajusta la magnitud de la representación.
+La arquitectura **BiLSTM** se entrena con un **modelo de lenguaje basado en caracteres**. Decir que **ELMo es un modelo de lenguaje basado en caracteres** significa que, en lugar de procesar palabras completas, la red trabaja directamente con los **caracteres individuales** de un texto. En este enfoque, cada carácter (letra, número o símbolo) se convierte en una representación numérica y se alimenta a la red. Luego, la **BiLSTM** analiza la secuencia de caracteres en ambas direcciones (de izquierda a derecha y de derecha a izquierda), permitiendo que el modelo capture patrones en la estructura del texto sin necesidad de conocer palabras completas previamente y por tanto reduciendo la dependencia de un vocabulario fijo.
 
 Este mecanismo permite que cada palabra tenga una representación adaptativa en función de su contexto, facilitando la transferencia de conocimiento a múltiples tareas de NLP sin necesidad de reentrenar modelos desde cero.
 
-#### **Cómo ELMo mejora la representación semántica del lenguaje**
+Así pues, el impacto de ELMo en el NLP radicó en su capacidad para generar por primera vez **representaciones contextualizadas**, mejorando la precisión en tareas que dependen sobre todo de la comprensión semántica. Ha de insistirse en que en los modelos anteriores, al asignar una única representación vectorial a cada palabra, estos eran incapaces de manejar la polisemia y las variaciones de significado inducidas por el contexto.
 
-El impacto de ELMo en el procesamiento del lenguaje natural radica en su capacidad para generar **representaciones contextualizadas**, mejorando la precisión en tareas que dependen de la comprensión semántica. Modelos anteriores, al asignar una única representación vectorial a cada palabra, eran incapaces de manejar la polisemia y las variaciones de significado inducidas por el contexto.
-
-La incorporación de ELMo en modelos de NLP ha demostrado mejoras sustanciales en tareas como **reconocimiento de entidades, análisis de sentimientos, clasificación de texto y respuesta a preguntas**. Su capacidad para capturar información sintáctica y semántica lo convierte en una herramienta flexible y adaptable a diferentes dominios.
-
-Una de las ventajas clave de ELMo es su estructura **preentrenada**, lo que permite reutilizar sus representaciones en distintos problemas de NLP sin necesidad de construir un modelo desde cero. Este enfoque ha sido una de las bases para el desarrollo posterior de modelos más avanzados como **BERT y GPT**, que han adoptado la idea de representaciones contextuales, aunque con arquitecturas basadas en **transformers** en lugar de redes recurrentes.
+Una de las ventajas clave de ELMo es su estructura **preentrenada**, lo que permite reutilizar sus representaciones en distintos problemas de NLP sin necesidad de construir un modelo desde cero. Este concepto es clave para entender cómo los embeddings contextuales mejoraron el procesamiento del lenguaje natural antes del auge de los **transformers**, sentando las bases para modelos como **BERT**, que utilizan un enfoque similar pero basado en autoatención en lugar de recurrencia.
 
 ##### **Para reflexionar...**
 
 > **¿En qué tareas específicas de NLP el uso de ELMo puede seguir siendo relevante hoy en día?**
 >  **Clave**: Reflexiona sobre cómo ELMo sigue siendo una alternativa viable en modelos que aún dependen de redes recurrentes y en casos donde la memoria y el cómputo son factores limitantes.
 
-#### **Comparación con modelos previos**
+#### **Usos de ELMo en NLP**
 
-El desarrollo de ELMo supuso una mejora sustancial respecto a los modelos de representación de palabras anteriores, los cuales se basaban en técnicas estáticas. Métodos como **Word2Vec, GloVe y FastText** lograron representar el lenguaje en espacios vectoriales continuos, pero compartían una limitación fundamental: **asignaban un único vector a cada palabra sin considerar su contexto**. ELMo superó esta restricción al introducir representaciones **contextuales dinámicas**, adaptando el significado de cada palabra según su entorno en la oración.
+El uso de **ELMo** en tareas de procesamiento del lenguaje natural ha demostrado ser una estrategia efectiva para mejorar la comprensión semántica y contextual del texto. Gracias a su capacidad para generar representaciones dinámicas, ELMo ha sido aplicado en tareas como **clasificación de texto, análisis de sentimientos, reconocimiento de entidades nombradas (NER) o respuesta a preguntas**.
 
-##### **Diferencias con Word2Vec, GloVe y FastText**
+En problemas de **clasificación de texto**, como la detección de spam o la categorización de documentos, la inclusión de embeddings de ELMo mejora el rendimiento al proporcionar información contextual sobre cada palabra dentro del documento.
 
-Los modelos clásicos de embeddings fueron los primeros en mapear palabras en un espacio vectorial de baja dimensión, capturando relaciones semánticas y sintácticas mediante el análisis de coocurrencias en grandes corpus de texto. Aunque estas técnicas permitieron representar similitudes entre palabras, presentaban una limitación clave: **cada palabra tenía una única representación fija**, sin importar el contexto en el que se utilizara.
-
-**Word2Vec**, basado en arquitecturas como **Skip-gram** y **CBOW (Continuous Bag of Words)**, generaba embeddings a partir de la predicción de palabras en su contexto local. Si bien capturaba relaciones semánticas, su limitación principal era su incapacidad para manejar polisemia, ya que no distinguía entre distintos significados de una misma palabra.
-
-**GloVe**, a diferencia de Word2Vec, utilizaba un modelo basado en la matriz de coocurrencia global, optimizando la factorización de la distribución de palabras en el corpus. Aunque esto permitía generar embeddings más robustos en algunos escenarios, seguía sin incorporar contexto dinámico en sus representaciones.
-
-**FastText** mejoró Word2Vec al representar palabras como conjuntos de subpalabras, lo que permitía manejar palabras fuera del vocabulario (OOV, *out of vocabulary*) de manera más eficiente. A pesar de esta ventaja, el modelo seguía enfrentando el problema de las representaciones estáticas.
-
-En contraste, **ELMo resolvió estas limitaciones al utilizar redes neuronales profundas bidireccionales (BiLSTM)** para modelar la dependencia contextual en las palabras. En lugar de asignar un único vector a cada término, ELMo generaba representaciones que variaban según el contexto de la oración.
-
-##### **Ventajas de las representaciones contextuales dinámicas**
-
-El principal avance de ELMo radica en su capacidad para **ajustar las representaciones de palabras según el contexto en el que aparecen**. Esta propiedad introduce ventajas clave en múltiples tareas de NLP:
-
-- **Manejo de polisemia**: Palabras como "banco" pueden adquirir representaciones distintas dependiendo de si se refieren a una entidad financiera o a un asiento en un parque.
-- **Captura de información sintáctica y semántica**: La bidireccionalidad del modelo permite entender relaciones entre palabras a lo largo de la oración completa, facilitando tareas como el reconocimiento de entidades y la desambiguación semántica.
-- **Mejora en tareas supervisadas y no supervisadas**: Al proporcionar representaciones más ricas y adaptables, ELMo ha demostrado mejorar el desempeño en problemas como clasificación de texto, traducción automática y respuesta a preguntas.
-
-El impacto de ELMo en NLP fue significativo, pero su uso ha sido en gran parte reemplazado por arquitecturas basadas en **transformers**, como **BERT y GPT**, que han llevado aún más lejos la idea de representaciones dinámicas del lenguaje.
-
-##### **Para reflexionar...**
-
-> **¿Por qué las representaciones contextuales de ELMo fueron un avance clave sobre Word2Vec y GloVe?**
->  **Clave**: Reflexiona sobre cómo la incorporación del contexto en las representaciones permitió mejorar la comprensión semántica en NLP y cómo esto impactó en el desarrollo de modelos más avanzados como BERT.
-
-#### **Implementación y uso de ELMo en NLP**
-
-El uso de **ELMo** en tareas de procesamiento del lenguaje natural ha demostrado ser una estrategia efectiva para mejorar la comprensión semántica y contextual del texto. Gracias a su capacidad para generar representaciones dinámicas, ELMo ha sido aplicado en tareas como **clasificación de texto, análisis de sentimientos, reconocimiento de entidades nombradas (NER) y respuesta a preguntas**.
-
-##### **Uso de embeddings de ELMo en tareas de clasificación y análisis semántico**
-
-La capacidad de ELMo para modelar palabras en función de su contexto lo hace particularmente útil en tareas donde la interpretación precisa del significado es esencial. En problemas de **clasificación de texto**, como la detección de spam o la categorización de documentos, la inclusión de embeddings de ELMo mejora el rendimiento al proporcionar información contextual sobre cada palabra dentro del documento.
-
-En el caso del **análisis de sentimientos**, ELMo permite capturar matices emocionales en textos con mayor precisión. Modelos basados en representaciones estáticas pueden tener dificultades para identificar el tono de una frase cuando las palabras clave tienen significados ambiguos. Por ejemplo, en una oración como *"El producto es increíblemente malo"*, una representación estática puede no captar la ironía, mientras que ELMo ajusta su representación en función de la estructura de la oración.
+En el caso de **análisis de sentimientos**, ELMo permite capturar matices emocionales en textos con mayor precisión. Modelos basados en representaciones estáticas pueden tener dificultades para identificar el tono de una frase cuando las palabras clave tienen significados ambiguos. Por ejemplo, en una oración como *"El producto es increíblemente malo"*, una representación estática puede no captar la ironía, mientras que ELMo ajusta su representación en función de la estructura de la oración.
 
 En el **reconocimiento de entidades nombradas (NER)**, la capacidad de ELMo para diferenciar palabras según su contexto es crucial. En una oración como *"Apple lanzó un nuevo iPhone"*, el modelo puede reconocer que *Apple* se refiere a una empresa y no a una fruta, mejorando la precisión de la tarea.
 
-##### **Ejemplos prácticos con frameworks de NLP**
+#### Implementación práctica de ELMo con TensorFlow
 
-La implementación de ELMo en aplicaciones de NLP es accesible gracias a bibliotecas como **TensorFlow Hub** y **AllenNLP**, que proporcionan modelos preentrenados listos para su integración en distintos flujos de trabajo.
+En términos prácticos, entrenar un modelo **ELMo desde cero** requiere grandes volúmenes de datos y una cantidad considerable de recursos computacionales. Sin embargo, en **TensorFlow** es posible aprovechar modelos preentrenados a través de **TensorFlow Hub**, una plataforma que permite descargar y utilizar modelos de deep learning sin necesidad de volver a entrenarlos desde cero. De este modo, ELMo puede integrarse en arquitecturas de **Keras** y utilizarse en tareas como clasificación de texto, análisis de sentimientos o reconocimiento de entidades nombradas.
 
-En **Python**, el uso de ELMo puede realizarse con la API de **AllenNLP** de la siguiente manera:
+El uso de ELMo en **TensorFlow** comienza con la carga del modelo preentrenado desde TensorFlow Hub. A partir de ahí, es posible extraer embeddings de palabras y usarlos como entrada en una red neuronal. Estos embeddings pueden emplearse directamente para análisis lingüístico o incorporarse en modelos más complejos para tareas específicas.
+
+Por ejemplo, una de las aplicaciones más comunes es la **clasificación de texto**, donde ELMo se integra como una capa dentro de un modelo basado en redes neuronales. En este caso, las representaciones contextuales se combinan con capas densas para generar predicciones sobre los textos analizados. Esto permite mejorar la precisión en comparación con modelos basados en embeddings estáticos, ya que el significado de cada palabra se ajusta dinámicamente en función del contexto en el que aparece.
+
+A continuación, se presenta un ejemplo de implementación en **TensorFlow**, que muestra cómo cargar ELMo, extraer embeddings y utilizarlo dentro de un modelo de clasificación de texto:
 
 ```python
-from allennlp.commands.elmo import ElmoEmbedder  
+import tensorflow as tf
+import tensorflow_hub as hub
+import tensorflow.keras as keras
+import tensorflow.keras.layers as layers
 
-# Cargar el modelo preentrenado de ELMo  
-elmo = ElmoEmbedder()  
+# Cargar el modelo ELMo desde TensorFlow Hub
+elmo = hub.load("https://tfhub.dev/google/elmo/3")
 
-# Obtener embeddings de una oración  
-oracion = ["El", "banco", "aprobó", "el", "préstamo"]
-embeddings = elmo.embed_sentence(oracion)  
+# Definir una función para obtener embeddings
+def elmo_embedding(sentences):
+    embeddings = elmo.signatures["default"](tf.constant(sentences))["elmo"]
+    return embeddings
 
-# Cada palabra tiene tres representaciones diferentes (una por cada capa de la red)
-print(embeddings.shape)  # (3, 5, 1024)  
+# Ejemplo de entrada
+sentences = ["ELMo genera embeddings contextuales.", "El contexto cambia el significado de las palabras."]
+embeddings = elmo_embedding(sentences)
+
+# Ver la forma del embedding generado
+print(embeddings.shape)  # (batch_size, num_palabras, embedding_dim)
+
+# Integración de ELMo en un modelo de clasificación de texto
+input_text = keras.Input(shape=(), dtype=tf.string)
+elmo_layer = hub.KerasLayer("https://tfhub.dev/google/elmo/3", trainable=False)(input_text)
+dense = layers.Dense(256, activation='relu')(elmo_layer)
+output = layers.Dense(1, activation='sigmoid')(dense)
+
+model = keras.Model(inputs=input_text, outputs=output)
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.summary()
+
+# Datos de ejemplo y entrenamiento
+X_train = ["Este producto es excelente", "No me gustó para nada"]
+y_train = [1, 0]  # 1 = positivo, 0 = negativo
+model.fit(X_train, y_train, epochs=3, batch_size=2)
 ```
 
-Este código genera embeddings para cada palabra de la oración considerando su contexto. La salida es un tensor tridimensional donde cada palabra posee tres representaciones correspondientes a las capas de la red neuronal de ELMo.
+En el código anterior todo comienza con la carga del modelo preentrenado desde **TensorFlow Hub**. Una vez cargado, el modelo puede utilizarse para extraer representaciones de palabras que varían según el contexto en el que aparecen. Para ello, se define una función encargada de procesar una lista de oraciones y devolver los embeddings generados por ELMo. Esta función recibe como entrada una serie de textos, los convierte en tensores y aplica el modelo preentrenado para obtener una representación densa de cada palabra. La estructura del embedding resultante refleja no solo el significado de las palabras individuales, sino también su relación con las demás dentro de la oración.
 
-En tareas de **clasificación de texto**, estos embeddings pueden combinarse con modelos basados en redes neuronales o transformers para mejorar la capacidad del sistema para diferenciar categorías.
+Una vez extraídos los embeddings, se procede a la integración dentro de un **modelo de clasificación de texto** utilizando **Keras**. En este modelo, la entrada consiste en texto sin procesar, que se convierte en su representación numérica a través de una capa específica de **TensorFlow Hub** que implementa ELMo. A continuación, se añade una **capa densa con activación ReLU**, que permite transformar la representación del texto en una forma más adecuada para la clasificación. Finalmente, la salida del modelo se genera mediante una **capa con activación sigmoide**, que produce una probabilidad indicando si el texto pertenece a una categoría positiva o negativa.
+
+El modelo se compila utilizando la función de pérdida **binary cross-entropy**, adecuada para problemas de clasificación binaria, y se optimiza con **Adam**, un algoritmo de optimización ampliamente utilizado en redes neuronales profundas. A continuación, se imprimen los detalles del modelo, permitiendo visualizar su arquitectura antes del entrenamiento.
+
+Para demostrar su funcionamiento, se proporciona un pequeño conjunto de datos de entrenamiento con dos frases, una con un sentimiento positivo y otra con un sentimiento negativo. Estas oraciones se pasan al modelo, que ajusta sus pesos a través de varias **épocas de entrenamiento**, permitiéndole aprender a distinguir entre textos con diferentes cargas emocionales.
 
 ##### **Para reflexionar...**
 
@@ -308,164 +237,108 @@ En tareas de **clasificación de texto**, estos embeddings pueden combinarse con
 
 ### Arquitectura *Transformer* y su impacto en NLP
 
-##### **Introducción al modelo Transformer**  
+#### **Introducción al modelo Transformer en NLP**
 
-El desarrollo de los **transformers** marcó un cambio fundamental en el procesamiento del lenguaje natural al superar las limitaciones de las **redes neuronales recurrentes (RNNs)** y las **redes neuronales convolucionales (CNNs)**. Antes de su aparición, los modelos de NLP dependían en gran medida de arquitecturas recurrentes como **LSTM y GRU**, que aunque efectivas, presentaban problemas de escalabilidad y eficiencia computacional al manejar secuencias largas.  
+El desarrollo de los **transformers** marcó un punto de inflexión en el procesamiento del lenguaje natural, permitiendo superar las limitaciones de las **redes neuronales recurrentes (RNNs)**. Antes de su aparición, los modelos de lenguaje dinámicos dependían de arquitecturas como **LSTM y GRU**, que aunque eficaces en la captura de relaciones temporales en el texto, presentaban dificultades para manejar secuencias largas de manera eficiente. La necesidad de procesar la información de forma secuencial limitaba la escalabilidad de estos modelos, ya que cada paso dependía del cálculo del anterior, ralentizando la inferencia y dificultando la paralelización del procesamiento.
 
-Los **transformers**, introducidos en el artículo *"Attention is All You Need"* (Vaswani et al., 2017), abandonaron completamente la estructura recurrente en favor de un mecanismo basado en **autoatención**. Esta innovación permitió procesar secuencias de texto en paralelo, reduciendo significativamente los tiempos de entrenamiento y mejorando la capacidad de modelar dependencias a largo plazo.  
+Los **transformers**, introducidos en el artículo *"Attention is All You Need"* (Vaswani et al., 2017), ofrecieron una alternativa más eficiente al reemplazar la recurrencia por un **mecanismo de autoatención**. Este enfoque permitió modelar relaciones entre palabras sin restricciones impuestas por la distancia en la secuencia, eliminando la necesidad de procesar la información palabra por palabra y permitiendo la ejecución en paralelo. Como resultado, los transformers han revolucionado el NLP, estableciendo un nuevo estándar en tareas como **traducción automática, generación de texto o análisis de documentos**.
 
-##### **¿Por qué los transformers reemplazaron a las RNNs?**  
+#### **El mecanismo de autoatención**
 
-Las redes neuronales recurrentes modelaban la información secuencialmente, propagando estados ocultos de un paso al siguiente. Aunque este enfoque era adecuado para manejar dependencias en el tiempo, tenía dos limitaciones fundamentales:  
+El concepto clave que distingue a los transformers es la **autoatención (self-attention)**, una técnica que permite al modelo analizar todas las palabras de una secuencia al mismo tiempo y determinar cuáles son más relevantes para la interpretación del significado general. En lugar de procesar la información de manera secuencial, como en las RNNs, este mecanismo asigna pesos a cada palabra en función de su relación con las demás en el contexto.
 
-1. **Dificultad para capturar dependencias a largo plazo**: El problema del **gradiente desaparecido** en RNNs dificultaba la propagación de información en secuencias extensas.  
-2. **Procesamiento secuencial y alta complejidad computacional**: Las RNNs procesaban la información paso a paso, lo que impedía paralelizar el cálculo en múltiples palabras de una oración.  
+Para lograrlo, cada palabra de la secuencia se representa mediante tres elementos fundamentales:
 
-Los transformers resolvieron estos problemas eliminando la estructura recurrente y reemplazándola con un **mecanismo de atención** que permite modelar las relaciones entre palabras sin importar la distancia entre ellas.  
+- **Query (Q)**: Representa la palabra actual que se está evaluando.
+- **Key (K)**: Contiene la información de todas las palabras con las que se compara.
+- **Value (V)**: Representa la información que se transmitirá en la red en función de la relevancia calculada.
 
-##### **Mecanismo de autoatención (Self-Attention)**  
+**Q, K y V son representaciones vectoriales obtenidas a partir de los embeddings de entrada**, y permiten que el mecanismo de atención determine qué palabras son más relevantes en el contexto del texto analizado. Mediante este proceso, el modelo identifica qué palabras tienen mayor influencia en la interpretación de una oración, incluso si están separadas por varias posiciones en la secuencia. Esto permite capturar dependencias de largo alcance de manera mucho más efectiva que los modelos recurrentes.
 
-El mecanismo clave en los transformers es la **autoatención (Self-Attention)**, que asigna pesos a cada palabra en función de su relevancia con respecto a las demás palabras de la secuencia. En lugar de procesar la información de manera secuencial, como hacen las RNNs, el modelo examina todas las palabras simultáneamente y aprende a asignar **importancia relativa** a cada una.  
+Sin embargo, para que un **transformer** pueda entender mejor las relaciones entre las palabras en un texto, no se limita a aplicar un único mecanismo de **autoatención**, sino que utiliza una técnica más avanzada llamada **Multi-Head Attention**. En lugar de analizar las conexiones entre palabras desde una sola perspectiva, el modelo crea **varios focos de atención al mismo tiempo**. Esto le permite detectar diferentes tipos de relaciones dentro del texto, como asociaciones semánticas (palabras con significados similares) o estructuras gramaticales (cómo las palabras se conectan dentro de una oración). Gracias a este enfoque, el modelo obtiene una representación mucho más completa y detallada del lenguaje.
 
-La autoatención se define mediante tres vectores por cada token de entrada:  
+#### **Estructura codificador-decodificador**
 
-- **Query (Q)**: Representación de la palabra que se está procesando.  
-- **Key (K)**: Representación de las palabras con las que se compara.  
-- **Value (V)**: Información que se propaga en la red.  
+El **modelo Transformer** está compuesto por dos bloques principales: el **encoder** y el **decoder**, cada uno con un rol específico en el procesamiento del lenguaje. Esta estructura es fundamental en tareas donde se necesita transformar una secuencia de texto en otra, como en **traducción automática** o **resumen de documentos**.
 
-El cálculo de la autoatención se realiza mediante la ecuación:  
+El **encoder** es el primer componente del modelo y su función es interpretar la secuencia de entrada. Cada palabra o token es convertida en un **embedding**, al cual se le añade información posicional para preservar el orden de las palabras en la oración. Luego, este conjunto de representaciones pasa a través de varias **capas de procesamiento**, donde se aplican mecanismos de **autoatención**. Esto permite que cada palabra pueda relacionarse con cualquier otra dentro del texto, capturando su significado en contexto sin importar la distancia entre ellas. Al final de este proceso, el encoder genera una representación continua de toda la oración, lista para ser utilizada en la fase de decodificación.
 
-$$
-\text{Attention}(Q, K, V) = \text{softmax} \left(\frac{QK^T}{\sqrt{d_k}}\right) V
-$$
+El **decoder**, por su parte, toma la representación generada por el encoder y la usa para producir la secuencia de salida. A diferencia del encoder, el decoder no solo recibe información del texto original, sino que también incorpora lo que ha generado hasta el momento. Para lograrlo, combina dos mecanismos de atención: uno que procesa su propia secuencia de salida y otro que **se enfoca en la representación del encoder**. Esto se conoce como **atención cruzada**, y permite que el decoder acceda a la información relevante del texto de entrada mientras genera palabra por palabra la salida final.
 
-Donde \( d_k \) es la dimensión de los vectores Key y el factor \( \frac{1}{\sqrt{d_k}} \) estabiliza la magnitud de los valores en la matriz de atención.  
+Ambos bloques, encoder y decoder, están compuestos por múltiples capas que incluyen **Multi-Head Attention**, encargada de modelar dependencias globales, y una **red feedforward densa**, que refina la información extraída. Además, se aplican mecanismos de **normalización y regularización**, que ayudan a mejorar la estabilidad del entrenamiento y evitar el sobreajuste.
 
-Este mecanismo permite que el modelo identifique qué palabras son más relevantes para la interpretación del significado general de una oración, incluso si están distantes entre sí.  
+###### **Para reflexionar...**  
 
-##### **Multi-Head Attention y Positional Encoding**  
-
-Para mejorar la capacidad del modelo de capturar relaciones complejas, los transformers emplean una variante del mecanismo de autoatención llamada **Multi-Head Attention**. En lugar de aplicar una única capa de autoatención, el modelo utiliza varias "cabezas" de atención independientes, lo que le permite aprender distintas representaciones de las relaciones entre palabras.  
-
-El cálculo de **Multi-Head Attention** se define como:  
-
-$$
-\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O
-$$
-
-Donde cada cabeza de atención se calcula de manera independiente con diferentes matrices de proyección. Esto mejora la capacidad del modelo para capturar diferentes tipos de relaciones semánticas y sintácticas en el texto.  
-
-Además, dado que los transformers no procesan la información de manera secuencial, necesitan una forma de representar la posición de cada palabra en la oración. Para ello, se introduce el **Positional Encoding**, que agrega información posicional a las representaciones de los tokens mediante funciones senoidales y cosenoidales:  
-
-$$
-PE_{(pos, 2i)} = \sin\left(\frac{pos}{10000^{2i/d}}\right)
-$$
-
-$$
-PE_{(pos, 2i+1)} = \cos\left(\frac{pos}{10000^{2i/d}}\right)
-$$
-
-Esta estrategia permite que el modelo **diferencie la posición relativa de las palabras**, manteniendo la capacidad de procesar la información en paralelo.  
-
-##### **Estructura interna del encoder-decoder en transformers**  
-
-Los transformers se componen de dos bloques principales: **encoder y decoder**.  
-
-- **El encoder** recibe una secuencia de entrada y la transforma en una representación continua a través de múltiples capas de **autoatención y redes feedforward**.  
-- **El decoder** toma esta representación y la convierte en una secuencia de salida, utilizando mecanismos de **atención cruzada** para enfocarse en la información más relevante del encoder.  
-
-Cada capa del **encoder** incluye:  
-1. Una capa de **Multi-Head Attention** que permite el modelado de dependencias globales.  
-2. Una red **feedforward** completamente conectada.  
-3. Mecanismos de **normalización y regularización** para mejorar la estabilidad del entrenamiento.  
-
-El **decoder**, por su parte, añade una capa adicional de atención que permite incorporar información de la representación generada por el encoder antes de producir la salida final.  
-
-Gracias a esta arquitectura, los transformers han demostrado ser más eficientes y precisos en tareas como **traducción automática, generación de texto, resumen de documentos y clasificación de texto**, reemplazando en gran medida a las redes recurrentes en NLP.  
-
-##### **Para reflexionar...**  
-
-> **¿Cómo el mecanismo de autoatención permitió a los transformers superar las limitaciones de las RNNs en NLP?**  
+> **¿Cómo el mecanismo de autoatención permitió a los transformers superar las limitaciones de las RNNs en NLP?** 
 > **Clave**: Reflexiona sobre la capacidad de procesar secuencias en paralelo y de modelar dependencias a largo plazo sin los problemas del gradiente desaparecido.
+
+#### **Cómo funciona el modelo Transformer en NLP**
+
+El modelo **Transformer** procesa una oración transformándola progresivamente desde su forma original en texto hasta una representación codificada, que luego es utilizada para generar una salida. Este flujo sigue una serie de pasos estructurados que permiten capturar relaciones lingüísticas complejas de manera eficiente.
+
+##### **Entrada y conversión a embeddings**
+
+El primer paso en el procesamiento de una oración es su transformación en una representación numérica. Para ello, el texto se somete a un proceso de **tokenización**, en el que se divide en palabras o subpalabras (*tokens*), según el modelo utilizado. A continuación, cada token es convertido en un **vector de embedding**, que representa su significado en un espacio numérico de alta dimensión.
+
+Dado que estos embeddings por sí solos no contienen información sobre el orden de las palabras en la oración, se les suma un **Positional Encoding**. Este mecanismo introduce información posicional en la secuencia, permitiendo que el modelo distinga entre palabras que aparecen en diferentes posiciones.
+
+##### **Cálculo de Q, K y V**
+
+Una vez que los embeddings han sido enriquecidos con la información de posición, se generan los tres conjuntos de vectores necesarios para el mecanismo de autoatención: **Query (Q)**, **Key (K)** y **Value (V)**. Estos vectores se obtienen aplicando transformaciones lineales a los embeddings de entrada, lo que permite al modelo aprender relaciones entre palabras a medida que avanza el entrenamiento.
+
+##### **Aplicación del mecanismo de autoatención**
+
+A continuación cada **Query (Q)** se compara con todos los **Keys (K)** de la secuencia, generando una matriz de pesos que indica la importancia de cada palabra en el contexto general. Estos pesos se utilizan para modificar los valores **V (Value)**, permitiendo que el modelo resalte las palabras más relevantes para cada token. Este es el mecanismo de **Self-Attention (Autoatención)**, que permite evaluar la relevancia de cada palabra en relación con todas las demás de la oración y constituye el núcleo del Transformer. Gracias a este mecanismo el modelo captura relaciones **de corto y largo alcance**, eliminando la necesidad de un procesamiento secuencial como en las redes recurrentes.
+
+Después de la autoatención, la información de cada palabra pasa a través de una **red neuronal feedforward completamente conectada**, que transforma y refina la representación aprendida. Este paso permite que el modelo genere una representación más abstracta y útil para las siguientes capas. Finalmente para estabilizar el entrenamiento y evitar que ciertas palabras dominen en exceso la información, se aplican técnicas de **normalización y regularización**.
+
+##### **Procesamiento a través de múltiples capas**
+
+Hasta este punto, se ha descrito lo que ocurre en una **única capa del encoder**. Sin embargo, los transformers utilizan múltiples capas apiladas (por ejemplo, BERT-base tiene 12 capas), donde cada nivel refina la información generada por el anterior. A medida que la información avanza por estas capas, el modelo construye una representación cada vez más rica de la estructura del lenguaje.
+
+##### **Transferencia de información al decoder (solo en modelos encoder-decoder)**
+
+En arquitecturas que incluyen un **decoder** (como en modelos de traducción automática), la información procesada por el **encoder** se transmite al **decoder**. Aquí, el bloque de decodificación recibe la representación generada y la combina con la secuencia de salida parcial (si está disponible, en el caso de entrenamiento supervisado). Además, emplea un mecanismo de **atención cruzada**, que le permite enfocarse en las partes más relevantes del contenido codificado.
+
+##### **Generación de la salida**
+
+Finalmente, el **decoder** produce la secuencia final palabra por palabra. En cada paso, el modelo selecciona la palabra más probable como salida, utilizando una función **Softmax** para calcular las probabilidades sobre el vocabulario. Este proceso se repite iterativamente hasta que se genera la secuencia completa.
 
 #### **Comparación entre RNNs y transformers**
 
-El surgimiento de los **transformers** marcó una ruptura con las arquitecturas recurrentes utilizadas en el procesamiento del lenguaje natural (NLP). Aunque modelos como **LSTM y GRU** fueron avances significativos respecto a las RNN tradicionales, seguían presentando **limitaciones en escalabilidad y eficiencia**. Los transformers resolvieron estos problemas mediante un enfoque basado en **autoatención y procesamiento paralelo**, lo que les permitió convertirse en el estándar dominante en NLP.
+El desarrollo de los **transformers** representó un punto de inflexión en el procesamiento del lenguaje natural, desplazando a las arquitecturas recurrentes que hasta entonces habían dominado el campo. Si bien modelos como **LSTM y GRU** introdujeron mejoras significativas con respecto a las RNN tradicionales, ya se ha visto cómo su capacidad para escalar y procesar información de manera eficiente seguía siendo limitada. La aparición de los transformers resolvió estos problemas al adoptar un enfoque basado en **autoatención y procesamiento paralelo**, lo que les permitió convertirse en la arquitectura de referencia en NLP.
 
-##### **Diferencias en escalabilidad y eficiencia**
+A diferencia de las redes recurrentes, los **transformers** pueden procesar todos los tokens de una secuencia simultáneamente. A través del mecanismo de **autoatención**, cada palabra dentro de una oración establece relaciones con cualquier otra en un solo paso, reduciendo significativamente los tiempos de cómputo y permitiendo una mayor eficiencia en el tratamiento de secuencias largas.
 
-Uno de los mayores desafíos de las **redes neuronales recurrentes (RNNs)** es su naturaleza secuencial. Durante el entrenamiento y la inferencia, las RNNs procesan un token a la vez, actualizando su estado oculto en cada paso. Esta restricción implica que **no se pueden paralelizar eficazmente**, lo que las hace poco escalables para corpus de gran tamaño.
+Esta mejora en escalabilidad se refleja en la complejidad computacional de cada arquitectura. En una RNN, el tiempo de inferencia crece de manera lineal con la longitud de la secuencia, lo que impone una barrera en aplicaciones que requieren respuestas rápidas y en tiempo real. En contraste, los **transformers** aprovechan la paralelización, permitiendo un procesamiento más eficiente y optimizado. Mientras que en las redes recurrentes la complejidad sigue un crecimiento proporcional al tamaño de la secuencia, en los transformers el cálculo puede distribuirse en paralelo, reduciendo considerablemente la carga computacional.
 
-Los **transformers**, en cambio, permiten el procesamiento simultáneo de todos los tokens de una secuencia. Gracias al mecanismo de **autoatención**, cada palabra en una oración puede relacionarse con cualquier otra palabra de la secuencia en un solo paso, lo que reduce drásticamente los tiempos de cómputo.
-
-El impacto en la escalabilidad puede observarse en la complejidad computacional de cada arquitectura. En una RNN, el tiempo de inferencia crece linealmente con la longitud de la secuencia, mientras que en un **transformer**, el uso de paralelización permite un procesamiento mucho más eficiente:
-
-- **Complejidad de RNNs/LSTM**: O(n)O(n)
-- **Complejidad de transformers**: O(1)O(1) (procesamiento paralelo)
-
-Esta diferencia es clave en aplicaciones de **traducción automática, generación de texto y comprensión del lenguaje**, donde los transformers han superado a las arquitecturas recurrentes en términos de **velocidad, precisión y capacidad de manejar grandes volúmenes de datos**.
-
-##### **Limitaciones de LSTM y cómo los transformers las superan**
-
-A pesar de sus mejoras sobre las RNN convencionales, los modelos **LSTM** aún enfrentan restricciones que los transformers han logrado superar:
-
-1. **Problemas de memoria a largo plazo**: Aunque las LSTM fueron diseñadas para mitigar el problema del **gradiente desaparecido**, su capacidad de retener información en secuencias largas sigue siendo limitada. En contraste, los transformers pueden modelar relaciones entre tokens lejanos de manera directa, sin necesidad de mantener un estado oculto acumulativo.
-2. **Procesamiento secuencial vs. procesamiento paralelo**: Las LSTM dependen de cálculos secuenciales para actualizar su estado, lo que ralentiza su entrenamiento. Los transformers utilizan autoatención para analizar simultáneamente todos los tokens de una secuencia, lo que permite el uso eficiente de hardware optimizado para procesamiento en paralelo, como **TPUs y GPUs**.
-3. **Dificultad en la captura de dependencias a largo plazo**: En una arquitectura LSTM, la información fluye a través de una celda de memoria, lo que puede provocar pérdida de información relevante cuando la distancia entre palabras clave es grande. En contraste, los transformers asignan pesos de atención a todas las palabras dentro de la oración, sin importar la distancia entre ellas, lo que mejora la modelización de relaciones semánticas complejas.
-4. **Costo computacional en secuencias largas**: Aunque las LSTM pueden manejar dependencias a largo plazo mejor que las RNN estándar, el cómputo crece linealmente con la longitud de la secuencia. En cambio, los transformers utilizan la **autoatención escalable**, permitiendo capturar relaciones globales sin requerir un procesamiento incremental token a token.
-
-El éxito de los transformers en NLP ha llevado a su adopción en modelos de gran escala como **BERT, GPT y T5**, los cuales han redefinido la manera en que se procesan y generan textos en aplicaciones del mundo real.
+Gracias a esta capacidad, los transformers han demostrado un rendimiento superior en tareas como **traducción automática, generación de texto y comprensión del lenguaje**, destacándose por su **velocidad, precisión y habilidad para manejar grandes volúmenes de datos**. Su impacto ha sido tan significativo que ha impulsado el desarrollo de modelos de gran escala como **BERT, GPT y T5**, que han redefinido la manera en que los sistemas de inteligencia artificial procesan y generan textos en aplicaciones del mundo real.
 
 ##### **Para reflexionar...**
 
 > **¿En qué escenarios puede seguir siendo útil una arquitectura basada en LSTM en lugar de transformers?**
 >  **Clave**: Reflexiona sobre la eficiencia computacional y casos donde la naturaleza secuencial de las RNNs podría ser una ventaja, como en procesamiento de series temporales o en dispositivos con recursos limitados.
 
-
-
 ### **BERT: Representación contextual con transformers**
 
-El desarrollo de **BERT (Bidirectional Encoder Representations from Transformers)** marcó un punto de inflexión en el procesamiento del lenguaje natural. A diferencia de los modelos previos basados en redes recurrentes o embeddings estáticos, BERT introdujo un mecanismo de representación contextual completamente basado en **transformers**, permitiendo que las palabras se interpreten en función de su contexto completo dentro de una oración.
+El modelo **BERT (Bidirectional Encoder Representations from Transformers)**, desarrollado por Google en 2018, representó un avance fundamental en el procesamiento del lenguaje natural al introducir una arquitectura basada únicamente en la parte **encoder** de los transformers. Esta decisión le permitió analizar el contexto de una palabra teniendo en cuenta tanto las palabras anteriores como las posteriores en la oración, a diferencia de modelos previos que solo procesaban el texto de manera unidireccional. Su impacto en tareas como inferencia textual, detección de equivalencia semántica, respuesta a preguntas y análisis de sentimientos ha sido significativo, estableciendo un nuevo estándar en el aprendizaje de representaciones lingüísticas.
 
-Gracias a su capacidad para procesar texto de manera **bidireccional**, BERT mejoró significativamente el desempeño en tareas de comprensión del lenguaje, como **clasificación de texto, búsqueda semántica, respuesta a preguntas y reconocimiento de entidades nombradas (NER)**.
+BERT no es un modelo diseñado para generar texto, sino para comprenderlo en profundidad. Su estructura permite reutilizar un modelo base preentrenado y ajustarlo posteriormente a tareas específicas mediante **fine-tuning**, lo que ha facilitado su adopción en múltiples aplicaciones sin necesidad de entrenamientos desde cero. Este enfoque modular se basa en dos etapas clave. Primero, un preentrenamiento sobre grandes volúmenes de datos con tareas de aprendizaje no supervisado, donde el modelo aprende una representación general del lenguaje sin necesidad de etiquetado manual. Posteriormente, en la fase de fine-tuning, se añade una capa adicional sobre la arquitectura preentrenada y el modelo se ajusta con ejemplos supervisados según la tarea específica, optimizando su rendimiento en aplicaciones concretas como clasificación de texto o sistemas de búsqueda.
 
-#### **Introducción a BERT**
+Para procesar una oración, BERT utiliza un mecanismo especial de tokens que le permite estructurar la información correctamente. Cada secuencia de entrada comienza con el token **[CLS]**, que actúa como una representación global del texto y es especialmente útil en tareas de clasificación. Cuando se trabaja con pares de oraciones, como en la inferencia textual o la detección de similitud semántica, se introduce el token **[SEP]** entre ambas frases, marcando su separación. Esta estrategia permite que el modelo relacione de manera eficiente las dos partes del texto dentro de una única estructura.
 
-El modelo **BERT** se basa en una arquitectura de **transformers de solo codificador (encoder-only)**, diseñada para capturar el contexto de una palabra analizando simultáneamente su relación con todas las demás palabras de la secuencia. Este enfoque lo distingue de modelos autoregresivos como **GPT**, que solo procesan texto de manera unidireccional.
+El preentrenamiento de BERT se basa en dos objetivos principales. En primer lugar, el **Masked Language Model (MLM)** consiste en ocultar aleatoriamente algunas palabras de la secuencia y obligar al modelo a predecirlas basándose en el contexto restante. Esta tarea permite que el modelo capture información bidireccional sin necesidad de procesar el texto en un orden predefinido. El segundo objetivo, **Next Sentence Prediction (NSP)**, presenta al modelo pares de frases donde debe determinar si la segunda oración sigue a la primera en un texto real o si ha sido seleccionada al azar. Con esta tarea, el modelo mejora su capacidad para comprender relaciones semánticas y de coherencia entre diferentes partes de un documento.
 
-Uno de los aspectos clave de BERT es su entrenamiento **bidireccional**, lo que significa que el modelo aprende representaciones contextualizadas considerando tanto el contexto anterior como el posterior de cada palabra en una oración. Esta propiedad le permite comprender el significado completo de una frase en lugar de depender solo de información parcial.
+> BERT ha demostrado ser altamente eficaz en diversas tareas de **procesamiento del lenguaje natural (NLP)**. A continuación, se describen brevemente las principales aplicaciones en las que ha sido utilizado:
+>
+> 1. **Inferencia textual**: Evalúa la relación entre dos oraciones, determinando si una implica, contradice o no guarda relación con la otra. Se utiliza en tareas como la comprensión de lectura y el análisis de coherencia en textos.
+> 2. **Equivalencia semántica**: Compara dos frases para determinar si tienen el mismo significado o expresan ideas similares. Es útil en sistemas de detección de plagio, agrupación de respuestas en foros y motores de búsqueda.
+> 3. **Pregunta-respuesta**: Extrae información relevante de un texto en función de una pregunta formulada. Se emplea en asistentes virtuales, chatbots y sistemas de recuperación de información.
+> 4. **Análisis de sentimientos**: Clasifica un texto según su carga emocional, identificando si es positivo, negativo o neutro. Se usa en la monitorización de redes sociales, encuestas de opinión y servicio al cliente.
+> 5. **Aceptabilidad lingüística**: Evalúa si una oración es gramaticalmente correcta o presenta errores. Se utiliza en correctores gramaticales y modelos de calidad de texto.
+> 6. **Selección de respuesta correcta**: Dado un conjunto de opciones, BERT puede identificar la mejor respuesta en función del contexto. Se aplica en cuestionarios automatizados, sistemas de evaluación y asistentes educativos.
 
-Por ejemplo, en la oración:
-
-> *"El banco aprobó el préstamo, pero el otro banco estaba cerrado."*
-
-Un modelo basado en representaciones estáticas como **Word2Vec** asignaría el mismo vector a ambas apariciones de "banco". En cambio, BERT genera una representación diferente para cada una, ya que considera el contexto completo de cada aparición de la palabra.
-
-#### **Mecanismos de entrenamiento de BERT**
-
-Para lograr una representación robusta del lenguaje, BERT se entrena mediante dos objetivos principales: **Masked Language Model (MLM)** y **Next Sentence Prediction (NSP)**.
-
-##### **Masked Language Model (MLM)**
-
-El entrenamiento de BERT se basa en un modelo de lenguaje enmascarado (**MLM, Masked Language Model**), en el que se ocultan aleatoriamente algunas palabras de una oración y el modelo debe predecirlas basándose en su contexto.
-
-Dado un texto de entrada, se selecciona aproximadamente un 15% de las palabras para ser enmascaradas. En cada paso de entrenamiento, una palabra enmascarada xtx_t es reemplazada por el token especial **[MASK]** y el modelo aprende a predecir la palabra original:
-$$
-P(x_t | x_1, x_2, ..., x_{t-1}, x_{t+1}, ..., x_n)
-$$
-Este enfoque obliga a BERT a aprender **representaciones profundas del lenguaje**, ya que no puede basarse únicamente en la secuencia previa o posterior, sino que debe analizar ambos lados simultáneamente.
-
-##### **Next Sentence Prediction (NSP)**
-
-Además del MLM, BERT incorpora un segundo objetivo de entrenamiento llamado **Next Sentence Prediction (NSP)**. Este mecanismo permite que el modelo aprenda a captar relaciones entre frases, lo que resulta crucial en tareas como la búsqueda de información y la respuesta a preguntas.
-
-Para entrenar en NSP, el modelo recibe dos segmentos de texto y debe predecir si el segundo segmento es una continuación natural del primero o si ha sido seleccionado aleatoriamente. Este proceso se formaliza como una tarea de clasificación binaria:
-$$
-P(\text{IsNext} | S_1, S_2)
-$$
-donde S1S_1 y S2S_2 representan dos oraciones consecutivas o no consecutivas. Durante el entrenamiento, la mitad de los ejemplos se seleccionan como frases consecutivas reales y la otra mitad como frases sin relación.
-
-Este enfoque mejora el rendimiento de BERT en tareas donde la coherencia entre oraciones es esencial, como la comprensión de textos largos y el emparejamiento de preguntas y respuestas.
+El impacto de BERT en NLP ha sido enorme, sirviendo de base para modelos más avanzados que han optimizado su eficiencia y capacidad de aprendizaje. Su enfoque bidireccional ha demostrado ser fundamental para mejorar la comprensión del lenguaje y ha sido ampliamente adoptado en aplicaciones de búsqueda, asistentes virtuales o análisis automático de texto.
 
 #### **Aplicaciones de BERT en NLP**
 
@@ -483,7 +356,24 @@ En motores de búsqueda, BERT ha mejorado la capacidad de interpretar consultas 
 
 La capacidad de BERT para capturar relaciones contextuales ha mejorado significativamente el reconocimiento de entidades nombradas, lo que permite identificar correctamente nombres de personas, ubicaciones, organizaciones y otras entidades dentro de un texto.
 
-##### **Implementación con Hugging Face Transformers**
+#### **Variantes de BERT y optimización**
+
+Desde su lanzamiento, **BERT** ha servido de base para el desarrollo de múltiples variantes que buscan mejorar su eficiencia y precisión. Algunas de estas versiones optimizan el entrenamiento, mientras que otras reducen la carga computacional para hacer el modelo más accesible en aplicaciones del mundo real.
+
+Una de las mejoras más significativas vino con **RoBERTa (Robustly Optimized BERT Approach)**, un modelo que ajustó el proceso de entrenamiento para hacer a BERT más robusto. Para ello, eliminó la tarea de **Next Sentence Prediction (NSP)**, que originalmente ayudaba al modelo a aprender relaciones entre oraciones, pero que demostró no ser tan relevante para el rendimiento final. Además, RoBERTa se entrenó con un conjunto de datos más grande y durante más tiempo, lo que permitió mejorar su capacidad de comprensión en diversas tareas de NLP.
+
+Otra variante clave es **DistilBERT**, creada para reducir la carga computacional sin perder gran parte de la precisión de BERT. Su diseño utiliza un proceso llamado **aprendizaje por destilación**, en el que un modelo más pequeño aprende de un modelo más grande, capturando sus representaciones de manera más compacta. Como resultado, DistilBERT logra mantener aproximadamente el **97% del rendimiento de BERT, pero con solo la mitad de los parámetros**, lo que lo convierte en una opción ideal para aplicaciones donde la eficiencia es prioritaria.
+
+Por otro lado, **ALBERT (A Lite BERT)** se centró en optimizar la estructura interna del modelo para reducir su tamaño sin sacrificar su capacidad de aprendizaje. Introdujo técnicas como la **factorización de matrices**, que disminuye la cantidad de parámetros necesarios en las capas intermedias, y el uso de **embeddings compartidos entre capas**, lo que permite que el modelo reutilice información en distintas etapas del procesamiento. Estas mejoras hicieron posible entrenar modelos más pequeños sin perder la potencia de representación de BERT.
+
+Cada una de estas variantes se ha diseñado para resolver diferentes desafíos en NLP, permitiendo adaptar el modelo original a distintos escenarios. RoBERTa mejora la precisión en tareas avanzadas, DistilBERT facilita su uso en dispositivos con menos recursos y ALBERT optimiza la memoria y el tamaño del modelo, haciendo que las aplicaciones basadas en BERT sean más accesibles y eficientes.
+
+##### **Para reflexionar...**
+
+> **¿Cómo ha influido BERT en el desarrollo de modelos posteriores de NLP y qué aspectos aún pueden mejorarse en su arquitectura?**
+> **Clave**: Reflexiona sobre cómo BERT sentó las bases para modelos más avanzados como GPT y T5, y sobre los desafíos actuales en términos de eficiencia computacional y adaptabilidad a tareas específicas.
+
+#### **Implementación con Hugging Face Transformers**
 
 El uso de BERT en aplicaciones prácticas ha sido facilitado por la biblioteca **Hugging Face Transformers**, que proporciona modelos preentrenados listos para su implementación en múltiples tareas. Un ejemplo de uso de BERT para clasificación de texto en **Python** es el siguiente:
 
@@ -506,28 +396,7 @@ logits = outputs.logits
 print(logits)
 ```
 
-#### **Variantes de BERT y optimización**
-
-Desde su lanzamiento, BERT ha servido como base para múltiples variantes optimizadas que mejoran su eficiencia y precisión.
-
-##### **RoBERTa**
-
-La variante **RoBERTa (Robustly Optimized BERT Approach)** introduce mejoras en el entrenamiento, como la eliminación de la tarea de **Next Sentence Prediction (NSP)** y el uso de un conjunto de datos más grande con más pasos de optimización. Estas modificaciones aumentan el rendimiento del modelo en diversas tareas de NLP.
-
-##### **DistilBERT**
-
-Para reducir la carga computacional de BERT, se desarrolló **DistilBERT**, una versión más ligera que conserva el 97% del rendimiento del modelo original utilizando solo la mitad de los parámetros. Este modelo es ideal para aplicaciones donde la eficiencia es prioritaria sin sacrificar demasiada precisión.
-
-##### **ALBERT**
-
-El modelo **ALBERT (A Lite BERT)** propone técnicas de compresión de parámetros, como la factorización de matrices y el uso de embeddings compartidos entre capas, lo que permite reducir significativamente el número de parámetros sin perder la capacidad de aprendizaje del modelo.
-
-Cada una de estas variantes ha sido optimizada para distintos escenarios, permitiendo el uso de BERT en aplicaciones que requieren un menor costo computacional o un rendimiento mejorado en tareas específicas.
-
-##### **Para reflexionar...**
-
-> **¿Cómo ha influido BERT en el desarrollo de modelos posteriores de NLP y qué aspectos aún pueden mejorarse en su arquitectura?**
->  **Clave**: Reflexiona sobre cómo BERT sentó las bases para modelos más avanzados como GPT y T5, y sobre los desafíos actuales en términos de eficiencia computacional y adaptabilidad a tareas específicas.
+> 
 
 ### **Modelos generativos: GPT y T5**
 
