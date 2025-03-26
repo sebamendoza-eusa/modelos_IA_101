@@ -235,15 +235,15 @@ Para resolver estos problemas, los autores del Transformer original (Vaswani et 
 
 - Para las dimensiones pares:
 
-  $$
-  PE(pos, 2i) = \sin\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
-  $$
+$$
+PE(pos, 2i) = \sin\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
+$$
 
 - Para las dimensiones impares:
 
-  $$
-  PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
-  $$
+$$
+PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
+$$
 
 donde:
 - $pos$ es la posición del token en la secuencia (0, 1, 2, ...),
