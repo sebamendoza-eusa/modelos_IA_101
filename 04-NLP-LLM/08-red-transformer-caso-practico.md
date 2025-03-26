@@ -151,15 +151,19 @@ En resumen, la tokenización no solo convierte palabras en índices numéricos, 
 Antes de nada recordemos lo que es una **matriz de embeddings.**
 
 La **matriz de embeddings de entrada** es un componente fundamental en todo modelo Transformer. Es una **matriz de pesos aprendibles** de tamaño:
+
 $$
 \text{Vocabulario} \times \text{Dimensión de embedding}
 $$
+
 En ella, **cada fila corresponde a un token del vocabulario** y almacena un vector denso que representa el significado semántico de dicho token en el espacio del modelo. Durante el entrenamiento, esta matriz se actualiza para capturar regularidades léxicas, gramaticales y semánticas de los datos de entrada.
 
 En el proceso de inferencia o entrenamiento, los `token_ids` que resultan de la tokenización **se utilizan como índices** para acceder a las filas de esta matriz. Así, una secuencia de tokens se transforma en una **matriz de embeddings** de forma:
+
 $$
 \text{longitud de la secuencia} \times \text{dimensión del embedding}
 $$
+
 Este conjunto de vectores será la entrada al bloque Transformer, al que posteriormente se sumarán otras informaciones cuyo objetivo final será capturar el contexto de cada token y con ello de cada palabra en el texto.
 
 Así pues, en esta fase, las claves a tener en cuenta en nuestro ejemplo son:
@@ -214,9 +218,11 @@ Para resolver este problema, se introduce la **codificación posicional**, una r
 Los modelos Transformer procesan todos los tokens de forma simultánea y sin un orden explícito. Esto plantea una dificultad importante: **¿cómo puede el modelo saber si una palabra aparece al principio o al final de una frase, o distinguir entre "los perros más que los gatos" o "los gatos más que los perros"?**
 
 La solución consiste en añadir, para cada token, un **vector que codifique su posición dentro de la secuencia**. Este vector se suma al embedding léxico que ya representa el significado del token. En nuestro caso, al trabajar con embeddings de dimensión 5, la codificación posicional será un **vector también de dimensión 5**, y cada token de entrada tendrá asociado el resultado de la suma:
+
 $$
 \text{embedding final} = \text{embedding de entrada} + \text{codificación posicional}
 $$
+
 Ahora bien, podríamos preguntarnos **cómo construir estos vectores posicionales**
 
 Podemos imaginar varias alternativas intuitivas, pero cada una presenta limitaciones importantes:
