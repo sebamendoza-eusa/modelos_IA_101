@@ -228,11 +228,13 @@ Podemos imaginar varias alternativas intuitivas, pero cada una presenta limitaci
 Para resolver estos problemas, los autores del Transformer original (Vaswani et al., 2017) propusieron una codificación basada en **funciones seno y coseno** de diferentes frecuencias, definidas de forma determinista (no se entrena con el modelo). Para una posición $pos$ y una dimensión $i$ del embedding, las fórmulas son:
 
 - Para las dimensiones pares:
+
   $$
   PE(pos, 2i) = \sin\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
   $$
 
 - Para las dimensiones impares:
+
   $$
   PE(pos, 2i+1) = \cos\left(\frac{pos}{10000^{\frac{2i}{d}}}\right)
   $$
@@ -274,9 +276,11 @@ El componente central de los modelos Transformer es el **mecanismo de atención*
 En NLP, cada palabra se representa como un vector en un espacio de dimensión fija (por ejemplo, ℝ⁵ en nuestro caso). Podemos entonces comparar dos palabras observando el **ángulo** entre sus vectores. Cuanto **más pequeño es el ángulo entre ellos**, más parecidos son en significado o contexto. Esta noción se traduce matemáticamente en lo que se conoce como la **similitud del coseno**.
 
 La **similitud del coseno** entre dos vectores $\mathbf{u}$ y $\mathbf{v}$ se calcula como:
+
 $$
 \text{sim}(\mathbf{u}, \mathbf{v}) = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\| \cdot \|\mathbf{v}\|}
 $$
+
 Este valor está **acotado entre -1 y 1**, y permite saber si dos vectores apuntan en la misma dirección (similares), en direcciones opuestas (antónimos o negativos), o si son ortogonales (no tienen relación).
 
 > Vemos entonces que al final, buscar la similitud entre dos vectores esta directamente relacionado con **la operación de multiplicación** de vectores. Este hecho es fundamental a la hora de desarrollar el posterior mecanismo de atención basado en operaciones con matrices.
@@ -354,6 +358,7 @@ Tomamos los valores generados en el paso anterior (embeddings finales):
 | 5 (cats) | [-0.66, 0.46, 0.72, -0.73, 0.16]  |
 
 Y generamos la matriz $\mathbf{X}$ apilando los tokens
+
 $$
 \mathbf{X} = \begin{bmatrix}
 0.10 & 0.63 & 1.24 & 0.18 & -0.36 \\
@@ -367,6 +372,7 @@ $$
 
 
 Ahora **supongamos** que las matrices de proyección $\mathbf{W}_Q$, $\mathbf{W}_K$, $\mathbf{W}_V$ que han resultado del entrenamiento son:
+
 $$
 \mathbf{W}_Q =\begin{bmatrix}0.2 & 0.1 & -0.1 \\0.0 & 0.3 & 0.2 \\0.1 & -0.1 & 0.0 \\-0.2 & 0.0 & 0.1 \\0.0 & 0.2 & -0.2 \\\end{bmatrix};
 
@@ -386,6 +392,7 @@ $$
 0.1 & 0.3 & 0.0 \\
 \end{bmatrix}
 $$
+
 El siguiente paso será multiplicar $\mathbf{X}$ por $\mathbf{W}_Q$, $\mathbf{W}_K$, $\mathbf{W}_V$
 
 Esto nos dará las matrices
@@ -395,6 +402,7 @@ Esto nos dará las matrices
 - $\mathbf{V} = \mathbf{X} \cdot \mathbf{W}_V$ → matriz $6 \times 3$
 
 Y en nuestro ejemplo quedaría:
+
 $$
 \mathbf{Q} =\begin{bmatrix}
 0.108 & 0.003 & 0.206 \\
@@ -421,9 +429,11 @@ $$
 0.167  & -0.182 & 0.085 \\
 \end{bmatrix}
 $$
+
 Vemos como cada una de las filas de estas matrices ya son distintas a las filas de $\mathbf{X}$. Eso es por la transformación lineal que introduce la similitud con otros tokens y que reduce el número de columnas inicial.
 
 El siguiente paso consiste multiplicar las matrices $\mathbf{Q}$ y $\mathbf{K^T}$. Con ello conseguimos una nueva matriz con información de la relación de cada token con los demás
+
 $$
 \mathbf{Q \cdot X^T} = \begin{bmatrix}
 -0.002 & 0.072 & 0.142 & 0.047 & -0.132 & 0.025 \\
@@ -434,9 +444,11 @@ $$
 0.004  & 0.021 & 0.048 & 0.029 & -0.050 & 0.010 \\
 \end{bmatrix}
 $$
+
 Esta matriz es la que denominamos **matriz de atención** (o similitud).
 
 Ahora habría que aplicarle las transformaciones de escalado y softmax, resultando la matriz de similitud:
+
 $$
 \begin{bmatrix}
 0.1647 & 0.1698 & 0.1748 & 0.1680 & 0.1563 & 0.1665 \\
@@ -447,7 +459,9 @@ $$
 0.1662 & 0.1673 & 0.1691 & 0.1679 & 0.1627 & 0.1668 \\
 \end{bmatrix}
 $$
+
 Por último, volvemos a multiplicar esta matriz por $\mathbf{V}$ para obtener la matriz de atención $\mathbf{Z}$. El resultado sería:
+
 $$
 \mathbf{Z} =
 \begin{bmatrix}
@@ -459,7 +473,9 @@ $$
 0.076 & 0.044 & -0.008 \\
 \end{bmatrix}
 $$
+
 Una última cuestión a tener en cuenta es que es necesario obtener una matriz con las mismas dimensiones de la original $\mathbf{X}$. Para ello volvemos a transformar (multiplicar) esta matriz $\mathbf{Z}$ por otra matriz de pesos final $\mathbf{W_O}$ que también se habrá generado durante el entrenamiento. Supongamos que la matriz $\mathbf{W_O}$ es esta:
+
 $$
 \mathbf{W}_O =
 \begin{bmatrix}
@@ -468,7 +484,9 @@ $$
 -0.288 & 0.282 & 0.199 & -0.173 & -0.191 \\
 \end{bmatrix}
 $$
+
 Al multiplicar $\mathbf{Z}$ por $\mathbf{W_O}$ obtendremos la matriz final $\mathbf{\hat{Z}}$ con toda la información de contexto
+
 $$
 \mathbf{\hat{Z}} = \begin{bmatrix}
 -0.014 & 0.005 & 0.020 & 0.009 & -0.008 \\
@@ -479,6 +497,7 @@ $$
 -0.012 & 0.007 & 0.019 & 0.009 & -0.009 \\
 \end{bmatrix}
 $$
+
 Cada una de las filas de esta matriz correspondería a un embedding de salida de cada uno de los tokens iniciales.
 
 #### **Etapa final del bloque de atención: normalización, conexión residual y capa de salida**
@@ -493,9 +512,11 @@ Este no es aún el final del procesamiento: el Transformer incluye una **etapa d
 ##### Conexión residual
 
 El primer paso es una **conexión residual** (skip connection). Esta consiste en **sumar directamente** la entrada original del bloque al resultado del sub-bloque de atención:
+
 $$
 \text{Salida}_{\text{residuo}} = \text{LayerNorm}(X + \hat{Z})
 $$
+
 donde:
 
 - $X$ es la entrada original del bloque (los embeddings con codificación posicional),
@@ -505,6 +526,7 @@ donde:
 Este diseño permite que el modelo **aprenda transformaciones ajustadas al contexto sin perder información de entrada**, y mejora el flujo de gradientes durante el entrenamiento.
 
 En nuestro caso la matriz resultante sería:
+
 $$
 \begin{bmatrix}
 -0.498 & 0.498 & 1.632 & -0.311 & -1.321\\
@@ -515,10 +537,13 @@ $$
 -1.121 & 0.800 & 1.258 & -1.204 & 0.267
 \end{bmatrix}
 $$
+
 Esta matriz pasará ahora por una red completamente conectada (feedforward) en la que a cada vector de token (cada fila de la matriz resultante) se le aplica una **misma red neuronal simple**, de forma independiente para cada posición. Esta red tiene dos capas lineales y una activación intermedia (como ReLU o GELU):
+
 $$
 \text{FFN}(x) = \text{ReLU}(x \cdot \mathbf{W}_1 + \mathbf{b}_1) \cdot \mathbf{W}_2 + \mathbf{b}_2
 $$
+
 Donde:
 
 - $\mathbf{W}_1 \in \mathbb{R}^{d \times d_{\text{ff}}}$, típicamente $d_{\text{ff}} = 4 \cdot d$,
@@ -527,9 +552,11 @@ Donde:
 Esta red permite introducir **no linealidades** adicionales y mejorar la capacidad de abstracción de cada token.
 
 Al igual que en el sub-bloque de atención, esta red también está seguida por una **conexión residual** y una **normalización por capas**:
+
 $$
 \text{Salida final del bloque} = \text{LayerNorm}(x + \text{FFN}(x))
 $$
+
 Este diseño:
 
 - Mantiene el flujo de información original (residual),
@@ -560,7 +587,6 @@ El decoder tiene una estructura muy similar al encoder, pero con **dos mecanismo
 **Capa final de proyección + softmax**: Tras pasar por varios bloques decoder (normalmente apilados), se aplica una capa lineal final que proyecta la salida a una dimensión igual al tamaño del vocabulario. Luego se aplica `softmax` para obtener una distribución de probabilidad sobre las posibles palabras siguientes. En inferencia, se toma el token con mayor probabilidad (o se usa sampling/beam search) para generar el siguiente token de la secuencia.
 
 
-
 ## Apéndices
 
 ### Tipos de máscara en Transformers
@@ -580,9 +606,11 @@ La máscara causal, también conocida como autoregresiva, restringe la atención
 Este tipo de máscara se aplica en modelos decoder-only como GPT o en el decoder de arquitecturas encoder-decoder durante el entrenamiento o la generación. Su implementación habitual es mediante una matriz triangular inferior que anula cualquier atención hacia tokens posteriores.
 
 Ejemplo de matriz causal para una secuencia de 4 tokens:
+
 $$
 \begin{bmatrix} 1 & 0 & 0 & 0 \\ 1 & 1 & 0 & 0 \\ 1 & 1 & 1 & 0 \\ 1 & 1 & 1 & 1 \\ \end{bmatrix}
 $$
+
 La máscara causal se implementa directamente en el bloque de atención como una **máscara binaria o booleana**, o mediante el uso de grandes valores negativos para anular las posiciones prohibidas (ej. usando `-inf` antes de aplicar `softmax`).
 
 #### Atención completa sin máscara
@@ -606,6 +634,7 @@ Durante el preentrenamiento con Masked Language Modeling (MLM), los tokens enmas
 En los modelos decoder-only, como GPT, el preentrenamiento y la tarea final de generación están muy estrechamente relacionados. A diferencia de los modelos de representación (como BERT), donde la tarea de preentrenamiento (MLM) es distinta de la tarea final (clasificación, NER, etc.), en los modelos generativos el objetivo del preentrenamiento y el objetivo de inferencia son esencialmente el mismo: **predecir el siguiente token dada una secuencia previa.**
 
 Esta tarea se formaliza como un problema de modelado autoregresivo del lenguaje, en el que se busca maximizar la probabilidad de una secuencia como producto de probabilidades condicionales:
+
 $$
 P(x_1, x_2, ..., x_n) = \prod_{t=1}^{n} P(x_t \mid x_1, x_2, ..., x_{t-1})
 $$
@@ -788,6 +817,7 @@ El entrenamiento es supervisado: se dispone de pares entrada-salida (por ejemplo
 El mecanismo de atención cruzada es la operación que permite al decoder acceder a la información que ha sido procesada por el encoder. Se encuentra en cada bloque del decoder, justo después de la autoatención enmascarada. Su papel es esencial: sin él, el decoder no tendría forma de incorporar el contenido de la secuencia de entrada a la generación de salida.
 
 Este mecanismo se basa en la misma operación fundamental de atención vista anteriormente:
+
 $$
 \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right) \cdot V
 $$
@@ -826,6 +856,3 @@ La atención cruzada se realiza sin restricciones de máscara. El decoder puede 
 Esto contrasta con la autoatención del decoder, que requiere una máscara causal para preservar la estructura autoregresiva.
 
 ---
-
-
-
