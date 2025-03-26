@@ -380,7 +380,8 @@ $$
 Ahora **supongamos** que las matrices de proyección $\mathbf{W}_Q$, $\mathbf{W}_K$, $\mathbf{W}_V$ que han resultado del entrenamiento son:
 
 $$
-\mathbf{W}_Q =\begin{bmatrix}0.2 & 0.1 & -0.1 \\0.0 & 0.3 & 0.2 \\0.1 & -0.1 & 0.0 \\-0.2 & 0.0 & 0.1 \\0.0 & 0.2 & -0.2 \\\end{bmatrix};
+\mathbf{W}_Q =\begin{bmatrix}0.2 & 0.1 & -0.1 \\0.0 & 0.3 & 0.2 \\0.1 & -0.1 & 0.0 \\-0.2 & 0.0 & 0.1 \\0.0 & 0.2 & -0.2 \\
+\end{bmatrix};
 \mathbf{W}_K =\begin{bmatrix}
 0.1 & 0.0 & 0.2 \\
 0.2 & -0.1 & 0.0 \\
