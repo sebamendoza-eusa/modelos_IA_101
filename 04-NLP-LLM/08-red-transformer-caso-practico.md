@@ -317,7 +317,7 @@ Así obtenemos:
 - $\mathbf{K} = \mathbf{X} \cdot \mathbf{W}_K \in \mathbb{R}^{n \times d'}$
 - $\mathbf{V} = \mathbf{X} \cdot \mathbf{W}_V \in \mathbb{R}^{n \times d'}$
 
-$d'$ tiene que ser menor (o como mucho igual) que $$ 
+$d'$ tiene que ser menor (o como mucho igual) que $d$ 
 
 Estas nuevas matrices contienen las **vistas del contenido** que el modelo necesita:
 
@@ -381,7 +381,6 @@ Ahora **supongamos** que las matrices de proyección $\mathbf{W}_Q$, $\mathbf{W}
 
 $$
 \mathbf{W}_Q =\begin{bmatrix}0.2 & 0.1 & -0.1 \\0.0 & 0.3 & 0.2 \\0.1 & -0.1 & 0.0 \\-0.2 & 0.0 & 0.1 \\0.0 & 0.2 & -0.2 \\\end{bmatrix};
-
 \mathbf{W}_K =\begin{bmatrix}
 0.1 & 0.0 & 0.2 \\
 0.2 & -0.1 & 0.0 \\
@@ -389,7 +388,6 @@ $$
 0.0 & 0.1 & -0.2 \\
 0.3 & 0.0 & 0.2 \\
 \end{bmatrix};
-
 \mathbf{W}_V =\begin{bmatrix}
 0.1 & 0.2 & -0.1 \\
 0.0 & 0.1 & 0.2 \\
