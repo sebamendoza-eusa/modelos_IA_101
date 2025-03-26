@@ -396,7 +396,7 @@ logits = outputs.logits
 print(logits)
 ```
 
-> 
+
 
 ### **Modelos generativos: GPT y T5**
 
